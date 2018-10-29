@@ -7,36 +7,33 @@ const HomeDiv = styled.div`
   background-attachment: fix;
   color: white;
   text-align: center;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: intro 1s ease-in;
   .title-card {
-    position:relative;
-    top: 35%;
     line-height: 3rem;
-
   }
   .name {
     font-size: 1.8rem;
     font-family: 'Muli', sans-serif;
     text-transform: uppercase;
-
   }
   .job {
     font-size: 1.7rem;
     font-family: 'Chakra Petch', sans-serif;
     text-transform: capitalize;
-
   }
   .down {
-    position:relative;
-    top: 70%;
+    position:absolute;
+    bottom: 0%;
     font-size:3rem;
-    animation: nextpagedown 7s infinite linear;
+    animation: nextpage 7s infinite linear;
   }
 
   @media (min-width: 500px) {
-    background-image: url(./img/background/SeattleSkyline.jpg);
-    width: 100vw;
-    heigth: auto;
+    background-image: url(./img/background/SeattleSkyline2.jpg);
     .title-card {
       line-height: 6rem;
 
@@ -56,7 +53,15 @@ const HomeDiv = styled.div`
     }
 
   }
-  @keyframes nextpagedown {
+  @keyframes intro {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+z    }
+  }
+  @keyframes nextpage {
     0% {
       opacity: 1;
       transform: scale(.5);
@@ -73,6 +78,7 @@ const HomeDiv = styled.div`
 
     }
   }
+
 `
 
 
