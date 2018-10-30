@@ -83,6 +83,9 @@ z    }
 
 
 class Home extends Component {
+  _scrollDown = () => {
+    document.querySelector(".second").scrollIntoView()
+  }
   render() {
     return (
       <HomeDiv className="top">
@@ -91,7 +94,7 @@ class Home extends Component {
           <div className="job">web developer</div>
         </div>
         <div className="down">
-          <i className="fas fa-angle-double-down" />
+          <i onClick={this.props.second} className="fas fa-angle-double-down" />
         </div>
       </HomeDiv>
     );

@@ -124,7 +124,7 @@ class About extends Component {
       </div>
     } else {
       return <div>
-        <p>I’m Justin Oliver Lee, a Full Stack Web Developer in the Tampa Bay Area.</p>
+        <p>I’m Justin Oliver Lee, a Full Stack Web Developer in the Tampa Bay Area. My past experience involved...</p>
       </div>
     }
   }
@@ -135,7 +135,7 @@ class About extends Component {
     return (
       <AboutDiv className="second">
         <div className="up">
-          <i className="fas fa-angle-double-up" />
+          <i onClick={this.props.home} className="fas fa-angle-double-up" />
         </div>
         <img src="./img/profilepicture.jpg" alt="my_profile_picture" />
         <div className="about-card">
@@ -144,7 +144,7 @@ class About extends Component {
           <p className="read" onClick={this.ReadMoreAbout}>{this.state.ReadMore ? "Read Less" : "Read More"}</p>
         </div>
         <div className="down">
-          <i className="fas fa-angle-double-down" />
+          <i onClick={this.props.third} className="fas fa-angle-double-down" />
         </div>
       </AboutDiv >
     );

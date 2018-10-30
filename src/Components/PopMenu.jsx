@@ -11,6 +11,7 @@ button {
   color: rgb(250, 250, 250);
   font-size: 1.5rem;
   outline: none;
+  margin: .5rem 0 0 .5rem;
 }
 a {
   padding: 1rem;
@@ -92,7 +93,7 @@ class PopMenu extends Component {
           <a>My Resume</a>
           <a>Contact Me</a>
         </div>
-      </MenuDiv>
+      </MenuDiv >
     );
   }
 }
