@@ -29,7 +29,7 @@ const ContactDiv = styled.div`
     align-items: center;
 	}
 	a i {
-    margin-bottom: 1rem;
+    // margin-bottom: 1rem;
 		font-size: 3rem;
 		width: 4.5rem;
 		height: 3.75rem;
@@ -65,9 +65,11 @@ const ContactDiv = styled.div`
   .down {
     display: flex;
     justify-content: center;
-    align-items:flex-end;
+    align-items:flex-start;
     flex: 1;
     font-size:3rem;
+    // margin-bottom: 3rem;
+
   }
 
   .fa-angle-double-up, .fa-angle-double-down{

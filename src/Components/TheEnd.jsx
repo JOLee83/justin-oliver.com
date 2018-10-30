@@ -48,29 +48,30 @@ const EndDiv = styled.div`
 	}
 
   button {
-    font-size: 2rem;
+    font-size: 1.5rem;
     border-radius: 1rem;
     color:white;
-    background-color: darkred;
-    border-color: pink black black pink;
+    background-color: rgb(40, 36, 119);
+    border-color: rgb(85, 182, 238) rgb(27, 25, 61) rgb(27, 25, 61) rgb(85, 182, 238);
   }
 
 
   .end-card {
     position:relative;
-  
-    
+  	display: flex;
+		justify-content: center;
+    align-items: center;
+    flex: 1;
 
 
   }
 
   .up {
-    // position: relative;
-    // top: 100;
     display: flex;
     justify-content: center;
     align-items:flex-start;
     font-size:3rem;
+    // height: 70vh;
   }
   .down {
     display: flex;
@@ -93,8 +94,7 @@ const EndDiv = styled.div`
     background-image: url(./img/background/SeattleSkylineSilohette2.png);
 	
 		div {
-			display: flex;
-			justify-content: center;
+		
 			flex-wrap: wrap;
 		}
 		a {
@@ -157,7 +157,7 @@ class TheEnd extends Component {
         </div>
 
         <div className="end-card">
-          <h1>THE END...</h1>
+          <h1>THE END</h1>
         </div>
         <button onClick={this.props.break}>
           Don't Press Me

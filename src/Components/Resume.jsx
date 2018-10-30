@@ -13,7 +13,7 @@ align-items: center;
 z-index: 100;
 font-family: 'Chakra Petch', sans-serif;
 img {
-  max-height: 80vh;
+  // max-height: 80vh;
   max-width: 90vw;
 }
   
@@ -26,9 +26,11 @@ img {
   .down {
     display: flex;
     justify-content: center;
-    align-items:flex-end;
+    align-items:flex-start;
     flex: 1;
     font-size:3rem;
+    // margin-bottom: 4rem;
+
   }
 
 	a {
@@ -72,7 +74,9 @@ img {
   
   @media (min-width: 500px) {
     padding-top: 3rem;	
-
+    img {
+      max-width: 40vw;
+    }
 		
 		
 	

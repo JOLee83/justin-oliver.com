@@ -11,7 +11,7 @@ button {
   color: rgb(250, 250, 250);
   font-size: 1.5rem;
   outline: none;
-  margin: .5rem 0 0 .5rem;
+  margin: .5rem 0 0 0;
 }
 a {
   padding: 1rem;
@@ -25,7 +25,7 @@ a {
   align-items: center;
   justify-content: space-evenly;
   font-family: 'Chakra Petch', sans-serif;
-  height: 90vh;
+  height: 80vh;
   width:135px;
   box-shadow: -.05rem -.05rem .1rem rgb(240, 240, 240),
   .05rem .05rem .1rem rgb(240, 240, 240),

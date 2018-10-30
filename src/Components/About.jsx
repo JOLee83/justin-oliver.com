@@ -5,7 +5,6 @@ const AboutDiv = styled.div`
 min-height: 100vh;
   background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(25, 25, 25));
   background-size: cover;
-  background-attachment: fix;
   color: rgb(250, 250, 250);
   display: flex;
   flex-direction: column;
@@ -40,9 +39,10 @@ min-height: 100vh;
   .down {
     display: flex;
     justify-content: center;
-    align-items:flex-end;
+    align-items:flex-start;
     flex: 1;
     font-size:3rem;
+    // margin-bottom: 4rem;
   }
   .read {
     border: .1rem solid rgb(250, 250, 250);
@@ -80,6 +80,9 @@ min-height: 100vh;
     .read:hover {
       color: rgb(139, 0, 0);
       cursor: pointer;
+    }
+    p {
+      font-size: 1.2rem;
     }
   }
   @keyframes nextpage {

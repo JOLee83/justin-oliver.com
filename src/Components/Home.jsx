@@ -4,7 +4,6 @@ const HomeDiv = styled.div`
   height: 100vh;
   background-image: url(./img/background/SeattleSkylineMobile.jpg);
   background-size: cover;
-  background-attachment: fix;
   color: white;
   text-align: center;
   display: flex;
