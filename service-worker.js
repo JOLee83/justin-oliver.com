@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/justin-oliver.com/precache-manifest.7939f5f4d8a7e8f770a9c5bf31c7995e.js"
+  "/justin-oliver.com/precache-manifest.2380649ed857c115301e48dfc824175c.js"
 );
 
 workbox.clientsClaim();
