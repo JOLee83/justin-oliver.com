@@ -64,6 +64,21 @@ class PopMenu extends Component {
   state = {
     popMenu: 'hidden'
   }
+  componentDidMount() {
+    window.addEventListener('scroll', this._closeMenu)
+  }
+  _closeMenu = () => {
+    this.setState(() => {
+      if (this.state.popMenu === 'shown') {
+        return {
+          popMenu: 'hidden'
+        }
+      } else {
+        return
+      }
+    })
+  }
+
   _toggleMenu = () => {
     this.setState(() => {
       if (this.state.popMenu === 'hidden') {
@@ -87,11 +102,11 @@ class PopMenu extends Component {
           {this.state.popMenu === 'hidden' ? 'Menu' : 'Close'}
         </button>
         <div className={this.state.popMenu}>
-          <a>Home</a>
-          <a>About Me</a>
-          <a>My Work</a>
-          <a>My Resume</a>
-          <a>Contact Me</a>
+          <a onClick={this.props.home} >Home</a>
+          <a onClick={this.props.second}>About Me</a>
+          <a onClick={this.props.third}>My Work</a>
+          <a onClick={this.props.fourth}>My Resume</a>
+          <a onClick={this.props.last}>Contact Me</a>
         </div>
       </MenuDiv >
     );

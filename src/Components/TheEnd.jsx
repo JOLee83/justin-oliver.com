@@ -47,7 +47,13 @@ const EndDiv = styled.div`
 
 	}
 
-
+  button {
+    font-size: 2rem;
+    border-radius: 1rem;
+    color:white;
+    background-color: darkred;
+    border-color: pink black black pink;
+  }
 
 
   .end-card {
@@ -143,19 +149,7 @@ const EndDiv = styled.div`
 
 
 class TheEnd extends Component {
-
-  _breakThePage = () => {
-    alert("You did it now")
-    document.break("You Lose, Refresh Page To Play Again")
-    //Why would push it?
-    //What did you do?  
-    //LOL  
-
-  }
-
-
   render() {
-
     return (
       <EndDiv className="very-last">
         <div className="up">
@@ -165,7 +159,7 @@ class TheEnd extends Component {
         <div className="end-card">
           <h1>THE END...</h1>
         </div>
-        <button onClick={this._breakThePage} className="">
+        <button onClick={this.props.break}>
           Don't Press Me
         </button>
       </EndDiv >
