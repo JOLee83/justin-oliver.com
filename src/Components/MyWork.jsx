@@ -9,11 +9,14 @@ const MyWorkDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   z-index: 100;
-  justify-content: center;
   font-family: 'Chakra Petch', sans-serif;
+
   img, p {
     max-width: 90vw;
+    font-size: 1.2rem;
+
   }
   .show {
     border: .1rem solid rgb(250, 250, 250);
@@ -33,11 +36,7 @@ const MyWorkDiv = styled.div`
 
 
 	a {
-	// 	margin: 10px;
-	// 	display: flex;
-	// 	flex-direction: column;
-  //   align-items: center;
-    text-decoration: none;
+    // text-decoration: none;
     color: rgb(250, 250, 250);
 
 	}
@@ -62,27 +61,6 @@ const MyWorkDiv = styled.div`
     position:relative;
     
 
-
-  }
-
-  .up {
-    display: flex;
-    justify-content: center;
-    align-items:flex-start;
-    font-size:3rem;
-  }
-  .down {
-    display: flex;
-    justify-content: center;
-    align-items:flex-start;
-    flex: 1;
-    font-size:3rem;
-    // margin-bottom: 4rem;
-
-  }
-
-  .fa-angle-double-up, .fa-angle-double-down{
-    animation: nextpage 7s infinite linear;
 
   }
   // .i-link {
@@ -119,33 +97,11 @@ const MyWorkDiv = styled.div`
     //   color: rgb(139, 0, 0);
 		// 	border-color: rgb(139, 0, 0);
     // }
-    // a:hover {
-    //   color: rgb(139, 0, 0);
-    // }
-    
-    .up, .down {
-      display: none;
- 
+    a:hover {
+      color: rgb(139, 0, 0);
     }
     
-    
-  @keyframes nextpage {
-    0% {
-      opacity: 1;
-      transform: scale(.5);
 
-    }
-    50% {
-      opacity: .2;
-      transform: scale(1);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(.5);
-
-
-    }
-  }
 `
 
 
@@ -163,14 +119,32 @@ class MyWork extends Component {
   }
   content = () => {
     if (this.state.ShowMore) {
-      return <section>
-        <img src="./img/malibulawns.png" />
-        <p><a href="www.malibulawns.com" target="_blank">MalibuLawns.com</a> was my first commercial site that I designed and built. I used various resources for the design, and built it using React, React Router, and Styled Components.</p>
-      </section>
+      return <div>
+        <section>
+          <img src="./img/malibulawns.png" />
+          <p><a href="https://www.malibulawns.com" target="_blank">MalibuLawns.com</a> was my first commercial site that I designed and built. I used various resources for the design, and built it using React, React Router, and Styled Components.</p>
+        </section>
+        <section>
+          <img src="./img/minesweeper.png" />
+          <p><a href="http://mine-sweeper-justin.surge.sh/" target="_blank">Mine Sweeper</a> is a React based game using an API. This was from my first week of learning React at SDG. API can be slow at times, and have not set up for mobile use yet.</p>
+        </section>
+        <section>
+          <img src="./img/blackjack.png" />
+          <p><a href="http://black-jack-justin.surge.sh/" target="_blank">Black Jack</a> is a JavaScript based game. This was the culmination of my first week of learning JavaScript at SDG. Set up the CSS for mobile use, but looks great on large screens as well.</p>
+          <p> See even more on <a
+            className="git"
+            href="https://github.com/JOLee83"
+            target="_blank"
+            rel="noopener noreferrer"
+          >GitHub</a>
+          </p>
+        </section>
+
+      </div>
     } else {
       return <section>
         <img src="./img/malibulawns.png" />
-        <p><a href="www.malibulawns.com" target="_blank">MalibuLawns.com</a> was my first commercial site that I designed and built. I used various resources for the design, and built it using React, React Router, and Styled Components.</p>
+        <p><a href="https://www.malibulawns.com" target="_blank">MalibuLawns.com</a> was my first commercial site that I designed and built. I used various resources for the design, and built it using React, React Router, and Styled Components.</p>
       </section>
     }
   }
@@ -180,17 +154,10 @@ class MyWork extends Component {
 
     return (
       <MyWorkDiv className="third">
-        <div className="up">
-          <i onClick={this.props.second} className="fas fa-angle-double-up" />
-        </div>
-
+        <h1>My Work</h1>
         <div className="work-card">
           {this.content()}
-          <p className="show" onClick={this.ShowMoreWork}>{this.state.ShowMore ? "Show Less" : "Show More"}</p>
-
-        </div>
-        <div className="down">
-          <i onClick={this.props.fourth} className="fas fa-angle-double-down" />
+          <p className="show" onClick={this.ShowMoreWork}>{this.state.ShowMore ? "See Less" : "See More"}</p>
         </div>
       </MyWorkDiv >
     );

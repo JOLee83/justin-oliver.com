@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 const AboutDiv = styled.div`
- 
-min-height: 100vh;
+  padding-top: 1rem;
+  min-height: 100vh;
   background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(25, 25, 25));
   background-size: cover;
   color: rgb(250, 250, 250);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flexstart ;
   z-index: 100;
+  font-size: 1.2rem;
 
   img {
     max-width:150px;
@@ -18,31 +20,11 @@ min-height: 100vh;
     .05rem .05rem .1rem rgb(240, 240, 240),
     .05rem .05rem .1rem rgb(240, 240, 240),
     -.05rem -.05rem .1rem rgb(240, 240, 240);
-
   }
-
-
   .about-card {
     position:relative;
     font-family: 'Chakra Petch', sans-serif;
     padding: 0 2rem;
-
-
-  }
-
-  .up {
-    display: flex;
-    justify-content: center;
-    align-items:flex-start;
-    font-size:3rem;
-  }
-  .down {
-    display: flex;
-    justify-content: center;
-    align-items:flex-start;
-    flex: 1;
-    font-size:3rem;
-    // margin-bottom: 4rem;
   }
   .read {
     border: .1rem solid rgb(250, 250, 250);
@@ -59,13 +41,8 @@ min-height: 100vh;
     border-color: rgb(0, 0, 0);
     color: rgb(0, 0, 0);
   }
-  .fas {
-    animation: nextpage 7s infinite linear;
-
-  }
 
   @media (min-width: 500px) {
-    // background-image: url(./img/background/SeattleSkyline.jpg);
     img {
       margin-top 2%;
       max-width:300px;
@@ -83,23 +60,6 @@ min-height: 100vh;
     }
     p {
       font-size: 1.2rem;
-    }
-  }
-  @keyframes nextpage {
-    0% {
-      opacity: 1;
-      transform: scale(.5);
-
-    }
-    50% {
-      opacity: .2;
-      transform: scale(1);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(.5);
-
-
     }
   }
 `
@@ -137,17 +97,11 @@ class About extends Component {
 
     return (
       <AboutDiv className="second">
-        <div className="up">
-          <i onClick={this.props.home} className="fas fa-angle-double-up" />
-        </div>
         <img src="./img/profilepicture.jpg" alt="my_profile_picture" />
         <div className="about-card">
-          <h1>About Me,</h1>
+          <h1>About Me</h1>
           {this.content()}
           <p className="read" onClick={this.ReadMoreAbout}>{this.state.ReadMore ? "Read Less" : "Read More"}</p>
-        </div>
-        <div className="down">
-          <i onClick={this.props.third} className="fas fa-angle-double-down" />
         </div>
       </AboutDiv >
     );

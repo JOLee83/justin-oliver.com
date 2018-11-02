@@ -9,8 +9,12 @@ const ContactDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   z-index: 100;
   justify-content: center;
+  font-size: 1.2rem;
+  font-family: 'Chakra Petch', sans-serif;
+
 
 	a {
 		margin: 10px;
@@ -30,27 +34,26 @@ const ContactDiv = styled.div`
 	}
 	a i {
     // margin-bottom: 1rem;
-		font-size: 3rem;
-		width: 4.5rem;
-		height: 3.75rem;
 		text-align: center;
-		padding-top: .75rem;
 		border-radius: 50%;
 		border 3px solid rgb(250, 250, 250);
-
+    font-size: 4rem;
+		width: 6rem;
+		height: 5rem;
+    padding-top: 1rem;
 	}
 	h1 {
-		margin: 1rem;
-		text-align: center;
-		font-size: 1.5rem;
-		font-style: italic;
-		font-weight: normal;
+		// margin: 1rem;
+		// text-align: center;
+		// font-size: 1.5rem;
+		// font-style: italic;
+		// font-weight: normal;
 		margin-bottom: .5rem;
 	}
 	p {
-		margin: 0 0 2rem 0;
+		margin: 0 0 0 0;
 		padding: 0 1.5rem;
-		text-align: center;
+		// text-align: center;
 	}
   .contact-card {
     position:relative;
@@ -99,7 +102,8 @@ const ContactDiv = styled.div`
 			font-size: 2rem;
 		}
 		p {
-			font-size: 1.3rem;
+      font-size: 1.3rem;
+      max-width: 500px;
 			margin-bottom: 6rem;
     }
     a i {
@@ -123,6 +127,7 @@ const ContactDiv = styled.div`
  
     }
     .text-link {
+      margin-top: 1rem;
       transition: color 0.5s ease-in-out;
     }
     
@@ -154,13 +159,11 @@ class Contact extends Component {
 
     return (
       <ContactDiv className="last">
-        <div className="up">
-          <i onClick={this.props.fourth} className="fas fa-angle-double-up" />
-        </div>
-        <h1>Start a Conversation</h1>
+        <h1>Contact Me</h1>
+
         <p>
-          Looking to fill a developer position or just want a web site built,
-          let's talk.
+          Start a Conversation, Looking to fill a developer position or just want a web site built,
+            let's talk.
 					</p>
         <div className="contact-card">
 
@@ -171,10 +174,10 @@ class Contact extends Component {
             <a className="text-link" href="tel://19044729516">(904) 472-9516</a>
           </aside>
           <aside>
-            <a className="i-link" href="mailto:lee.justin.oliver@gmail.com">
+            <a className="i-link" href="mailto:lee.justin.oliver@gmail.com?subject=Hi%20Justin,%20Nice%20Website">
               <i className="fas fa-envelope" />
             </a>
-            <a className="text-link" href="mailto:lee.justin.oliver@gmail.com">
+            <a className="text-link" href="mailto:lee.justin.oliver@gmail.com?subject=Hi%20Justin,%20Nice%20Website">
               lee.justin.oliver@gmail.com
 							</a>
           </aside>
@@ -191,9 +194,6 @@ class Contact extends Component {
               LinkedIn
 							</a>
           </aside>
-        </div>
-        <div className="down">
-          <i onClick={this.props.veryLast} className="fas fa-angle-double-down" />
         </div>
       </ContactDiv >
     );

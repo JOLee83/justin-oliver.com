@@ -4,7 +4,7 @@ const HomeDiv = styled.div`
   height: 100vh;
   background-image: url(./img/background/SeattleSkylineMobile.jpg);
   background-size: cover;
-  color: white;
+  color: rgb(250, 250, 250);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -13,6 +13,7 @@ const HomeDiv = styled.div`
   animation: intro 1s ease-in;
   .title-card {
     line-height: 3rem;
+    margin-bottom: 10rem;
   }
   .name {
     font-size: 1.8rem;
@@ -24,13 +25,6 @@ const HomeDiv = styled.div`
     font-family: 'Chakra Petch', sans-serif;
     text-transform: capitalize;
   }
-  .down {
-    position:absolute;
-    bottom: 0%;
-    font-size:3rem;
-    animation: nextpage 7s infinite linear;
-  }
-
   @media (min-width: 500px) {
     background-image: url(./img/background/SeattleSkyline2.jpg);
     .title-card {
@@ -47,10 +41,6 @@ const HomeDiv = styled.div`
     .job {
       font-size: 2.5rem;
     }
-    .down {
-      display: none;
-    }
-
   }
   @keyframes intro {
     from {
@@ -58,26 +48,8 @@ const HomeDiv = styled.div`
     }
     to {
       opacity: 1;
-z    }
-  }
-  @keyframes nextpage {
-    0% {
-      opacity: 1;
-      transform: scale(.5);
-
-    }
-    50% {
-      opacity: .2;
-      transform: scale(1);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(.5);
-
-
     }
   }
-
 `
 
 
@@ -91,9 +63,6 @@ class Home extends Component {
         <div className="title-card">
           <div className="name">justin oliver lee</div>
           <div className="job">web developer</div>
-        </div>
-        <div className="down">
-          <i onClick={this.props.second} className="fas fa-angle-double-down" />
         </div>
       </HomeDiv>
     );

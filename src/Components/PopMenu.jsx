@@ -12,21 +12,26 @@ button {
   font-size: 1.5rem;
   outline: none;
   margin: .5rem 0 0 0;
+  cursor: pointer;
+
 }
 a {
   padding: 1rem;
+  cursor: pointer;
 }
 .hidden, .shown {
   position:relative;
   background-image: linear-gradient(to top, rgb(0, 0, 0), rgb(25, 25, 25));
   color: rgb(250, 250, 250);
   display: flex;
+  font-size: 1.3rem;
+
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   font-family: 'Chakra Petch', sans-serif;
   height: 80vh;
-  width:135px;
+  width:150px;
   box-shadow: -.05rem -.05rem .1rem rgb(240, 240, 240),
   .05rem .05rem .1rem rgb(240, 240, 240),
   .05rem .05rem .1rem rgb(240, 240, 240),

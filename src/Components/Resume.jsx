@@ -10,6 +10,7 @@ color: rgb(250, 250, 250);
 display: flex;
 flex-direction: column;
 align-items: center;
+justify-content: flex-start;
 z-index: 100;
 font-family: 'Chakra Petch', sans-serif;
 img {
@@ -17,23 +18,9 @@ img {
   max-width: 90vw;
 }
   
-  .up {
-    display: flex;
-    justify-content: center;
-    align-items:flex-start;
-    font-size:3rem;
-  }
-  .down {
-    display: flex;
-    justify-content: center;
-    align-items:flex-start;
-    flex: 1;
-    font-size:3rem;
-    // margin-bottom: 4rem;
+  
 
-  }
-
-	a {
+	.link {
 		margin: 10px;
 		display: flex;
 		// flex-direction: column;
@@ -75,7 +62,7 @@ img {
   @media (min-width: 500px) {
     padding-top: 3rem;	
     img {
-      max-width: 40vw;
+      max-width: 70vw;
     }
 		
 		
@@ -86,27 +73,13 @@ img {
       color: rgb(139, 0, 0);
     }
     
-    .up, .down {
-      display: none;
+  
  
     }
-    
-    
-  @keyframes nextpage {
-    0% {
-      opacity: 1;
-      transform: scale(.5);
-
-    }
-    50% {
-      opacity: .2;
-      transform: scale(1);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(.5);
-
-
+    @media (min-width: 1200px) {
+      img {
+        max-width: 40vw;
+      }
     }
   }
 `
@@ -120,22 +93,22 @@ class Resume extends Component {
 
     return (
       <ResumeDiv className="fourth">
-        <div className="up">
-          <i onClick={this.props.third} className="fas fa-angle-double-up" />
-        </div>
+        <h1>Resume</h1>
 
         <div className="resume-card">
-          <a
+          <a className="link"
             href="https://drive.google.com/file/d/1TuEUxaJHyiaz4SVyjLEzUuuqmxlJBvIq/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >
             <i className="fas fa-file" />Download PDF
 				</a>
-          <img src="./img/Justin_Oliver_Lee_Resume.jpg" alt="My Resume" />
-        </div>
-        <div className="down">
-          <i onClick={this.props.last} className="fas fa-angle-double-down" />
+          <a
+            href="https://drive.google.com/file/d/1TuEUxaJHyiaz4SVyjLEzUuuqmxlJBvIq/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="./img/Justin_Oliver_Lee_Resume.jpg" alt="My Resume" /></a>
         </div>
       </ResumeDiv >
     );
