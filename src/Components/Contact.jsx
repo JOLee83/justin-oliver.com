@@ -59,22 +59,6 @@ const ContactDiv = styled.div`
     position:relative;
     font-family: 'Chakra Petch', sans-serif;
   }
-  .up {
-    display: flex;
-    justify-content: center;
-    align-items:flex-start;
-    font-size:3rem;
-  }
-  .down {
-    display: flex;
-    justify-content: center;
-    align-items:flex-start;
-    flex: 1;
-    font-size:3rem;
-    // margin-bottom: 3rem;
-
-  }
-
   .fa-angle-double-up, .fa-angle-double-down{
     animation: nextpage 7s infinite linear;
 
@@ -85,7 +69,9 @@ const ContactDiv = styled.div`
     margin: 0;
   }
   @media (min-width: 500px) {
-    padding-top: 3rem;	
+    // padding-top: 3rem;
+    display: flex;
+    justify-content: flex-start;
 		div {
 			display: flex;
 			justify-content: center;
@@ -104,7 +90,7 @@ const ContactDiv = styled.div`
 		p {
       font-size: 1.3rem;
       max-width: 500px;
-			margin-bottom: 6rem;
+			margin: 2rem 0 8rem 0;
     }
     a i {
     font-size: 4rem;
@@ -129,23 +115,6 @@ const ContactDiv = styled.div`
     .text-link {
       margin-top: 1rem;
       transition: color 0.5s ease-in-out;
-    }
-    
-  @keyframes nextpage {
-    0% {
-      opacity: 1;
-      transform: scale(.5);
-
-    }
-    50% {
-      opacity: .2;
-      transform: scale(1);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(.5);
-
-
     }
   }
 `

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const MenuDiv = styled.div`
 position: fixed;
 width: 10%;
-
+z-index: 101;
 button {
   border: none;
   background-color: transparent;
@@ -40,7 +40,7 @@ a {
 
 }
 .hidden {
-  left: -1000%;
+  left: -2000%;
   
 }
 .shown {

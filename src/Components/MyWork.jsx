@@ -68,7 +68,7 @@ const MyWorkDiv = styled.div`
   //   margin: 0;
   // }
   @media (min-width: 500px) {
-    padding-top: 3rem;
+    // padding-top: 3rem;
     img, p{
       max-width: 50vw;
     }	
@@ -76,27 +76,11 @@ const MyWorkDiv = styled.div`
       color: rgb(139, 0, 0);
       cursor: pointer;
     }
-		// a {
-		// 	margin: 0 3rem .4rem 3rem;
-		// }
-	
-		// h1 {
-		// 	font-size: 2rem;
-		// }
+
 		p {
 			font-size: 1.3rem;
-			margin-bottom: 6rem;
+			margin-bottom: 2rem;
     }
-    // a i {
-    // font-size: 4rem;
-		// width: 6rem;
-		// height: 5rem;
-    // padding-top: 1rem;
-    // }
-		// i:hover {
-    //   color: rgb(139, 0, 0);
-		// 	border-color: rgb(139, 0, 0);
-    // }
     a:hover {
       color: rgb(139, 0, 0);
     }

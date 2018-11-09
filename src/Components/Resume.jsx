@@ -60,7 +60,7 @@ img {
   }
   
   @media (min-width: 500px) {
-    padding-top: 3rem;	
+    // padding-top: 3rem;	
     img {
       max-width: 70vw;
     }

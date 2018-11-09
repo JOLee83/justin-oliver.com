@@ -53,13 +53,17 @@ class App extends Component {
             <span class="slider round"></span>
           </label>
         </div>
-        <PopMenu home={this._scrollTop} second={this._scrollSecond} third={this._scrollThird} fourth={this._scrollFourth} last={this._scrollLast} />
-        <Home second={this._scrollSecond} />
-        <About home={this._scrollTop} third={this._scrollThird} />
-        <MyWork second={this._scrollSecond} fourth={this._scrollFourth} />
-        <Resume third={this._scrollThird} last={this._scrollLast} />
-        <Contact fourth={this._scrollFourth} veryLast={this._scrollVeryLast} />
-        <TheEnd last={this._scrollLast} break={this._breakThePage} />
+        <PopMenu home={this._scrollTop}
+          second={this._scrollSecond}
+          third={this._scrollThird}
+          fourth={this._scrollFourth}
+          last={this._scrollLast} />
+        <Home />
+        <About />
+        <MyWork />
+        <Resume />
+        <Contact />
+        <TheEnd />
       </>
     );
   }
