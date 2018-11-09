@@ -3,7 +3,6 @@ import styled from 'styled-components'
 const MenuDiv = styled.div`
 position: fixed;
 width: 10%;
-z-index: 101;
 
 button {
   border: none;
@@ -13,30 +12,31 @@ button {
   outline: none;
   margin: .5rem 0 0 0;
   cursor: pointer;
-
 }
 a {
   padding: 1rem;
   cursor: pointer;
 }
 .hidden, .shown {
-  position:relative;
+  position: absolute;
   background-image: linear-gradient(to top, rgb(0, 0, 0), rgb(25, 25, 25));
   color: rgb(250, 250, 250);
   display: flex;
   font-size: 1.3rem;
-
+  // height: 80vh;
+  width: 100vw;
+  z-index: 99;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   font-family: 'Chakra Petch', sans-serif;
-  height: 80vh;
-  width:150px;
+  
   box-shadow: -.05rem -.05rem .1rem rgb(240, 240, 240),
   .05rem .05rem .1rem rgb(240, 240, 240),
   .05rem .05rem .1rem rgb(240, 240, 240),
   -.05rem -.05rem .1rem rgb(240, 240, 240);
   transition: left .4s ease-in-out;
+  z-index: none;
 
 }
 .hidden {
@@ -50,6 +50,7 @@ a {
   display: none;
 }
 @media (min-width: 700px) {
+ 
   .full-button{
     display: flex;
     font-family: 'Chakra Petch', sans-serif;
@@ -60,8 +61,17 @@ a {
   }
   .shown, .hidden {
     font-size:1.3rem;
+    height: 80vh;
+
     width:150px;
 
+  }
+  .hidden {
+    left: -1000%;
+    
+  }
+  .shown {
+    left: 0;
   }
 }
 `
