@@ -14,8 +14,6 @@ const ContactDiv = styled.div`
   justify-content: center;
   font-size: 1.2rem;
   font-family: 'Chakra Petch', sans-serif;
-
-
 	a {
 		margin: 10px;
 		display: flex;
@@ -24,7 +22,6 @@ const ContactDiv = styled.div`
     text-decoration: none;
     color: rgb(250, 250, 250);
 		transition: border-color 0.5s ease-in-out, color 0.5s ease-in-out;
-
 	}
 	aside {
     font-size: 0rem;
@@ -33,7 +30,6 @@ const ContactDiv = styled.div`
     align-items: center;
 	}
 	a i {
-    // margin-bottom: 1rem;
 		text-align: center;
 		border-radius: 50%;
 		border 3px solid rgb(250, 250, 250);
@@ -43,33 +39,21 @@ const ContactDiv = styled.div`
     padding-top: 1rem;
 	}
 	h1 {
-		// margin: 1rem;
-		// text-align: center;
-		// font-size: 1.5rem;
-		// font-style: italic;
-		// font-weight: normal;
 		margin-bottom: .5rem;
 	}
 	p {
-		margin: 0 0 0 0;
+		margin: 0;
 		padding: 0 1.5rem;
-		// text-align: center;
 	}
   .contact-card {
     position:relative;
     font-family: 'Chakra Petch', sans-serif;
   }
-  .fa-angle-double-up, .fa-angle-double-down{
-    animation: nextpage 7s infinite linear;
-
-  }
   .i-link {
     max-width: 6rem;
-    // max-height: 6rem;
     margin: 0;
   }
   @media (min-width: 500px) {
-    // padding-top: 3rem;
     display: flex;
     justify-content: flex-start;
 		div {
@@ -98,19 +82,9 @@ const ContactDiv = styled.div`
 		height: 5rem;
     padding-top: 1rem;
     }
-		// i:hover {
-    //   color: rgb(139, 0, 0);
-		// 	border-color: rgb(139, 0, 0);
-    // }
     a:hover {
       color: rgb(139, 0, 0);
       border-color: rgb(139, 0, 0);
-
-    }
-    
-    .up, .down {
-      display: none;
- 
     }
     .text-link {
       margin-top: 1rem;

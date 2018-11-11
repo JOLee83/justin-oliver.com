@@ -8,11 +8,12 @@ import Contact from './Components/Contact.jsx'
 import TheEnd from './Components/TheEnd.jsx'
 
 class App extends Component {
+
   state = {
     end: 'normal'
   }
-  _breakThePage = () => {
 
+  _breakThePage = () => {
     this.setState(() => {
       if (this.state.end === 'normal') {
         return {
@@ -25,7 +26,6 @@ class App extends Component {
       }
     })
   }
-
   _scrollTop = () => {
     document.querySelector(".top").scrollIntoView()
   }
@@ -47,13 +47,14 @@ class App extends Component {
   render() {
     return (
       <>
-        <div className={this.state.end}><h1>Who Turned Off The Lights?</h1>
-          <label class="switch">
+        {/* <div className={this.state.end}><h1>Who Turned Off The Lights?</h1>
+          <label className="switch">
             <input type="checkbox" onClick={this._breakThePage} />
-            <span class="slider round"></span>
+            <span className="slider round"></span>
           </label>
-        </div>
-        <PopMenu home={this._scrollTop}
+        </div> */}
+        <PopMenu
+          home={this._scrollTop}
           second={this._scrollSecond}
           third={this._scrollThird}
           fourth={this._scrollFourth}

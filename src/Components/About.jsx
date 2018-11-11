@@ -12,7 +12,6 @@ const AboutDiv = styled.div`
   justify-content: flexstart ;
   z-index: 100;
   font-size: 1.2rem;
-
   img {
     max-width:150px;
     border-radius: 50%;
@@ -41,7 +40,6 @@ const AboutDiv = styled.div`
     border-color: rgb(0, 0, 0);
     color: rgb(0, 0, 0);
   }
-
   @media (min-width: 500px) {
     img {
       margin-top 2%;
@@ -49,10 +47,6 @@ const AboutDiv = styled.div`
     }
     .about-card {
       max-width: 500px;
-    }
-    
-    .up, .down {
-      display: none;
     }
     .read:hover {
       color: rgb(139, 0, 0);

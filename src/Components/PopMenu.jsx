@@ -23,25 +23,21 @@ a {
   color: rgb(250, 250, 250);
   display: flex;
   font-size: 1.3rem;
-  // height: 80vh;
   width: 100vw;
   z-index: 99;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   font-family: 'Chakra Petch', sans-serif;
-  
   box-shadow: -.05rem -.05rem .1rem rgb(240, 240, 240),
   .05rem .05rem .1rem rgb(240, 240, 240),
   .05rem .05rem .1rem rgb(240, 240, 240),
   -.05rem -.05rem .1rem rgb(240, 240, 240);
   transition: left .4s ease-in-out;
   z-index: none;
-
 }
 .hidden {
   left: -2000%;
-  
 }
 .shown {
   left: 0;
@@ -50,11 +46,9 @@ a {
   display: none;
 }
 @media (min-width: 700px) {
- 
   .full-button{
     display: flex;
     font-family: 'Chakra Petch', sans-serif;
-
   }
   .mobile-button {
     display:none;
@@ -62,13 +56,10 @@ a {
   .shown, .hidden {
     font-size:1.3rem;
     height: 80vh;
-
     width:150px;
-
   }
   .hidden {
     left: -1000%;
-    
   }
   .shown {
     left: 0;

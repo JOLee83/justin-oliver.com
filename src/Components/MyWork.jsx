@@ -12,11 +12,9 @@ const MyWorkDiv = styled.div`
   justify-content: flex-start;
   z-index: 100;
   font-family: 'Chakra Petch', sans-serif;
-
   img, p {
     max-width: 90vw;
     font-size: 1.2rem;
-
   }
   .show {
     border: .1rem solid rgb(250, 250, 250);
@@ -33,42 +31,13 @@ const MyWorkDiv = styled.div`
     border-color: rgb(0, 0, 0);
     color: rgb(0, 0, 0);
   }
-
-
 	a {
-    // text-decoration: none;
     color: rgb(250, 250, 250);
-
 	}
-
-	// a i {
-  //   margin-bottom: 1rem;
-	// 	font-size: 3rem;
-	// 	width: 4.5rem;
-	// 	height: 3.75rem;
-	// 	text-align: center;
-	// 	padding-top: .75rem;
-	// 	border-radius: 50%;
-	// 	border 3px solid rgb(250, 250, 250);
-	// 	transition: border-color 0.5s ease-in-out, color 0.5s ease-in-out;
-
-	// }
-
-
-
-
   .work-card {
     position:relative;
-    
-
-
   }
-  // .i-link {
-  //   max-width: 6rem;
-  //   margin: 0;
-  // }
   @media (min-width: 500px) {
-    // padding-top: 3rem;
     img, p{
       max-width: 50vw;
     }	
@@ -76,7 +45,6 @@ const MyWorkDiv = styled.div`
       color: rgb(139, 0, 0);
       cursor: pointer;
     }
-
 		p {
 			font-size: 1.3rem;
 			margin-bottom: 2rem;
@@ -84,8 +52,6 @@ const MyWorkDiv = styled.div`
     a:hover {
       color: rgb(139, 0, 0);
     }
-    
-
 `
 
 
