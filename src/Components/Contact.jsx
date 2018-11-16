@@ -10,9 +10,8 @@ const ContactDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   z-index: 100;
-  justify-content: center;
   font-size: 1.2rem;
   font-family: 'Chakra Petch', sans-serif;
 	a {
