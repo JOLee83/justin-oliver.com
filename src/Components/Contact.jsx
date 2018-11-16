@@ -42,7 +42,7 @@ const ContactDiv = styled.div`
 		margin-bottom: .5rem;
 	}
 	p {
-		margin: 0;
+		margin: 0 0 1rem 0;
 		padding: 0 1.5rem;
 	}
   .contact-card {
