@@ -66,6 +66,8 @@ class Home extends Component {
     title: "problem solver"
   }
   componentWillMount() {
+    setTimeout(this.changeTitle, 1000)
+
     setInterval(this.changeTitle, 4000)
   }
   componentWillUnmount() {
