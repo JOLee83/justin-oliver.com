@@ -46,7 +46,6 @@ img {
   }
 `
 class Resume extends Component {
-
   render() {
     return (
       <ResumeDiv className="fourth">

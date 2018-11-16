@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
+
 const HomeDiv = styled.div`
   height: 100vh;
   background-image: url(./img/background/SeattleSkylineMobile.jpg);
@@ -25,11 +26,18 @@ const HomeDiv = styled.div`
     font-family: 'Chakra Petch', sans-serif;
     text-transform: capitalize;
   }
+  .faded {
+    opacity: 0;
+    transition: opacity .4s ease-in-out;
+  }
+  .fading{
+    opacity: 1;
+    transition: opacity .4s ease-in-out;
+  }
   @media (min-width: 500px) {
     background-image: url(./img/background/SeattleSkyline2.jpg);
     .title-card {
       line-height: 6rem;
-
       text-shadow: -.1rem -.1rem .5rem rgb(25, 25, 25),
         .1rem .1rem .5rem rgb(25, 25, 25),
         .1rem .1rem .6rem rgb(25, 25, 25),
@@ -52,17 +60,55 @@ const HomeDiv = styled.div`
   }
 `
 
-
 class Home extends Component {
-  _scrollDown = () => {
-    document.querySelector(".second").scrollIntoView()
+  state = {
+    fading: false,
+    title: "problem solver"
+  }
+  componentWillMount() {
+    setInterval(this.changeTitle, 4000)
+  }
+  componentWillUnmount() {
+    clearInterval(this.changeTitle)
+  }
+  changeTitle = () => {
+    this.timer = setTimeout(_ => {
+      this.setState({ fading: true })
+    }, 1000);
+    if (this.state.title === "problem solver") {
+      this.timer = setTimeout(_ => {
+        this.setState({ title: 'up for a challenge' })
+        this.setState({ fading: false })
+      }, 2000);
+    }
+    if (this.state.title === "up for a challenge") {
+      this.timer = setTimeout(_ => {
+        this.setState({ title: 'web developer' })
+        this.setState({ fading: false })
+      }, 2000);
+    }
+    if (this.state.title === "web developer") {
+      this.timer = setTimeout(_ => {
+        this.setState({ title: 'problem solver' })
+        this.setState({ fading: false })
+      }, 2000);
+    }
+    // if (this.state.title === "up for a challenge") {
+    //   this.setState({ title: 'web developer' })
+    // }
+    // if (this.state.title === "web developer") {
+    //   this.setState({ title: 'problem solver' })
+    // }
+
   }
   render() {
+    const { title, fading } = this.state;
+
     return (
       <HomeDiv className="top">
         <div className="title-card">
           <div className="name">justin oliver lee</div>
-          <div className="job">web developer</div>
+          <div className={`${fading ? 'faded job' : 'fading job'}`}>{title}</div>
         </div>
       </HomeDiv>
     );

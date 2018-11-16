@@ -9,23 +9,6 @@ import TheEnd from './Components/TheEnd.jsx'
 
 class App extends Component {
 
-  state = {
-    end: 'normal'
-  }
-
-  _breakThePage = () => {
-    this.setState(() => {
-      if (this.state.end === 'normal') {
-        return {
-          end: 'break'
-        }
-      } else {
-        return {
-          end: 'normal'
-        }
-      }
-    })
-  }
   _scrollTop = () => {
     document.querySelector(".top").scrollIntoView()
   }
@@ -47,12 +30,6 @@ class App extends Component {
   render() {
     return (
       <>
-        {/* <div className={this.state.end}><h1>Who Turned Off The Lights?</h1>
-          <label className="switch">
-            <input type="checkbox" onClick={this._breakThePage} />
-            <span className="slider round"></span>
-          </label>
-        </div> */}
         <PopMenu
           home={this._scrollTop}
           second={this._scrollSecond}

@@ -2,13 +2,12 @@
   "name": "justin-oliver.com",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jolee83.github.io/justin-oliver.com/",
+  "homepage": "https://www.justin-oliver.com/",
   "dependencies": {
     "components": "^0.1.0",
     "gh-pages": "^2.0.1",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.5",
     "styled": "^1.0.0",
     "styled-components": "^4.0.2"

@@ -26,22 +26,18 @@ const EndDiv = styled.div`
     padding-top: 3rem;
     background-image: url(./img/background/SeattleSkylineSilohette3.png);
 		h1 {
-			font-size: 2rem;
+      font-size: 2rem;
 		}
   }
 `
+
 class TheEnd extends Component {
   render() {
     return (
       <EndDiv className="very-last">
-        <div className="end-card">
-          <h1>THE END</h1>
+        <div className="end-card" id="rain">
+          <h1>The End</h1>
         </div>
-        {/* <img src="https://www.codewars.com/users/JOLee83/badges/large" /> */}
-
-        {/* <button onClick={this.props.break}>
-        Don't Press Me
-        </button> */}
       </EndDiv >
     );
   }

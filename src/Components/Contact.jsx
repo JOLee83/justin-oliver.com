@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
+
 const ContactDiv = styled.div`
   min-height: 100vh;
   background-image: linear-gradient(to bottom, rgb(25, 24, 43), rgb(40, 36, 119));
@@ -93,23 +94,15 @@ const ContactDiv = styled.div`
   }
 `
 
-
 class Contact extends Component {
-
-
-
   render() {
-
     return (
       <ContactDiv className="last">
         <h1>Contact Me</h1>
-
         <p>
-          Start a Conversation, Looking to fill a developer position or just want a web site built,
-            let's talk.
-					</p>
+          Start a Conversation, Looking to fill a developer position or just want a web site built, let's talk.
+				</p>
         <div className="contact-card">
-
           <aside>
             <a className="i-link" href="tel://19044729516">
               <i className="fas fa-mobile-alt" />

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
+
 const MenuDiv = styled.div`
 position: fixed;
 width: 10%;

@@ -89,7 +89,6 @@ class MyWork extends Component {
           >GitHub</a>
           </p>
         </section>
-
       </div>
     } else {
       return <section>
@@ -99,9 +98,7 @@ class MyWork extends Component {
     }
   }
 
-
   render() {
-
     return (
       <MyWorkDiv className="third">
         <h1>My Work</h1>
