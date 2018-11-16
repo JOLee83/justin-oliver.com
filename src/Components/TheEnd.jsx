@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 const EndDiv = styled.div`
   min-height: 100vh;
+  // overflow: visible;
+
   background-color: rgb(40, 36, 119);
   background-image: url(./img/background/SeattleSkylineSilohetteMobile.png);
   background-position: bottom; 
@@ -23,8 +25,20 @@ const EndDiv = styled.div`
     flex: 1;
   }
   @media (min-width: 500px) {
-    padding-top: 3rem;
+    min-height: 100vh;
+
+    // padding-top: 3rem;
+    background-image: url(./img/background/SeattleSkylineSilohette.png);
+		h1 {
+      font-size: 2rem;
+		}
+  }
+  @media (min-width: 1200px) {
+    min-height: 75vh;
+
+    // padding-top: 3rem;
     background-image: url(./img/background/SeattleSkylineSilohette3.png);
+
 		h1 {
       font-size: 2rem;
 		}
@@ -35,7 +49,7 @@ class TheEnd extends Component {
   render() {
     return (
       <EndDiv className="very-last">
-        <div className="end-card" id="rain">
+        <div className="end-card">
           <h1>The End</h1>
         </div>
       </EndDiv >

@@ -67,7 +67,6 @@ class Home extends Component {
   }
   componentWillMount() {
     setTimeout(this.changeTitle, 1000)
-
     setInterval(this.changeTitle, 4000)
   }
   componentWillUnmount() {
@@ -95,13 +94,6 @@ class Home extends Component {
         this.setState({ fading: false })
       }, 2000);
     }
-    // if (this.state.title === "up for a challenge") {
-    //   this.setState({ title: 'web developer' })
-    // }
-    // if (this.state.title === "web developer") {
-    //   this.setState({ title: 'problem solver' })
-    // }
-
   }
   render() {
     const { title, fading } = this.state;

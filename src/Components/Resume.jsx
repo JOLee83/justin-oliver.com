@@ -17,31 +17,51 @@ padding-bottom: 4rem;
 img {
   max-width: 90vw;
 }
-	.link {
-		margin: 10px;
-		display: flex;
-    justify-content: center;
-    text-decoration: none;
-    color: rgb(250, 250, 250);
-    	transition: color 0.5s ease-in-out;
-	}
+button {
+  font-family: 'Chakra Petch', sans-serif;
+
+  border: .1rem solid rgb(100, 100, 100), .1rem solid rgb(150, 150, 150), .1rem solid rgb(150, 150, 150), .1rem solid rgb(100, 100, 100);
+  border-radius: 5%;
+  padding-top: .15rem;
+  background-color: rgb(250, 250, 250);
+  color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+  outline: none;
+  margin: .5rem 0 0 0;
+  cursor: pointer;
+  padding: .2rem;
+  transition: background-color .4s ease-in-out, color .4s ease-in-out;
+  margin-bottom: .2rem;
+}
+a{
+  color: inherit;
+  text-decoration: inherit;
+}
 	a i {
     margin-right: .5rem;
 	}
   .resume-card {
     position:relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
   }
   @media (min-width: 500px) {
     img {
       max-width: 70vw;
     }
-    a:hover {
-      color: rgb(139, 0, 0);
+    button:hover {
+      background-color: rgb(139, 0, 0);
+      color: rgb(250, 250, 250);
+      transition: background-color .4s ease-in-out, color .4s ease-in-out;
+
     }
+    
   }
   @media (min-width: 1200px) {
     img {
-      max-width: 40vw;
+      max-width: 50vw;
     }
   }
 `
@@ -51,13 +71,15 @@ class Resume extends Component {
       <ResumeDiv className="fourth">
         <h1>Resume</h1>
         <div className="resume-card">
-          <a className="link"
-            href="https://drive.google.com/file/d/1TuEUxaJHyiaz4SVyjLEzUuuqmxlJBvIq/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="fas fa-file" />Download PDF
-				  </a>
+          <button>
+            <a className="link"
+              href="https://drive.google.com/file/d/1TuEUxaJHyiaz4SVyjLEzUuuqmxlJBvIq/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fas fa-file" />Download PDF
+				    </a>
+          </button>
           <a
             href="https://drive.google.com/file/d/1TuEUxaJHyiaz4SVyjLEzUuuqmxlJBvIq/view?usp=sharing"
             target="_blank"

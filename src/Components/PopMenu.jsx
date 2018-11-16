@@ -6,19 +6,23 @@ position: fixed;
 width: 10%;
 z-index: 101;
 button {
-  border: none;
-  background-color: transparent;
-  color: rgb(250, 250, 250);
+  font-family: 'Chakra Petch', sans-serif;
+  border: .1rem solid rgb(100, 100, 100), .1rem solid rgb(150, 150, 150), .1rem solid rgb(150, 150, 150), .1rem solid rgb(100, 100, 100);
+  border-radius: 20%;
+  padding-top: .15rem;
+  background-color: rgb(250, 250, 250);
+  color: rgb(0, 0, 0);
   font-size: 1.5rem;
-  outline: none;
   margin: .5rem 0 0 0;
-  cursor: pointer;
+  transition: background-color .4s ease-in-out;
 }
 a {
   padding: 1rem;
   cursor: pointer;
+  transition: color .4s ease-in-out;
 }
 .hidden, .shown {
+  margin-top: .3rem;
   position: absolute;
   background-image: linear-gradient(to top, rgb(0, 0, 0), rgb(25, 25, 25));
   color: rgb(250, 250, 250);
@@ -34,7 +38,7 @@ a {
   .05rem .05rem .1rem rgb(240, 240, 240),
   .05rem .05rem .1rem rgb(240, 240, 240),
   -.05rem -.05rem .1rem rgb(240, 240, 240);
-  transition: left .4s ease-in-out;
+  transition: left .4s ease-in-out, color .4s ease-in-out;
   z-index: none;
 }
 .hidden {
@@ -64,6 +68,20 @@ a {
   }
   .shown {
     left: 0;
+  }
+  button {
+    padding-top: 0;
+    border-radius: 10%;
+  }
+  a:hover {
+    color: rgb(139, 0, 0);
+    transition: color .4s ease-in-out;
+  }
+  button:hover {
+    background-color: rgb(139, 0, 0);
+    color: rgb(250, 250, 250);
+    transition: background-color .4s ease-in-out, color .4s ease-in-out;
+
   }
 }
 `

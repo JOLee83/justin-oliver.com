@@ -16,23 +16,28 @@ const MyWorkDiv = styled.div`
     max-width: 90vw;
     font-size: 1.2rem;
   }
-  .show {
-    border: .1rem solid rgb(250, 250, 250);
-    padding: .1rem;
-    max-width: 120px;
-    text-align: center;
+  button {
+    font-family: 'Chakra Petch', sans-serif;
+
+    border: .1rem solid rgb(100, 100, 100), .1rem solid rgb(150, 150, 150), .1rem solid rgb(150, 150, 150), .1rem solid rgb(100, 100, 100);
     border-radius: 5%;
-    transition: background-color .4s ease-in-out,
-      border-color.4s ease-in-out,
-      color .4s ease-in-out;
-  }
-  .show:active {
+    padding-top: .15rem;
     background-color: rgb(250, 250, 250);
-    border-color: rgb(0, 0, 0);
     color: rgb(0, 0, 0);
+    font-size: 1.2rem;
+    outline: none;
+    margin: .5rem 0 0 0;
+    cursor: pointer;
+    padding: .2rem;
+    transition: background-color .4s ease-in-out, color .4s ease-in-out;
+
   }
+
+
 	a {
     color: rgb(250, 250, 250);
+    transition: color .4s ease-in-out;
+
 	}
   .work-card {
     position:relative;
@@ -41,16 +46,20 @@ const MyWorkDiv = styled.div`
     img, p{
       max-width: 50vw;
     }	
-		.show:hover {
-      color: rgb(139, 0, 0);
-      cursor: pointer;
-    }
+	
 		p {
 			font-size: 1.3rem;
 			margin-bottom: 2rem;
     }
     a:hover {
       color: rgb(139, 0, 0);
+      transition: color .4s ease-in-out;
+    }
+    button:hover {
+      background-color: rgb(139, 0, 0);
+      color: rgb(250, 250, 250);
+      transition: background-color .4s ease-in-out, color .4s ease-in-out;
+
     }
 `
 
@@ -104,7 +113,7 @@ class MyWork extends Component {
         <h1>My Work</h1>
         <div className="work-card">
           {this.content()}
-          <p className="show" onClick={this.ShowMoreWork}>{this.state.ShowMore ? "See Less" : "See More"}</p>
+          <button className="show" onClick={this.ShowMoreWork}>{this.state.ShowMore ? "See Less" : "See More Projects"}</button>
         </div>
       </MyWorkDiv >
     );

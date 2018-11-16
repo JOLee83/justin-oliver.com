@@ -32,11 +32,13 @@ const ContactDiv = styled.div`
 	a i {
 		text-align: center;
 		border-radius: 50%;
-		border 3px solid rgb(250, 250, 250);
+    border 3px solid rgb(250, 250, 250);
+    overflow: hidden;
     font-size: 4rem;
 		width: 6rem;
 		height: 5rem;
     padding-top: 1rem;
+    transition: background-color .4s ease-in-out, color .4s ease-in-out;
 	}
 	h1 {
 		margin-bottom: .5rem;
@@ -56,10 +58,11 @@ const ContactDiv = styled.div`
   @media (min-width: 500px) {
     display: flex;
     justify-content: flex-start;
-		div {
+		.contact-card {
 			display: flex;
 			justify-content: center;
-			flex-wrap: wrap;
+      flex-wrap: wrap;
+     
 		}
 		a {
 			margin: 0 3rem .4rem 3rem;
@@ -82,9 +85,13 @@ const ContactDiv = styled.div`
 		height: 5rem;
     padding-top: 1rem;
     }
-    a:hover {
+    i:hover {
+      background-color: rgb(139, 0, 0);
+      transition: background-color .4s ease-in-out;
+    }
+    .text-link:hover {
       color: rgb(139, 0, 0);
-      border-color: rgb(139, 0, 0);
+
     }
     .text-link {
       margin-top: 1rem;
