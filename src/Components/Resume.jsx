@@ -20,11 +20,11 @@ img {
 button {
   font-family: 'Chakra Petch', sans-serif;
 
-  border: .1rem solid rgb(100, 100, 100), .1rem solid rgb(150, 150, 150), .1rem solid rgb(150, 150, 150), .1rem solid rgb(100, 100, 100);
+  border: .1rem solid rgb(250, 250, 250);
   border-radius: 5%;
   padding-top: .15rem;
-  background-color: rgb(250, 250, 250);
-  color: rgb(0, 0, 0);
+  color: rgb(250, 250, 250);
+  background-color: transparent;
   font-size: 1.2rem;
   outline: none;
   margin: .5rem 0 0 0;
@@ -52,8 +52,8 @@ a{
       max-width: 70vw;
     }
     button:hover {
-      background-color: rgb(139, 0, 0);
-      color: rgb(250, 250, 250);
+      background-color: rgb(250, 250, 250);
+    color: rgb(139, 0, 0);
       transition: background-color .4s ease-in-out, color .4s ease-in-out;
 
     }

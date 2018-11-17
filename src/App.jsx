@@ -5,7 +5,6 @@ import PopMenu from './Components/PopMenu.jsx'
 import MyWork from './Components/MyWork.jsx'
 import Resume from './Components/Resume.jsx'
 import Contact from './Components/Contact.jsx'
-import TheEnd from './Components/TheEnd.jsx'
 
 class App extends Component {
 
@@ -41,7 +40,7 @@ class App extends Component {
         <MyWork />
         <Resume />
         <Contact />
-        <TheEnd />
+
       </>
     );
   }

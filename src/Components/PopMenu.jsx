@@ -6,15 +6,17 @@ position: fixed;
 width: 10%;
 z-index: 101;
 button {
+  text-align: center:
   font-family: 'Chakra Petch', sans-serif;
-  border: .1rem solid rgb(100, 100, 100), .1rem solid rgb(150, 150, 150), .1rem solid rgb(150, 150, 150), .1rem solid rgb(100, 100, 100);
+  border: .1rem solid rgb(250, 250, 250);
   border-radius: 20%;
-  padding-top: .15rem;
-  background-color: rgb(250, 250, 250);
-  color: rgb(0, 0, 0);
+  padding: .15rem .3rem 0 .3rem;
+  color: rgb(250, 250, 250);
+  background-color: transparent;
   font-size: 1.5rem;
-  margin: .5rem 0 0 0;
+  margin: .5rem 0 0 .5rem;
   transition: background-color .4s ease-in-out;
+  max-width: 35px;
 }
 a {
   padding: 1rem;
@@ -70,16 +72,19 @@ a {
     left: 0;
   }
   button {
+    font-size: 1.7rem;
     padding-top: 0;
     border-radius: 10%;
+    max-width: 95px;
+
   }
   a:hover {
     color: rgb(139, 0, 0);
     transition: color .4s ease-in-out;
   }
   button:hover {
-    background-color: rgb(139, 0, 0);
-    color: rgb(250, 250, 250);
+    background-color: rgb(250, 250, 250);
+    color: rgb(139, 0, 0);
     transition: background-color .4s ease-in-out, color .4s ease-in-out;
 
   }
