@@ -54,9 +54,12 @@ const ContactDiv = styled.div`
       padding: 0 1.5rem;
     }
     .contact-card {
-      // position:relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
       font-family: 'Chakra Petch', sans-serif;
-      width: 100%;
+      flex: 1;
+      padding-bottom: 1rem;
     }
     .i-link {
       max-width: 6rem;
@@ -71,7 +74,8 @@ const ContactDiv = styled.div`
 
     
     .contact-card {
-			display: flex;
+      display: flex;
+      flex-direction: row;
       justify-content: center;
       align-item: center;
       flex-wrap: wrap;
