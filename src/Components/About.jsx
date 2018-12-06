@@ -96,7 +96,7 @@ class About extends Component {
   render() {
     return (
       <AboutDiv className="second">
-        <img src="./img/profilepicture.jpg" alt="my_profile_picture" />
+        <img src="./img/profilepicture.jpg" alt="Justin Oliver Lee" />
         <div className="about-card">
           <h1>About Me</h1>
           {this.content()}

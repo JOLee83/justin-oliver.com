@@ -5,7 +5,7 @@ const MenuDiv = styled.div`
 position: fixed;
 width: 10%;
 z-index: 101;
-button {
+.mobile-button, .full-button {
   text-align: center:
   font-family: 'Chakra Petch', sans-serif;
   border: .1rem solid rgb(250, 250, 250);
@@ -18,7 +18,14 @@ button {
   transition: background-color .4s ease-in-out;
   max-width: 35px;
 }
-a {
+button.jump {
+  font-family: 'Chakra Petch', sans-serif;
+  color: rgb(250, 250, 250);
+  background-color: transparent;
+  border: none;
+  font-size: 1.3rem;
+
+  width: 100%;
   padding: 1rem;
   cursor: pointer;
   transition: color .4s ease-in-out;
@@ -71,18 +78,18 @@ a {
   .shown {
     left: 0;
   }
-  button {
+  .full-button {
     font-size: 1.7rem;
     padding-top: 0;
     border-radius: 10%;
     max-width: 95px;
 
   }
-  a:hover {
+  .jump:hover {
     color: rgb(139, 0, 0);
     transition: color .4s ease-in-out;
   }
-  button:hover {
+  .full-button:hover {
     background-color: rgb(250, 250, 250);
     color: rgb(139, 0, 0);
     transition: background-color .4s ease-in-out, color .4s ease-in-out;
@@ -132,11 +139,11 @@ class PopMenu extends Component {
           {this.state.popMenu === 'hidden' ? 'Menu' : 'Close'}
         </button>
         <div className={this.state.popMenu}>
-          <a onClick={this.props.home} >Home</a>
-          <a onClick={this.props.second}>About Me</a>
-          <a onClick={this.props.third}>My Work</a>
-          <a onClick={this.props.fourth}>My Resume</a>
-          <a onClick={this.props.last}>Contact Me</a>
+          <button className="jump" onClick={this.props.home} >Home</button>
+          <button className="jump" onClick={this.props.second}>About Me</button>
+          <button className="jump" onClick={this.props.third}>My Work</button>
+          <button className="jump" onClick={this.props.fourth}>My Resume</button>
+          <button className="jump" onClick={this.props.last}>Contact Me</button>
         </div>
       </MenuDiv >
     );
