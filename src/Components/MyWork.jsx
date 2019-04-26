@@ -18,7 +18,6 @@ const MyWorkDiv = styled.div`
   }
   button {
     font-family: 'Chakra Petch', sans-serif;
-
     border: .1rem solid rgb(250, 250, 250);
     border-radius: 5%;
     padding-top: .15rem;
@@ -30,14 +29,10 @@ const MyWorkDiv = styled.div`
     cursor: pointer;
     padding: .2rem;
     transition: background-color .4s ease-in-out, color .4s ease-in-out;
-
   }
-
-
 	a {
     color: rgb(250, 250, 250);
     transition: color .4s ease-in-out;
-
 	}
   .work-card {
     position:relative;
@@ -45,8 +40,7 @@ const MyWorkDiv = styled.div`
   @media (min-width: 500px) {
     img, p{
       max-width: 50vw;
-    }	
-	
+    }
 		p {
 			font-size: 1.3rem;
 			margin-bottom: 2rem;
@@ -57,13 +51,10 @@ const MyWorkDiv = styled.div`
     }
     button:hover {
       background-color: rgb(250, 250, 250);
-    color: rgb(139, 0, 0);
+      color: rgb(139, 0, 0);
       transition: background-color .4s ease-in-out, color .4s ease-in-out;
-
     }
 `
-
-
 class MyWork extends Component {
   constructor(props) {
     super(props)
@@ -76,7 +67,7 @@ class MyWork extends Component {
       ShowMore: !prevState.ShowMore
     }), () => {
       if (!this.state.ShowMore) {
-        this.props.third()
+        this.props.scroll(".third")
       }
     })
   }
@@ -126,7 +117,6 @@ class MyWork extends Component {
       </section>
     }
   }
-
   render() {
     return (
       <MyWorkDiv className="third">
@@ -139,5 +129,4 @@ class MyWork extends Component {
     );
   }
 }
-
 export default MyWork;

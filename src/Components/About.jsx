@@ -23,7 +23,6 @@ const AboutDiv = styled.div`
   }
   button {
     font-family: 'Chakra Petch', sans-serif;
-
     border: .1rem solid rgb(250, 250, 250);
     border-radius: 5%;
     padding-top: .15rem;
@@ -35,14 +34,12 @@ const AboutDiv = styled.div`
     cursor: pointer;
     padding: .2rem;
     transition: background-color .4s ease-in-out, color .4s ease-in-out;
-
   }
   .about-card {
     position:relative;
     font-family: 'Chakra Petch', sans-serif;
     // padding: 0 2rem;
     max-width: 90vw;
-
   }
   @media (min-width: 500px) {
     img {
@@ -56,15 +53,12 @@ const AboutDiv = styled.div`
       background-color: rgb(250, 250, 250);
       color: rgb(139, 0, 0);
       transition: background-color .4s ease-in-out, color .4s ease-in-out;
-
     }
     p {
       font-size: 1.2rem;
     }
   }
 `
-
-
 class About extends Component {
   constructor(props) {
     super(props)
@@ -75,10 +69,9 @@ class About extends Component {
   ReadMoreAbout = () => {
     this.setState(prevState => ({
       ReadMore: !prevState.ReadMore
-
     }), () => {
       if (!this.state.ReadMore) {
-        this.props.second()
+        this.props.scroll(".second")
       }
     })
   }
@@ -96,8 +89,6 @@ class About extends Component {
       </div>
     }
   }
-
-
   render() {
     return (
       <AboutDiv className="second">
@@ -111,5 +102,4 @@ class About extends Component {
     );
   }
 }
-
 export default About;

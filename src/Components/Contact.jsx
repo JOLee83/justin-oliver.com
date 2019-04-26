@@ -68,64 +68,58 @@ const ContactDiv = styled.div`
   }
   @media (min-width: 500px) {
     .back{
-    display: flex;
-    justify-content: flex-start;
-    background-image: url(./img/background/SeattleSkylineSilohette.png);
-
-    
-    .contact-card {
       display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-item: center;
-      flex-wrap: wrap;
-      max-width: 60vw;
-
-		}
-		a {
-			margin: 0 3rem .4rem 3rem;
-		}
-		aside {
-			font-size: 1.1rem;
-      text-align: center;
-      width: 300px;
-		}
-		h1 {
-      margin-top: 2rem;
-			font-size: 2rem;
-		}
-		p {
-      font-size: 1.3rem;
-      max-width: 500px;
-			margin: 2rem 0 8rem 0;
-    }
-    a i {
-    font-size: 4rem;
-		width: 6rem;
-		height: 5rem;
-    padding-top: 1rem;
-    }
-    i:hover {
-      background-color: rgb(250, 250, 250);
-    color: rgb(139, 0, 0);
-    transition: background-color .4s ease-in-out, color .4s ease-in-out;
-    }
-    .text-link:hover {
+      justify-content: flex-start;
+      background-image: url(./img/background/SeattleSkylineSilohette.png);
+      .contact-card {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-item: center;
+        flex-wrap: wrap;
+        max-width: 60vw;
+      }
+      a {
+        margin: 0 3rem .4rem 3rem;
+      }
+      aside {
+        font-size: 1.1rem;
+        text-align: center;
+        width: 300px;
+      }
+      h1 {
+        margin-top: 2rem;
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1.3rem;
+        max-width: 500px;
+        margin: 2rem 0 8rem 0;
+      }
+      a i {
+      font-size: 4rem;
+      width: 6rem;
+      height: 5rem;
+      padding-top: 1rem;
+      }
+      i:hover {
+        background-color: rgb(250, 250, 250);
       color: rgb(139, 0, 0);
-
+      transition: background-color .4s ease-in-out, color .4s ease-in-out;
+      }
+      .text-link:hover {
+        color: rgb(139, 0, 0);
+      }
+      .text-link {
+        margin-top: 1rem;
+        transition: color 0.5s ease-in-out;
+      }
     }
-    .text-link {
-      margin-top: 1rem;
-      transition: color 0.5s ease-in-out;
-    }
-  }
   }
   @media (min-width: 800px) {
-  .back{
-    background-image: url(./img/background/SeattleSkylineSilohette3.png);
-    .contact-card{
+    .back{
+      background-image: url(./img/background/SeattleSkylineSilohette3.png);
     }
-  }
   }
 `
 

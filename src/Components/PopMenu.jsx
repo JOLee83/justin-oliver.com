@@ -24,7 +24,6 @@ button.jump {
   background-color: transparent;
   border: none;
   font-size: 1.3rem;
-
   width: 100%;
   padding: 1rem;
   cursor: pointer;
@@ -83,7 +82,6 @@ button.jump {
     padding-top: 0;
     border-radius: 10%;
     max-width: 95px;
-
   }
   .jump:hover {
     color: rgb(139, 0, 0);
@@ -93,7 +91,6 @@ button.jump {
     background-color: rgb(250, 250, 250);
     color: rgb(139, 0, 0);
     transition: background-color .4s ease-in-out, color .4s ease-in-out;
-
   }
 }
 `
@@ -115,7 +112,6 @@ class PopMenu extends Component {
       }
     })
   }
-
   _toggleMenu = () => {
     this.setState(() => {
       if (this.state.popMenu === 'hidden') {
@@ -139,11 +135,11 @@ class PopMenu extends Component {
           {this.state.popMenu === 'hidden' ? 'Menu' : 'Close'}
         </button>
         <div className={this.state.popMenu}>
-          <button className="jump" onClick={this.props.home} >Home</button>
-          <button className="jump" onClick={this.props.second}>About Me</button>
-          <button className="jump" onClick={this.props.third}>My Work</button>
-          <button className="jump" onClick={this.props.fourth}>My Resume</button>
-          <button className="jump" onClick={this.props.last}>Contact Me</button>
+          <button className="jump" onClick={() => this.props.scroll(".top")} >Home</button>
+          <button className="jump" onClick={() => this.props.scroll(".second")}>About Me</button>
+          <button className="jump" onClick={() => this.props.scroll(".third")}>My Work</button>
+          <button className="jump" onClick={() => this.props.scroll(".fourth")}>My Resume</button>
+          <button className="jump" onClick={() => this.props.scroll(".last")}>Contact Me</button>
         </div>
       </MenuDiv >
     );
