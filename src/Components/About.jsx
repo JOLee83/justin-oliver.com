@@ -75,7 +75,12 @@ class About extends Component {
   ReadMoreAbout = () => {
     this.setState(prevState => ({
       ReadMore: !prevState.ReadMore
-    }))
+
+    }), () => {
+      if (!this.state.ReadMore) {
+        this.props.second()
+      }
+    })
   }
   content = () => {
     if (this.state.ReadMore) {

@@ -36,8 +36,8 @@ class App extends Component {
           fourth={this._scrollFourth}
           last={this._scrollLast} />
         <Home />
-        <About />
-        <MyWork />
+        <About second={this._scrollSecond} />
+        <MyWork third={this._scrollThird} />
         <Resume />
         <Contact />
 

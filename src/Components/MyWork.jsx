@@ -74,7 +74,11 @@ class MyWork extends Component {
   ShowMoreWork = () => {
     this.setState(prevState => ({
       ShowMore: !prevState.ShowMore
-    }))
+    }), () => {
+      if (!this.state.ShowMore) {
+        this.props.third()
+      }
+    })
   }
   content = () => {
     if (this.state.ShowMore) {
