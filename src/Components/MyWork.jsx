@@ -37,6 +37,22 @@ const MyWorkDiv = styled.div`
   .work-card {
     position:relative;
   }
+  .full {
+    max-height: 1000vh;
+    transition: all 2s ease-in-out;
+
+  }
+  .preview, .full {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+  }
+  .preview {
+    max-height: 65vh;
+    transition: all 1s ease-in-out;
+
+  }
   @media (min-width: 500px) {
     img, p{
       max-width: 50vw;
@@ -54,6 +70,10 @@ const MyWorkDiv = styled.div`
       color: rgb(139, 0, 0);
       transition: background-color .4s ease-in-out, color .4s ease-in-out;
     }
+    .preview {
+      max-height: 75vh;
+    }
+  }
 `
 class MyWork extends Component {
   constructor(props) {
@@ -71,58 +91,44 @@ class MyWork extends Component {
       }
     })
   }
-  content = () => {
-    if (this.state.ShowMore) {
-      return <div>
-        <section>
-          <img src="./img/quicklee.png" alt="quicklee app" />
-          <p>
-            <a href="http://quicklee.surge.sh"
-              target="_blank"
-              rel="noopener noreferrer">Quicklee</a> is a full-stack web app that I built for my capstone project at Suncoast Developers Guild. The front-end is built with React and SASS, the back-end is an API built with C#, .Net, Linq, and Entity.</p>
-          <p>Note: the API is hosted on Heroku, and if it hasn't been used in more than 30 minutes the first response from the API will take 30 seconds to be received.</p>
-        </section>
-        <section>
-          <img src="./img/malibulawns.png" alt="malibulawns" />
-          <p>
-            <a href="https://www.malibulawns.com"
-              target="_blank"
-              rel="noopener noreferrer">MalibuLawns.com</a> was my first commercial site that I designed and built. I used various resources for the design, and built it using React, React Router, and Styled Components.</p>
-        </section>
-        <section>
-          <img src="./img/minesweeper.png" alt="mine sweeper" />
-          <p>
-            <a href="http://mine-sweeper-justin.surge.sh/"
-              target="_blank"
-              rel="noopener noreferrer">Mine Sweeper</a> is a React based game using an API. This was from my first week of learning React at SDG. API can be slow at times, and have not set up for mobile use yet.</p>
-        </section>
-        <section>
-          <p> See even more on <a
-            className="git"
-            href="https://github.com/JOLee83"
-            target="_blank"
-            rel="noopener noreferrer"
-          >GitHub</a>
-          </p>
-        </section>
-      </div>
-    } else {
-      return <section>
-        <img src="./img/quicklee.png" alt="quicklee app" />
-        <p>
-          <a href="http://quicklee.surge.sh"
-            target="_blank"
-            rel="noopener noreferrer">Quicklee</a> is a full-stack web app that I built for my capstone project at Suncoast Developers Guild. The front-end is built with React and SASS, the back-end is an API built with C#, .Net, Linq, and Entity.</p>
-        <p>Note: the API is hosted on Heroku, and if it hasn't been used in more than 30 minutes the first response from the API will take 30 seconds to be received.</p>
-      </section>
-    }
-  }
   render() {
     return (
       <MyWorkDiv className="third">
         <h1>My Work</h1>
         <div className="work-card">
-          {this.content()}
+          <div className={this.state.ShowMore ? "full" : "preview"}>
+            <section>
+              <img src="./img/quicklee.png" alt="quicklee app" />
+              <p>
+                <a href="http://quicklee.surge.sh"
+                  target="_blank"
+                  rel="noopener noreferrer">Quicklee</a> is a full-stack web app that I built for my capstone project at Suncoast Developers Guild. The front-end is built with React and SASS, the back-end is an API built with C#, .Net, Linq, and Entity.</p>
+              <p>Note: the API is hosted on Heroku, and if it hasn't been used in more than 30 minutes the first response from the API will take 30 seconds to be received.</p>
+            </section>
+            <section>
+              <img src="./img/malibulawns.png" alt="malibulawns" />
+              <p>
+                <a href="https://www.malibulawns.com"
+                  target="_blank"
+                  rel="noopener noreferrer">MalibuLawns.com</a> was my first commercial site that I designed and built. I used various resources for the design, and built it using React, React Router, and Styled Components.</p>
+            </section>
+            <section>
+              <img src="./img/minesweeper.png" alt="mine sweeper" />
+              <p>
+                <a href="http://mine-sweeper-justin.surge.sh/"
+                  target="_blank"
+                  rel="noopener noreferrer">Mine Sweeper</a> is a React based game using an API. This was from my first week of learning React at SDG. API can be slow at times, and have not set up for mobile use yet.</p>
+            </section>
+            <section>
+              <p> See even more on <a
+                className="git"
+                href="https://github.com/JOLee83"
+                target="_blank"
+                rel="noopener noreferrer"
+              >GitHub</a>
+              </p>
+            </section>
+          </div>
           <button className="show" onClick={this.ShowMoreWork}>{this.state.ShowMore ? "See Less" : "See More Projects"}</button>
         </div>
       </MyWorkDiv >
