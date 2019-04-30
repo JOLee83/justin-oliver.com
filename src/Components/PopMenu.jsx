@@ -101,14 +101,16 @@ class PopMenu extends Component {
   componentDidMount() {
     window.addEventListener('scroll', this._closeMenu)
   }
+  _menu = target => {
+    this.props.scroll(target)
+    this._closeMenu()
+  }
   _closeMenu = () => {
     this.setState(() => {
       if (this.state.popMenu === 'shown') {
         return {
           popMenu: 'hidden'
         }
-      } else {
-        return
       }
     })
   }
@@ -135,12 +137,22 @@ class PopMenu extends Component {
           {this.state.popMenu === 'hidden' ? 'Menu' : 'Close'}
         </button>
         <div className={this.state.popMenu}>
-          <button className="jump" onClick={() => this.props.scroll(".top")} >Home</button>
-          <button className="jump" onClick={() => this.props.scroll(".second")}>About Me</button>
-          <button className="jump" onClick={() => this.props.scroll(".third")}>My Work</button>
-          <button className="jump" onClick={() => this.props.scroll(".fourth")}>My Resume</button>
-          <button className="jump" onClick={() => this.props.scroll(".last")}>Contact Me</button>
-        </div>
+          <button className="jump" onClick={() => this._menu(".top")} >
+            Home
+          </button>
+          <button className="jump" onClick={() => this._menu(".second")}>
+            About Me
+          </button>
+          <button className="jump" onClick={() => this._menu(".third")}>
+            My Work
+          </button >
+          <button className="jump" onClick={() => this._menu(".fourth")}>
+            My Resume
+          </button >
+          <button className="jump" onClick={() => this._menu(".last")}>
+            Contact Me
+          </button >
+        </div >
       </MenuDiv >
     );
   }

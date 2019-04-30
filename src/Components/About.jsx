@@ -57,7 +57,10 @@ const AboutDiv = styled.div`
     transition: all 1s ease-in-out;
 
   }
-  .preview::after {
+  .preview::before {
+    position: relative;
+    width: 100$%;
+    height: 100%;
     background-image: linear-gradient(to bottom, rgb(250, 250, 250), transparent);
  
   }
