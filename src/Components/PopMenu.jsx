@@ -145,5 +145,4 @@ class PopMenu extends Component {
     );
   }
 }
-
 export default PopMenu;

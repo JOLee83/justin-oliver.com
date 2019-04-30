@@ -10,6 +10,9 @@ class App extends Component {
   _scroll = where => {
     document.querySelector(where).scrollIntoView({ behavior: "smooth" })
   }
+  componentDidMount() {
+    console.log("Welcome to my portfolio")
+  }
   render() {
     return (
       <>
