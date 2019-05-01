@@ -16,6 +16,10 @@ const MyWorkDiv = styled.div`
     max-width: 90vw;
     font-size: 1.2rem;
   }
+  img {
+    margin-top: .5em;
+
+  }
   button {
     font-family: 'Chakra Petch', sans-serif;
     border: .1rem solid rgb(250, 250, 250);
