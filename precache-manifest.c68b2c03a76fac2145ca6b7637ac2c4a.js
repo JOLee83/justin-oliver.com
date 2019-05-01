@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "fb493903265cad425ccdf8e04fc2de61",
-    "url": "/static/media/fa-solid-900.fb493903.woff2"
+    "revision": "8b7a9afd7b95f62e6ee8a72930bfb9ed",
+    "url": "/static/media/fa-brands-400.8b7a9afd.woff"
   },
   {
-    "revision": "f271413d0c6fd115e98c",
+    "revision": "5bd8019f81b1badc7661",
     "url": "/static/css/main.54ef1ade.chunk.css"
   },
   {
@@ -28,36 +28,36 @@ self.__precacheManifest = [
     "url": "/static/media/fa-regular-400.0b5e3a54.woff"
   },
   {
-    "revision": "b48c48ea8457846a5695b139c377d3d1",
-    "url": "/static/media/fa-regular-400.b48c48ea.ttf"
-  },
-  {
     "revision": "6493321d567eb0f22bd5112fbcf044a8",
     "url": "/static/media/fa-regular-400.6493321d.eot"
+  },
+  {
+    "revision": "b48c48ea8457846a5695b139c377d3d1",
+    "url": "/static/media/fa-regular-400.b48c48ea.ttf"
   },
   {
     "revision": "659c4d58b00226541ef95c3a76e169c5",
     "url": "/static/media/fa-brands-400.659c4d58.woff2"
   },
   {
-    "revision": "f271413d0c6fd115e98c",
-    "url": "/static/js/main.f271413d.chunk.js"
+    "revision": "5bd8019f81b1badc7661",
+    "url": "/static/js/main.5bd8019f.chunk.js"
   },
   {
-    "revision": "8b7a9afd7b95f62e6ee8a72930bfb9ed",
-    "url": "/static/media/fa-brands-400.8b7a9afd.woff"
+    "revision": "fb493903265cad425ccdf8e04fc2de61",
+    "url": "/static/media/fa-solid-900.fb493903.woff2"
   },
   {
     "revision": "bcb927a742a8370b76642fd1a9a749c0",
     "url": "/static/media/fa-solid-900.bcb927a7.woff"
   },
   {
-    "revision": "ec0716ae8aa1ba781a1a6bcbce833f6c",
-    "url": "/static/media/fa-brands-400.ec0716ae.eot"
-  },
-  {
     "revision": "b69de69a4ff8ca0abe96ec0b0c180c5b",
     "url": "/static/media/fa-brands-400.b69de69a.ttf"
+  },
+  {
+    "revision": "ec0716ae8aa1ba781a1a6bcbce833f6c",
+    "url": "/static/media/fa-brands-400.ec0716ae.eot"
   },
   {
     "revision": "0c41971339b9fc5b1cefb0abad1e2e69",
@@ -80,7 +80,7 @@ self.__precacheManifest = [
     "url": "/static/css/1.21a03d81.chunk.css"
   },
   {
-    "revision": "62eaace3fb3c477290b30096c58f9bec",
+    "revision": "e75e2270c272be417823633f17f3447a",
     "url": "/index.html"
   }
 ];
