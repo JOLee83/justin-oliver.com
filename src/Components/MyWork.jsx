@@ -45,6 +45,14 @@ const MyWorkDiv = styled.div`
     flex-direction: column;
     overflow: hidden;
     transition: all 1.5s ease-in-out;
+    .unfaded {
+      opacity: 1;
+      transition: all 1s ease-in-out;
+    }
+    .faded {
+      opacity: 0;
+      transition: all 2s ease-in-out;
+    }
   }
   @media (min-width: 500px) {
     img, p{
@@ -105,23 +113,43 @@ class MyWork extends Component {
         <div className="work-card">
           <div className="works">
             {this.state.MyWorks.map((proj, i) => {
-              return (
-                <section key={i} className={i === 0 ? "firstSec" : "sec"}>
-                  <a href={proj.href}
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    <img src={proj.imgSrc} alt={proj.imgAlt} />
-                  </a>
-                  <p>
+              if (i === 0) {
+                return (
+                  <section key={i} className="firstSec">
                     <a href={proj.href}
                       target="_blank"
                       rel="noopener noreferrer">
-                      {proj.title}
+                      <img src={proj.imgSrc} alt={proj.imgAlt} />
                     </a>
-                    {proj.description}
-                  </p>
-                </section>
-              )
+                    <p>
+                      <a href={proj.href}
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        {proj.title}
+                      </a>
+                      {proj.description}
+                    </p>
+                  </section>
+                )
+              } else {
+                return (
+                  <section key={i} className={this.state.ShowMore ? "unfaded" : "faded"}>
+                    <a href={proj.href}
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      <img src={proj.imgSrc} alt={proj.imgAlt} />
+                    </a>
+                    <p>
+                      <a href={proj.href}
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        {proj.title}
+                      </a>
+                      {proj.description}
+                    </p>
+                  </section>
+                )
+              }
             })}
             <section>
               <p> See even more on <a
