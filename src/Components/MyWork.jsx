@@ -18,7 +18,6 @@ const MyWorkDiv = styled.div`
   }
   img {
     margin-top: .5em;
-
   }
   button {
     font-family: 'Chakra Petch', sans-serif;
@@ -86,8 +85,8 @@ class MyWork extends Component {
     setTimeout(this._setHeight, 50)
   }
   _setHeight = () => {
-    let box = document.querySelector(".works")
-    return box.style.maxHeight = this.state.ShowMore ? "500vh" : `${this.previewHeight()}px`
+    let area = document.querySelector(".works")
+    return area.style.maxHeight = this.state.ShowMore ? "500vh" : `${this.previewHeight()}px`
   }
   ShowMoreWork = () => {
     this.setState(prevState => ({

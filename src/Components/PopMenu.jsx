@@ -96,7 +96,7 @@ button.jump {
 `
 class PopMenu extends Component {
   state = {
-    popMenu: 'hidden'
+    popMenu: false
   }
   componentDidMount() {
     window.addEventListener('scroll', this._closeMenu)
@@ -107,23 +107,15 @@ class PopMenu extends Component {
   }
   _closeMenu = () => {
     this.setState(() => {
-      if (this.state.popMenu === 'shown') {
-        return {
-          popMenu: 'hidden'
-        }
+      return {
+        popMenu: false
       }
     })
   }
   _toggleMenu = () => {
-    this.setState(() => {
-      if (this.state.popMenu === 'hidden') {
-        return {
-          popMenu: 'shown'
-        }
-      } else {
-        return {
-          popMenu: 'hidden'
-        }
+    this.setState(prevState => {
+      return {
+        popMenu: !prevState.popMenu
       }
     })
   }
@@ -131,12 +123,12 @@ class PopMenu extends Component {
     return (
       <MenuDiv>
         <button className="mobile-button" onClick={this._toggleMenu}>
-          {this.state.popMenu === 'hidden' ? <i className="fas fa-bars" /> : <i className="fas fa-times" />}
+          {this.state.popMenu ? <i className="fas fa-times" /> : <i className="fas fa-bars" />}
         </button>
         <button className="full-button" onClick={this._toggleMenu}>
-          {this.state.popMenu === 'hidden' ? 'Menu' : 'Close'}
+          {this.state.popMenu ? 'Close' : 'Menu'}
         </button>
-        <div className={this.state.popMenu}>
+        <div className={this.state.popMenu ? "shown" : "hidden"}>
           <button className="jump" onClick={() => this._menu(".top")} >
             Home
           </button>
@@ -147,7 +139,7 @@ class PopMenu extends Component {
             My Work
           </button >
           <button className="jump" onClick={() => this._menu(".fourth")}>
-            My Resume
+            Resume
           </button >
           <button className="jump" onClick={() => this._menu(".last")}>
             Contact Me

@@ -7,8 +7,8 @@ import Resume from './Components/Resume.jsx'
 import Contact from './Components/Contact.jsx'
 
 class App extends Component {
-  _scroll = where => {
-    document.querySelector(where).scrollIntoView({ behavior: "smooth" })
+  _scroll = target => {
+    document.querySelector(target).scrollIntoView({ behavior: "smooth" })
   }
   componentDidMount() {
     console.log("Welcome to my portfolio")
