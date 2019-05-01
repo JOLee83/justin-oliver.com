@@ -11,7 +11,6 @@ const HomeDiv = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: intro 1s ease-in;
   .title-card {
     line-height: 3rem;
     margin-bottom: 10rem;
@@ -48,14 +47,6 @@ const HomeDiv = styled.div`
     }
     .job {
       font-size: 2.5rem;
-    }
-  }
-  @keyframes intro {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
     }
   }
 `

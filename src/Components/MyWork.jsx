@@ -37,21 +37,11 @@ const MyWorkDiv = styled.div`
   .work-card {
     position:relative;
   }
-  .full {
-    max-height: 1000vh;
-    transition: all 2s ease-in-out;
-
-  }
-  .preview, .full {
+  .works{
     display: flex;
     flex-direction: column;
     overflow: hidden;
-
-  }
-  .preview {
-    max-height: 65vh;
-    transition: all 1s ease-in-out;
-
+    transition: all 1.5s ease-in-out;
   }
   @media (min-width: 500px) {
     img, p{
@@ -70,17 +60,30 @@ const MyWorkDiv = styled.div`
       color: rgb(139, 0, 0);
       transition: background-color .4s ease-in-out, color .4s ease-in-out;
     }
-    .preview {
-      max-height: 75vh;
-    }
+    
   }
 `
 class MyWork extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      ShowMore: false
+      ShowMore: false,
+      MyWorks: [{ title: "Quicklee", imgSrc: "./img/quicklee.png", imgAlt: "quicklee app", href: "http://quicklee.surge.sh", description: " is a full-stack web app that I built for my capstone project at Suncoast Developers Guild. The front-end is built with React and SASS, the back-end is an API built with C#, .Net, Linq, and Entity." },
+      { title: "Malibulawns", imgSrc: "./img/malibulawns.png", imgAlt: "malibu lawns", href: "https://www.malibulawns.com", description: " was my first commercial site that I designed and built. I used various resources for the design, and built it using React, React Router, and Styled Components." },
+      { title: "Mine Sweeper", imgSrc: "./img/minesweeper.png", imgAlt: "./img/minesweeper.png", href: "http://mine-sweeper-justin.surge.sh/", description: " is a React based game using an API. This was from my first week of learning React at SDG. API can be slow at times, and have not set up for mobile use yet." }
+      ]
     }
+  }
+  previewHeight = () => {
+    return document.querySelector(".firstSec").clientHeight
+  }
+  componentDidMount = () => {
+    window.addEventListener("resize", this._setHeight)
+    setTimeout(this._setHeight, 50)
+  }
+  _setHeight = () => {
+    let box = document.querySelector(".works")
+    return box.style.maxHeight = this.state.ShowMore ? "500vh" : `${this.previewHeight()}px`
   }
   ShowMoreWork = () => {
     this.setState(prevState => ({
@@ -89,6 +92,7 @@ class MyWork extends Component {
       if (!this.state.ShowMore) {
         this.props.scroll(".third")
       }
+      this._setHeight()
     })
   }
   render() {
@@ -96,29 +100,26 @@ class MyWork extends Component {
       <MyWorkDiv className="third">
         <h1>My Work</h1>
         <div className="work-card">
-          <div className={this.state.ShowMore ? "full" : "preview"}>
-            <section>
-              <img src="./img/quicklee.png" alt="quicklee app" />
-              <p>
-                <a href="http://quicklee.surge.sh"
-                  target="_blank"
-                  rel="noopener noreferrer">Quicklee</a> is a full-stack web app that I built for my capstone project at Suncoast Developers Guild. The front-end is built with React and SASS, the back-end is an API built with C#, .Net, Linq, and Entity.</p>
-              <p>Note: the API is hosted on Heroku, and if it hasn't been used in more than 30 minutes the first response from the API will take 30 seconds to be received.</p>
-            </section>
-            <section>
-              <img src="./img/malibulawns.png" alt="malibulawns" />
-              <p>
-                <a href="https://www.malibulawns.com"
-                  target="_blank"
-                  rel="noopener noreferrer">MalibuLawns.com</a> was my first commercial site that I designed and built. I used various resources for the design, and built it using React, React Router, and Styled Components.</p>
-            </section>
-            <section>
-              <img src="./img/minesweeper.png" alt="mine sweeper" />
-              <p>
-                <a href="http://mine-sweeper-justin.surge.sh/"
-                  target="_blank"
-                  rel="noopener noreferrer">Mine Sweeper</a> is a React based game using an API. This was from my first week of learning React at SDG. API can be slow at times, and have not set up for mobile use yet.</p>
-            </section>
+          <div className="works">
+            {this.state.MyWorks.map((proj, i) => {
+              return (
+                <section key={i} className={i === 0 ? "firstSec" : "sec"}>
+                  <a href={proj.href}
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <img src={proj.imgSrc} alt={proj.imgAlt} />
+                  </a>
+                  <p>
+                    <a href={proj.href}
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      {proj.title}
+                    </a>
+                    {proj.description}
+                  </p>
+                </section>
+              )
+            })}
             <section>
               <p> See even more on <a
                 className="git"

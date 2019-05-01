@@ -42,7 +42,7 @@ const AboutDiv = styled.div`
     max-width: 90vw;
   }
   .full {
-    max-height: 1000vh;
+    // max-height: 1000vh;
     transition: all 2s ease-in-out;
 
   }
@@ -53,16 +53,26 @@ const AboutDiv = styled.div`
 
   }
   .preview {
-    max-height: 30vh;
+    // max-height: 30vh;
     transition: all 1s ease-in-out;
 
   }
-  .preview::before {
-    position: relative;
-    width: 100$%;
-    height: 100%;
-    background-image: linear-gradient(to bottom, rgb(250, 250, 250), transparent);
  
+  .blur {
+    position: relative;
+    z-index: 200;
+    min-width: 100%;
+    min-height: 100%;
+    background-image: linear-gradient(to bottom, transparent, green);
+ 
+  }
+  .text{
+    overflow: hidden;
+    transition: all 1.5s ease-in-out;
+    p {
+      margin-bottom: 0;
+      padding-bottom: 1em;
+    }
   }
   @media (min-width: 500px) {
     img {
@@ -82,7 +92,7 @@ const AboutDiv = styled.div`
       
     }
     .preview {
-      max-height: 20vh
+      // max-height: 20vh
     }
   }
 `
@@ -93,6 +103,17 @@ class About extends Component {
       ReadMore: false
     }
   }
+  previewHeight = () => {
+    return document.querySelector(".firstP").clientHeight
+  }
+  componentDidMount = () => {
+    window.addEventListener("resize", this._setHeight)
+    setTimeout(this._setHeight, 50)
+  }
+  _setHeight = () => {
+    let box = document.querySelector(".text")
+    return box.style.maxHeight = this.state.ReadMore ? "500vh" : `${this.previewHeight()}px`
+  }
   ReadMoreAbout = () => {
     this.setState(prevState => ({
       ReadMore: !prevState.ReadMore
@@ -100,6 +121,7 @@ class About extends Component {
       if (!this.state.ReadMore) {
         this.props.scroll(".second")
       }
+      this._setHeight()
     })
   }
   render() {
@@ -108,8 +130,8 @@ class About extends Component {
         <img src="./img/profilepicture.jpg" alt="Justin Oliver Lee" />
         <div className="about-card">
           <h1>About Me</h1>
-          <div className={this.state.ReadMore ? "full" : "preview"}>
-            <p>A Full Stack Web Developer from Florida. Recently, I decided to follow my passion for building and creating things which led me to increasing my coding knowledge around how to make user friendly, functional web applications. My past experience involved management in the Hospitality Industry, and I’ve studied business management at USF.  Through that learning process, I have come to enjoy the process and challenges that creating websites and other applications bring, while increasing my understanding of methods to improve my development skills.</p>
+          <div className="text">
+            <p className="firstP">A Full Stack Web Developer from Florida. Recently, I decided to follow my passion for building and creating things which led me to increasing my coding knowledge around how to make user friendly, functional web applications. My past experience involved management in the Hospitality Industry, and I’ve studied business management at USF.  Through that learning process, I have come to enjoy the process and challenges that creating websites and other applications bring, while increasing my understanding of methods to improve my development skills.</p>
             <p>Although I am more than capable of back-end development, my real passions are in front-end development. My eye for detail has been a real asset in building websites that are not only functional but also appealing to the end user. My current front-end skill set includes HTML5, CSS3, JavaScript, along with frameworks such as React. My back-end skill set includes C# and the .Net framework. At this time I am continuing my development knowledge surrounding React Native, React Redux, and Phaser3. My long term goal is to continue to expand my skill sets into other languages and frameworks.</p>
             <p>Development has proven to fit well with other pieces of my life. When I’m not coding, I enjoy the challenge of doing a puzzle and playing games, along with expressing my creative nature with different arts and crafts. These outside interests help fuel my passion for front-end development.</p>
             <p>All that is missing from my career now is the opportunity to bring my passion for development to the right company. I look forward to hearing from you so that I can share additional examples of my work and show how I will be a great fit for your organization.</p>
