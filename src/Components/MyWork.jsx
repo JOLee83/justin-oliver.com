@@ -90,7 +90,7 @@ class MyWork extends Component {
   }
   componentDidMount = () => {
     window.addEventListener("resize", this._setHeight)
-    setTimeout(this._setHeight, 50)
+    setTimeout(this._setHeight, 500)
   }
   _setHeight = () => {
     let area = document.querySelector(".works")

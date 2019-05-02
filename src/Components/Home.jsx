@@ -88,7 +88,6 @@ class Home extends Component {
   }
   render() {
     const { title, fading } = this.state;
-
     return (
       <HomeDiv className="top">
         <div className="title-card">

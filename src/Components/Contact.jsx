@@ -50,6 +50,7 @@ const ContactDiv = styled.div`
       margin: .5rem;
     }
     p {
+      max-width: 90vw;
       margin: 0 0 1rem 0;
       padding: 0 1.5rem;
     }
@@ -93,8 +94,9 @@ const ContactDiv = styled.div`
       }
       p {
         font-size: 1.3rem;
-        max-width: 500px;
+        max-width: 50vw;
         margin: 2rem 0 8rem 0;
+        text-align: center;
       }
       a i {
       font-size: 4rem;

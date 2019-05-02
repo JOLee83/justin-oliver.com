@@ -82,7 +82,8 @@ class Resume extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="./img/Justin_Oliver_Lee_Resume.jpg" alt="My Resume" /></a>
+            <img src="./img/Justin_Oliver_Lee_Resume.jpg" alt="My Resume" />
+          </a>
         </div>
       </ResumeDiv >
     );
