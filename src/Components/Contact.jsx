@@ -5,7 +5,6 @@ const ContactDiv = styled.div`
   min-height: 100vh;
   background-image: linear-gradient(to bottom, rgb(25, 24, 43), rgb(40, 36, 119));
   background-size: cover;
-  background-attachment: fix;
   color: rgb(250, 250, 250);
   .back {
     min-height: 100vh;
@@ -27,7 +26,9 @@ const ContactDiv = styled.div`
       align-items: center;
       text-decoration: none;
       color: rgb(250, 250, 250);
-      transition: border-color 0.5s ease-in-out, color 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      outline-color: rgb(250, 0, 0);
+      cursor: pointer;
     }
     aside {
       font-size: 0rem;
@@ -38,13 +39,13 @@ const ContactDiv = styled.div`
     a i {
       text-align: center;
       border-radius: 50%;
-      border 3px solid rgb(250, 250, 250);
+      border: 3px solid rgb(250, 250, 250);
       overflow: hidden;
       font-size: 4rem;
       width: 6rem;
       height: 5rem;
       padding-top: 1rem;
-      transition: background-color .4s ease-in-out, color .4s ease-in-out;
+      transition: all 0.5s ease-in-out;
     }
     h1 {
       margin: .5rem;
@@ -76,7 +77,7 @@ const ContactDiv = styled.div`
         display: flex;
         flex-direction: row;
         justify-content: center;
-        align-item: center;
+        align-items: center;
         flex-wrap: wrap;
         max-width: 60vw;
       }
@@ -95,26 +96,26 @@ const ContactDiv = styled.div`
       p {
         font-size: 1.3rem;
         max-width: 50vw;
-        margin: 2rem 0 8rem 0;
+        margin: 2rem 0 2rem 0;
         text-align: center;
       }
       a i {
-      font-size: 4rem;
-      width: 6rem;
-      height: 5rem;
-      padding-top: 1rem;
+        font-size: 4rem;
+        width: 6rem;
+        height: 5rem;
+        padding-top: 1rem;
       }
       i:hover {
         background-color: rgb(250, 250, 250);
-      color: rgb(139, 0, 0);
-      transition: background-color .4s ease-in-out, color .4s ease-in-out;
+        color: rgb(139, 0, 0);
+        transition: all 0.5s ease-in-out;
       }
       .text-link:hover {
         color: rgb(139, 0, 0);
       }
       .text-link {
         margin-top: 1rem;
-        transition: color 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
       }
     }
   }
@@ -124,7 +125,6 @@ const ContactDiv = styled.div`
     }
   }
 `
-
 class Contact extends Component {
   render() {
     return (
@@ -133,19 +133,37 @@ class Contact extends Component {
           <h1>Contact Me</h1>
           <p>
             Start a Conversation, Looking to fill a developer position or just want a web site built, let's talk.
-				</p>
+				  </p>
           <div className="contact-card">
             <aside>
-              <a className="i-link" href="tel://19044729516">
+              <a
+                className="i-link"
+                href="tel://19044729516"
+                tabIndex="9"
+              >
                 <i className="fas fa-mobile-alt" />
               </a>
-              <a className="text-link" href="tel://19044729516">(904) 472-9516</a>
+              <a
+                className="text-link"
+                href="tel://19044729516"
+                tabIndex="10"
+              >
+                (904) 472-9516
+              </a>
             </aside>
             <aside>
-              <a className="i-link" href="mailto:lee.justin.oliver@gmail.com?subject=Hi%20Justin,%20Nice%20Website">
+              <a
+                className="i-link"
+                href="mailto:lee.justin.oliver@gmail.com?subject=Hi%20Justin,%20Nice%20Website"
+                tabIndex="9"
+              >
                 <i className="fas fa-envelope" />
               </a>
-              <a className="text-link" href="mailto:lee.justin.oliver@gmail.com?subject=Hi%20Justin,%20Nice%20Website">
+              <a
+                className="text-link"
+                href="mailto:lee.justin.oliver@gmail.com?subject=Hi%20Justin,%20Nice%20Website"
+                tabIndex="10"
+              >
                 lee.justin.oliver@gmail.com
 							</a>
             </aside>
@@ -155,10 +173,17 @@ class Contact extends Component {
                 href="https://www.linkedin.com/in/justin-oliver-lee/"
                 target="_blank"
                 rel="noopener noreferrer"
+                tabIndex="9"
               >
                 <i className="fab fa-linkedin" />
               </a>
-              <a className="text-link" href="https://www.linkedin.com/in/justin-oliver-lee/">
+              <a
+                className="text-link"
+                href="https://www.linkedin.com/in/justin-oliver-lee/"
+                target="_blank"
+                rel="noopener noreferrer"
+                tabIndex="10"
+              >
                 LinkedIn
 							</a>
             </aside>
@@ -168,5 +193,4 @@ class Contact extends Component {
     );
   }
 }
-
 export default Contact;

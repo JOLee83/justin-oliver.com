@@ -27,15 +27,17 @@ const MyWorkDiv = styled.div`
     color: rgb(250, 250, 250);
     background-color: transparent;
     font-size: 1.2rem;
-    outline: none;
     margin: .5rem 0 0 0;
-    cursor: pointer;
     padding: .2rem;
-    transition: background-color .4s ease-in-out, color .4s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    outline-color: rgb(250, 0, 0);
+    cursor: pointer;
   }
 	a {
     color: rgb(250, 250, 250);
-    transition: color .4s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    outline-color: rgb(250, 0, 0);
+    cursor: pointer;
 	}
   .work-card {
     position:relative;
@@ -64,12 +66,12 @@ const MyWorkDiv = styled.div`
     }
     a:hover {
       color: rgb(139, 0, 0);
-      transition: color .4s ease-in-out;
+      transition: all 0.5s ease-in-out;
     }
     button:hover {
       background-color: rgb(250, 250, 250);
       color: rgb(139, 0, 0);
-      transition: background-color .4s ease-in-out, color .4s ease-in-out;
+      transition: all 0.5s ease-in-out;
     }
     
   }
@@ -118,13 +120,15 @@ class MyWork extends Component {
                   <section key={i} className="firstSec">
                     <a href={proj.href}
                       target="_blank"
-                      rel="noopener noreferrer">
+                      rel="noopener noreferrer"
+                      tabIndex="5">
                       <img src={proj.imgSrc} alt={proj.imgAlt} />
                     </a>
                     <p>
                       <a href={proj.href}
                         target="_blank"
-                        rel="noopener noreferrer">
+                        rel="noopener noreferrer"
+                        tabIndex="5">
                         {proj.title}
                       </a>
                       {proj.description}
@@ -136,13 +140,17 @@ class MyWork extends Component {
                   <section key={i} className={this.state.ShowMore ? "unfaded" : "faded"}>
                     <a href={proj.href}
                       target="_blank"
-                      rel="noopener noreferrer">
+                      rel="noopener noreferrer"
+                      tabIndex={this.state.ShowMore ? 7 : -1}
+                    >
                       <img src={proj.imgSrc} alt={proj.imgAlt} />
                     </a>
                     <p>
                       <a href={proj.href}
                         target="_blank"
-                        rel="noopener noreferrer">
+                        rel="noopener noreferrer"
+                        tabIndex={this.state.ShowMore ? 7 : -1}
+                      >
                         {proj.title}
                       </a>
                       {proj.description}
@@ -151,17 +159,18 @@ class MyWork extends Component {
                 )
               }
             })}
-            <section>
+            <section className={this.state.ShowMore ? "unfaded" : "faded"}>
               <p> See even more on <a
                 className="git"
                 href="https://github.com/JOLee83"
                 target="_blank"
                 rel="noopener noreferrer"
+                tabIndex={this.state.ShowMore ? 7 : -1}
               >GitHub</a>
               </p>
             </section>
           </div>
-          <button className="show" onClick={this.ShowMoreWork}>{this.state.ShowMore ? "See Less" : "See More Projects"}</button>
+          <button className="show" onClick={this.ShowMoreWork} tabIndex="6">{this.state.ShowMore ? "See Less" : "See More Projects"}</button>
         </div>
       </MyWorkDiv >
     );

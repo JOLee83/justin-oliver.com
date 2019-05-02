@@ -5,7 +5,6 @@ const ResumeDiv = styled.div`
   min-height: 100vh;
   background-image: linear-gradient(to bottom, rgb(25, 24, 43), rgb(25, 24, 43));
   background-size: cover;
-  background-attachment: fix;
   color: rgb(250, 250, 250);
   display: flex;
   flex-direction: column;
@@ -27,14 +26,17 @@ const ResumeDiv = styled.div`
     font-size: 1.2rem;
     outline: none;
     margin: .5rem 0 0 0;
-    cursor: pointer;
     padding: .2rem;
-    transition: background-color .4s ease-in-out, color .4s ease-in-out;
+    transition: all 0.5s ease-in-out;
     margin-bottom: .2rem;
+    outline-color: rgb(250, 0, 0);
+    cursor: pointer;
   }
   a{
     color: inherit;
     text-decoration: inherit;
+    outline-color: rgb(250, 0, 0);
+    cursor: pointer;
   }
 	a i {
     margin-right: .5rem;
@@ -53,7 +55,7 @@ const ResumeDiv = styled.div`
     button:hover {
       background-color: rgb(250, 250, 250);
       color: rgb(139, 0, 0);
-      transition: background-color .4s ease-in-out, color .4s ease-in-out;
+      transition: all 0.5s ease-in-out;
     }
   }
   @media (min-width: 1200px) {
@@ -73,6 +75,7 @@ class Resume extends Component {
               href="https://drive.google.com/file/d/1TuEUxaJHyiaz4SVyjLEzUuuqmxlJBvIq/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
+              tabIndex="8"
             >
               <i className="fas fa-file" />Download PDF
 				    </a>
@@ -81,6 +84,7 @@ class Resume extends Component {
             href="https://drive.google.com/file/d/1TuEUxaJHyiaz4SVyjLEzUuuqmxlJBvIq/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
+            tabIndex="8"
           >
             <img src="./img/Justin_Oliver_Lee_Resume.jpg" alt="My Resume" />
           </a>

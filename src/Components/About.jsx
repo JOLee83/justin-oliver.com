@@ -10,7 +10,7 @@ const AboutDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flexstart ;
+  justify-content: flex-start ;
   z-index: 100;
   font-size: 1.2rem;
   img {
@@ -24,6 +24,8 @@ const AboutDiv = styled.div`
   a {
     color: rgb(250, 250, 250);
     transition: color .4s ease-in-out;
+    outline-color: rgb(250, 0, 0);
+    cursor: pointer;
 	}
   button {
     font-family: 'Chakra Petch', sans-serif;
@@ -33,11 +35,11 @@ const AboutDiv = styled.div`
     color: rgb(250, 250, 250);
     background-color: transparent;
     font-size: 1.2rem;
-    outline: none;
     margin: 1.5rem 0 0 0;
-    cursor: pointer;
     padding: .2rem;
-    transition: background-color .4s ease-in-out, color .4s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    outline-color: rgb(250, 0, 0);
+    cursor: pointer;
   }
   .about-card {
     position:relative;
@@ -62,7 +64,7 @@ const AboutDiv = styled.div`
   }
   @media (min-width: 500px) {
     img {
-      margin-top 2%;
+      margin-top: 2%;
       max-width:300px;
     }
     .about-card {
@@ -70,16 +72,15 @@ const AboutDiv = styled.div`
     }
     a:hover {
       color: rgb(139, 0, 0);
-      transition: color .4s ease-in-out;
+      transition: all 0.5s ease-in-out;
     }
     button:hover {
       background-color: rgb(250, 250, 250);
       color: rgb(139, 0, 0);
-      transition: background-color .4s ease-in-out, color .4s ease-in-out;
+      transition: all 0.5s ease-in-out;
     }
     p {
       font-size: 1.2rem;
-      
     }
   }
 `
@@ -121,13 +122,13 @@ class About extends Component {
             <p className="firstP">A Web Developer from Florida, currently living in Seattle. Looking for my next challenge, along with ways to get involved and give back to the local developer community.</p>
             <div className={this.state.ReadMore ? "unfaded" : "faded"}>
               <p>Last year, I decided to follow my passion for building and creating things which led me to increasing my coding knowledge around how to make user friendly, functional web applications. Through that learning process, I have come to enjoy the process and challenges that creating websites and other applications bring, while increasing my understanding of methods to improve my development skills.</p>
-              <p>Since moving to Seattle, I have become involved with local meet up groups. I have even become an event organizer and host with <a href="http://www.seattlejshackers.com" target="_blank" rel="noopener noreferrer">Seattle JS Hackers</a>. With them I put together a Code Katas meet up. During the event I present developers of all skill levels a series of coding challenges. Then the participants work together or on their own to solve the challenges. After solving, they present their solution so everyone can see the different ways the challenges can be solved.</p>
+              <p>Since moving to Seattle, I have become involved with local meet up groups. I have even become an event organizer and host with <a href="http://www.seattlejshackers.com" target="_blank" rel="noopener noreferrer" tabIndex={this.state.ReadMore ? 4 : -1}>Seattle JS Hackers</a>. With them I put together a Code Katas meet up. During the event I present developers of all skill levels a series of coding challenges. Then the participants work together or on their own to solve the challenges. After solving, they present their solution so everyone can see the different ways the challenges can be solved.</p>
               <p>My real passions are in front-end development. My eye for detail has been a real asset in building websites that are not only functional but also appealing to the end user. My current front-end skill set includes HTML5, CSS3, JavaScript, along with frameworks such as React. My back-end skill set includes C# and the .Net framework. My long-term goal is to continue to expand my skill sets into other languages and frameworks.</p>
               <p>Development has proven to fit well with other pieces of my life. When I’m not coding, I enjoy the challenge of doing a puzzle and playing games, along with expressing my creative nature with different arts and crafts. These outside interests help fuel my passion for front-end development.</p>
               <p>All that is missing from my career now is the opportunity to bring my passion for development to the right company. I look forward to hearing from you so that I can share additional examples of my work and show how I will be a great fit for your organization.</p>
             </div>
           </div>
-          <button className="read" onClick={this.ReadMoreAbout}>{this.state.ReadMore ? "Read Less" : "Read More"}</button>
+          <button className="read" onClick={this.ReadMoreAbout} tabIndex="3">{this.state.ReadMore ? "Read Less" : "Read More"}</button>
         </div>
       </AboutDiv >
     );

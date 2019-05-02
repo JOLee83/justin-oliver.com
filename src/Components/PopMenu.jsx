@@ -6,7 +6,7 @@ position: fixed;
 width: 10%;
 z-index: 101;
 .mobile-button, .full-button {
-  text-align: center:
+  text-align: center;
   font-family: 'Chakra Petch', sans-serif;
   border: .1rem solid rgb(250, 250, 250);
   border-radius: 20%;
@@ -17,6 +17,8 @@ z-index: 101;
   margin: .5rem 0 0 .5rem;
   transition: background-color .4s ease-in-out;
   max-width: 35px;
+  outline-color: rgb(250, 0, 0);
+  cursor: pointer;
 }
 button.jump {
   font-family: 'Chakra Petch', sans-serif;
@@ -28,6 +30,8 @@ button.jump {
   padding: 1rem;
   cursor: pointer;
   transition: color .4s ease-in-out;
+  outline-color: rgb(250, 0, 0);
+
 }
 .hidden, .shown {
   margin-top: .3rem;
@@ -122,26 +126,26 @@ class PopMenu extends Component {
   render() {
     return (
       <MenuDiv>
-        <button className="mobile-button" onClick={this._toggleMenu}>
+        <button className="mobile-button" onClick={this._toggleMenu} tabIndex="1">
           {this.state.popMenu ? <i className="fas fa-times" /> : <i className="fas fa-bars" />}
         </button>
-        <button className="full-button" onClick={this._toggleMenu}>
+        <button className="full-button" onClick={this._toggleMenu} tabIndex="1">
           {this.state.popMenu ? 'Close' : 'Menu'}
         </button>
         <div className={this.state.popMenu ? "shown" : "hidden"}>
-          <button className="jump" onClick={() => this._menu(".top")} >
+          <button className="jump" onClick={() => this._menu(".top")} tabIndex={this.state.popMenu ? 2 : -1}>
             Home
           </button>
-          <button className="jump" onClick={() => this._menu(".second")}>
+          <button className="jump" onClick={() => this._menu(".second")} tabIndex={this.state.popMenu ? 2 : -1}>
             About Me
           </button>
-          <button className="jump" onClick={() => this._menu(".third")}>
+          <button className="jump" onClick={() => this._menu(".third")} tabIndex={this.state.popMenu ? 2 : -1}>
             My Work
           </button >
-          <button className="jump" onClick={() => this._menu(".fourth")}>
+          <button className="jump" onClick={() => this._menu(".fourth")} tabIndex={this.state.popMenu ? 2 : -1}>
             Resume
           </button >
-          <button className="jump" onClick={() => this._menu(".last")}>
+          <button className="jump" onClick={() => this._menu(".last")} tabIndex={this.state.popMenu ? 2 : -1}>
             Contact Me
           </button >
         </div >
