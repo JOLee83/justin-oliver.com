@@ -13,8 +13,9 @@ const ResumeDiv = styled.div`
   z-index: 100;
   font-family: 'Chakra Petch', sans-serif;
   padding-bottom: 4rem;
-  img {
+  iframe {
     max-width: 90vw;
+    border: none;
   }
   button {
     font-family: 'Chakra Petch', sans-serif;
@@ -48,8 +49,9 @@ const ResumeDiv = styled.div`
     align-items: center;
     justify-content: flex-start;
   }
+ 
   @media (min-width: 500px) {
-    img {
+    iframe {
       max-width: 70vw;
     }
     button:hover {
@@ -59,12 +61,26 @@ const ResumeDiv = styled.div`
     }
   }
   @media (min-width: 1200px) {
-    img {
+    iframe {
       max-width: 50vw;
     }
   }
 `
 class Resume extends Component {
+  frameWidth = () => {
+    return document.querySelector(".frame").clientWidth
+  }
+  frameHeight = () => {
+    return this.frameWidth() * (11 / 8.55)
+  }
+  componentDidMount = () => {
+    window.addEventListener("resize", this._setHeight)
+    setTimeout(this._setHeight, 50)
+  }
+  _setHeight = () => {
+    let area = document.querySelector(".frame")
+    return area.style.minHeight = `${this.frameHeight()}px`
+  }
   render() {
     return (
       <ResumeDiv className="fourth">
@@ -80,14 +96,7 @@ class Resume extends Component {
               <i className="fas fa-file" />Download PDF
 				    </a>
           </button>
-          <a
-            href="https://drive.google.com/file/d/1TuEUxaJHyiaz4SVyjLEzUuuqmxlJBvIq/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            tabIndex="8"
-          >
-            <img src="./img/Justin_Oliver_Lee_Resume.jpg" alt="My Resume" />
-          </a>
+          <iframe src="https://drive.google.com/file/d/1TuEUxaJHyiaz4SVyjLEzUuuqmxlJBvIq/preview" className="frame" width="850" title="My Resume" />
         </div>
       </ResumeDiv >
     );

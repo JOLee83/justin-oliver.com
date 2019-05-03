@@ -30,11 +30,12 @@ const ContactDiv = styled.div`
       outline-color: rgb(250, 0, 0);
       cursor: pointer;
     }
-    aside {
+    .card {
       font-size: 0rem;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
     }
     a i {
       text-align: center;
@@ -61,7 +62,7 @@ const ContactDiv = styled.div`
       justify-content: space-evenly;
       font-family: 'Chakra Petch', sans-serif;
       flex: 1;
-      padding-bottom: 1rem;
+      padding-bottom: 10rem;
     }
     .i-link {
       max-width: 6rem;
@@ -84,7 +85,7 @@ const ContactDiv = styled.div`
       a {
         margin: 0 3rem .4rem 3rem;
       }
-      aside {
+      .card {
         font-size: 1.1rem;
         text-align: center;
         width: 300px;
@@ -96,7 +97,7 @@ const ContactDiv = styled.div`
       p {
         font-size: 1.3rem;
         max-width: 50vw;
-        margin: 2rem 0 2rem 0;
+        margin: 2rem 0;
         text-align: center;
       }
       a i {
@@ -124,6 +125,12 @@ const ContactDiv = styled.div`
       background-image: url(./img/background/SeattleSkylineSilohette3.png);
     }
   }
+  @media (min-width: 1200px) {
+    .card {
+      /*fix for IE*/
+      height: 0px;
+    }
+  }
 `
 class Contact extends Component {
   render() {
@@ -135,7 +142,7 @@ class Contact extends Component {
             Start a Conversation, Looking to fill a developer position or just want a web site built, let's talk.
 				  </p>
           <div className="contact-card">
-            <aside>
+            <div className="card">
               <a
                 className="i-link"
                 href="tel://19044729516"
@@ -150,8 +157,8 @@ class Contact extends Component {
               >
                 (904) 472-9516
               </a>
-            </aside>
-            <aside>
+            </div>
+            <div className="card">
               <a
                 className="i-link"
                 href="mailto:lee.justin.oliver@gmail.com?subject=Hi%20Justin,%20Nice%20Website"
@@ -166,8 +173,8 @@ class Contact extends Component {
               >
                 lee.justin.oliver@gmail.com
 							</a>
-            </aside>
-            <aside>
+            </div>
+            <div className="card">
               <a
                 className="i-link"
                 href="https://www.linkedin.com/in/justin-oliver-lee/"
@@ -186,7 +193,7 @@ class Contact extends Component {
               >
                 LinkedIn
 							</a>
-            </aside>
+            </div>
           </div>
         </div>
       </ContactDiv >
