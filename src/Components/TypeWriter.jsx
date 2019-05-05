@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 
-const TpyeDiv = styled.div`
- font-size: 1.7rem;
-font-family: 'Chakra Petch', sans-serif;
-.cursor {
-  opacity: 1;
-  animation: blink 1s step-end infinite;
-}
-@media (min-width: 500px) {
-  font-size: 2.5rem;
-}
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  50% {
+const TypeDiv = styled.div`
+  font-size: 1.7rem;
+  font-family: 'Chakra Petch', sans-serif;
+  .cursor {
     opacity: 1;
+    animation: blink 1s step-end infinite;
   }
-}
+  @media (min-width: 500px) {
+    font-size: 2.5rem;
+  }
+  @keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
 `
 class TypeWriter extends Component {
   constructor(props) {
@@ -105,9 +105,9 @@ class TypeWriter extends Component {
   }
   render() {
     return (
-      <TpyeDiv>
+      <TypeDiv>
         <div className="title">{this.state.currentTitle}<span className="cursor">|</span></div>
-      </TpyeDiv>
+      </TypeDiv>
     );
   }
 }
