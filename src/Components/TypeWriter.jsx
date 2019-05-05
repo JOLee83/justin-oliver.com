@@ -6,16 +6,16 @@ const TpyeDiv = styled.div`
 font-family: 'Chakra Petch', sans-serif;
 .cursor {
   opacity: 1;
-  animation: blink .75s linear infinite;
+  animation: blink 1s step-end infinite;
 }
 @media (min-width: 500px) {
   font-size: 2.5rem;
 }
 @keyframes blink {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
+  50% {
     opacity: 1;
   }
 }
@@ -24,7 +24,7 @@ class TypeWriter extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      titles: ["Problem Solver", "Up For A Challenge", "Web Developer"],
+      titles: ["Problem Solver", "Up For A Challenge", "Web Developer", "Problem Solver", "Up For A Challenge", "Web Developer", "Na Na Na Batman!"],
       title: 0,
       cursor: 0,
       erase: false,
@@ -96,13 +96,17 @@ class TypeWriter extends Component {
     this.setState(() => ({
       currentTitle: this.state.titles[this.state.title].slice(0, this.state.cursor)
     }), () => {
-      setTimeout(this._typeWriter, 125)
+      if (this.state.erase) {
+        setTimeout(this._typeWriter, 75)
+      } else {
+        setTimeout(this._typeWriter, 125)
+      }
     })
   }
   render() {
     return (
       <TpyeDiv>
-        <div className="title">{this.state.currentTitle}<strong className="cursor">|</strong></div>
+        <div className="title">{this.state.currentTitle}<span className="cursor">|</span></div>
       </TpyeDiv>
     );
   }
