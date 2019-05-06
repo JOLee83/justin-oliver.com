@@ -10,7 +10,6 @@ z-index: 101;
   font-family: 'Chakra Petch', sans-serif;
   border: .1rem solid rgb(250, 250, 250);
   border-radius: 20%;
-  padding: .15rem .3rem 0 .3rem;
   color: rgb(250, 250, 250);
   background-color: transparent;
   font-size: 1.5rem;
@@ -19,6 +18,101 @@ z-index: 101;
   max-width: 35px;
   outline-color: rgb(250, 0, 0);
   cursor: pointer;
+}
+.mobile-button {
+  width: 35px;
+  height: 35px;
+  padding: auto;
+  .flex {
+    display: flex;
+  }
+  .bar {
+    position: relative;
+    height: 3px;
+    background-color: rgb(250, 250, 250);
+  }
+  .o-one-1 {
+    transition: all .5s ease;
+    width: 50%;
+    border-radius:5px 0 0 5px;
+    margin: auto 0 2.5px auto;
+    top: 0;
+    left: 0;
+  }
+  .c-one-1 {
+    transition: all .5s ease;
+    width: 50%;
+    border-radius:5px 0 0 5px;
+    margin: auto 0 2.5px auto;
+    transform: rotate(45deg);
+    top: 5px;
+    left: 2px;
+  }
+  .o-one-2 {
+    transition: all .5s ease;
+
+    width: 50%;
+    border-radius:0 5px 5px 0;
+    margin: auto auto 2.5px 0;
+    top: 0;
+    right: 0;
+  }
+  .c-one-2 {
+    transition: all .5s ease;
+    width: 50%;
+    border-radius:0 5px 5px 0;
+    margin: auto auto 2.5px 0;
+    transform: rotate(-45deg);
+    top: 5px;
+    right: 2px;
+  }
+  .o-two {
+    transition: all .5s ease;
+    margin: 2.5px auto;
+    border-radius: 5px;
+    width: 100%;
+  }
+  .c-two {
+    transition: all .5s ease;
+    margin: 2.5px auto;
+    border-radius: 5px;
+    width: 100%;
+    opacity: 0;
+  }
+  .o-three-1 {
+    transition: all .5s ease;
+    width: 50%;
+    border-radius:5px 0 0 5px;
+    margin: 2.5px 0 auto auto;
+    bottom: 0;
+    left: 0;
+  }
+  .c-three-1 {
+    transition: all .5s ease;
+    width: 50%;
+    border-radius:5px 0 0 5px;
+    margin: 2.5px 0 auto auto;
+    transform: rotate(-45deg);
+    bottom: 5px;
+    left: 2px;
+  }
+  .o-three-2 {
+    transition: all .5s ease;
+    width: 50%;
+    border-radius:0 5px 5px 0;
+    margin: 2.5px auto auto 0;
+    bottom: 0;
+    right: 0;
+  }
+  .c-three-2 {
+    transition: all .5s ease;
+    width: 50%;
+    border-radius:0 5px 5px 0;
+    margin: 2.5px auto auto 0;
+    transform: rotate(45deg);
+    bottom: 5px;
+    right: 2px;
+  }
 }
 button.jump {
   font-family: 'Chakra Petch', sans-serif;
@@ -50,11 +144,11 @@ button.jump {
   .05rem .05rem .1rem rgb(240, 240, 240),
   .05rem .05rem .1rem rgb(240, 240, 240),
   -.05rem -.05rem .1rem rgb(240, 240, 240);
-  transition: left .4s ease-in-out, color .4s ease-in-out;
+  transition: all .4s ease-in-out;
   z-index: none;
 }
 .hidden {
-  left: -2000%;
+  left: -1200%;
 }
 .shown {
   left: 0;
@@ -66,6 +160,7 @@ button.jump {
   .full-button{
     display: flex;
     font-family: 'Chakra Petch', sans-serif;
+    padding: .15rem .3rem 0 .3rem;
   }
   .mobile-button {
     display:none;
@@ -76,7 +171,7 @@ button.jump {
     width:150px;
   }
   .hidden {
-    left: -1000%;
+    left: -200%;
   }
   .shown {
     left: 0;
@@ -127,7 +222,15 @@ class PopMenu extends Component {
     return (
       <MenuDiv>
         <button className="mobile-button" onClick={this._toggleMenu} tabIndex="1">
-          {this.state.popMenu ? <i className="fas fa-times" /> : <i className="fas fa-bars" />}
+          <div className="flex">
+            <div className={`bar ${this.state.popMenu ? "c-one-1" : "o-one-1"}`} />
+            <div className={`bar ${this.state.popMenu ? "c-one-2" : "o-one-2"}`} />
+          </div>
+          <div className={`bar ${this.state.popMenu ? "c-two" : "o-two"}`} />
+          <div className="flex">
+            <div className={`bar ${this.state.popMenu ? "c-three-1" : "o-three-1"}`} />
+            <div className={`bar ${this.state.popMenu ? "c-three-2" : "o-three-2"}`} />
+          </div>
         </button>
         <button className="full-button" onClick={this._toggleMenu} tabIndex="1">
           {this.state.popMenu ? 'Close' : 'Menu'}
