@@ -3,27 +3,25 @@ import styled from 'styled-components'
 
 const MenuDiv = styled.div`
 position: fixed;
-width: 10%;
 z-index: 101;
 .mobile-button, .full-button {
+  position: fixed;
+  top: 8px;
+  left: 8px;
   text-align: center;
   font-family: 'Chakra Petch', sans-serif;
-  border: .1rem solid rgb(250, 250, 250);
   border-radius: 20%;
   color: rgb(250, 250, 250);
   background-color: transparent;
   font-size: 1.5rem;
-  margin: .5rem 0 0 .5rem;
   transition: background-color .4s ease-in-out;
-  max-width: 35px;
   outline-color: rgb(250, 0, 0);
   cursor: pointer;
 }
 .mobile-button {
+  border: none;
   width: 35px;
   height: 35px;
-  max-width: 35px;
-  max-height: 35px;
   .flex {
     display: flex;
   }
@@ -32,108 +30,89 @@ z-index: 101;
     background-color: rgb(250, 250, 250);
   }
   .o-one-1 {
-    transition: all .5s ease;
+    transition: all .5s linear;
     width: 18px;
     height: 3px;
-
     border-radius:5px 0 0 5px;
-    margin: auto 0 2.5px auto;
     top: 16px;
     left: 11px;
   }
   .c-one-1 {
-    transition: all .5s ease;
+    transition: all .5s linear;
     width: 18px;
     height: 3px;
-
     border-radius:5px 0 0 5px;
-    margin: auto 0 2.5px auto;
     transform: rotate(45deg);
     top: 18px;
     left: 11px;
   }
   .o-one-2 {
-    transition: all .5s ease;
+    transition: all .5s linear;
     width: 16px;
     height: 3px;
-
     border-radius:0 5px 5px 0;
-    margin: auto auto 2.5px 0;
     top: 16px;
     left: 23px;
   }
   .c-one-2 {
-    transition: all .5s ease;
+    transition: all .5s linear;
     width: 16px;
     height: 3px;
-
     border-radius:0 5px 5px 0;
-    margin: auto auto 2.5px 0;
     transform: rotate(-45deg);
     top: 18px;
     left: 23px;
   }
   .o-two {
-    transition: all .5s ease;
-    margin: 2.5px auto;
+    transition: all .5s linear;
     border-radius: 5px;
     width: 28px;
     height: 3px;
-
-    top: 22px;
+    top: 24px;
     left: 11px;
   }
   .c-two {
-    transition: all .5s ease;
-    margin: 2.5px auto;
+    transition: all .5s linear;
     border-radius: 5px;
     width: 28px;
     height: 3px;
-
-    top: 22px;
+    top: 24px;
     left: 11px;
     opacity: 0;
   }
   .o-three-1 {
-    transition: all .5s ease;
+    transition: all .5s linear;
     width: 14px;
     height: 3px;
-
     border-radius:5px 0 0 5px;
-    margin: 2.5px 0 auto auto;
-    top: 30px;
+    top: 32px;
     left: 11px;
   }
   .c-three-1 {
-    transition: all .5s ease;
+    transition: all .5s linear;
     width: 16px;
     height: 3px;
-
     border-radius:5px 0 0 5px;
-    margin: 2.5px 0 auto auto;
     transform: rotate(-45deg);
-    top: 28px;
+    top: 30px;
     left: 11px;
   }
   .o-three-2 {
-    transition: all .5s ease;
+    transition: all .5s linear;
     width: 16px;
     height: 3px;
-
     border-radius:0 5px 5px 0;
-    margin: 2.5px auto auto 0;
-    top: 30px;
+    top: 32px;
     left: 23px;
   }
   .c-three-2 {
-    transition: all .5s ease;
+    transition: all .5s linear;
     width: 16px;
     height: 3px;
 
     border-radius:0 5px 5px 0;
-    margin: 2.5px auto auto 0;
     transform: rotate(45deg);
-    top: 28px;
+    top: 30px;
     left: 23px;
   }
 }
@@ -152,7 +131,8 @@ button.jump {
 }
 .hidden, .shown {
   margin-top: .3rem;
-  position: absolute;
+  position: fixed;
+  top: 45px;
   background-image: linear-gradient(to top, rgb(0, 0, 0), rgb(25, 25, 25));
   color: rgb(250, 250, 250);
   display: flex;
@@ -171,7 +151,7 @@ button.jump {
   z-index: none;
 }
 .hidden {
-  left: -1200%;
+  left: -150%;
 }
 .shown {
   left: 0;
@@ -181,6 +161,7 @@ button.jump {
 }
 @media (min-width: 700px) {
   .full-button{
+    border: .1rem solid rgb(250, 250, 250);
     display: flex;
     font-family: 'Chakra Petch', sans-serif;
     padding: .15rem .3rem 0 .3rem;
@@ -194,7 +175,7 @@ button.jump {
     width:150px;
   }
   .hidden {
-    left: -200%;
+    left: -100%;
   }
   .shown {
     left: 0;
