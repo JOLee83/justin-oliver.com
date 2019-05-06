@@ -22,96 +22,119 @@ z-index: 101;
 .mobile-button {
   width: 35px;
   height: 35px;
-  padding: auto;
+  max-width: 35px;
+  max-height: 35px;
   .flex {
     display: flex;
   }
   .bar {
-    position: relative;
-    height: 3px;
+    position: fixed;
     background-color: rgb(250, 250, 250);
   }
   .o-one-1 {
     transition: all .5s ease;
-    width: 50%;
+    width: 18px;
+    height: 3px;
+
     border-radius:5px 0 0 5px;
     margin: auto 0 2.5px auto;
-    top: 0;
-    left: 0;
+    top: 16px;
+    left: 11px;
   }
   .c-one-1 {
     transition: all .5s ease;
-    width: 50%;
+    width: 18px;
+    height: 3px;
+
     border-radius:5px 0 0 5px;
     margin: auto 0 2.5px auto;
     transform: rotate(45deg);
-    top: 5px;
-    left: 2px;
+    top: 18px;
+    left: 11px;
   }
   .o-one-2 {
     transition: all .5s ease;
+    width: 16px;
+    height: 3px;
 
-    width: 50%;
     border-radius:0 5px 5px 0;
     margin: auto auto 2.5px 0;
-    top: 0;
-    right: 0;
+    top: 16px;
+    left: 23px;
   }
   .c-one-2 {
     transition: all .5s ease;
-    width: 50%;
+    width: 16px;
+    height: 3px;
+
     border-radius:0 5px 5px 0;
     margin: auto auto 2.5px 0;
     transform: rotate(-45deg);
-    top: 5px;
-    right: 2px;
+    top: 18px;
+    left: 23px;
   }
   .o-two {
     transition: all .5s ease;
     margin: 2.5px auto;
     border-radius: 5px;
-    width: 100%;
+    width: 28px;
+    height: 3px;
+
+    top: 22px;
+    left: 11px;
   }
   .c-two {
     transition: all .5s ease;
     margin: 2.5px auto;
     border-radius: 5px;
-    width: 100%;
+    width: 28px;
+    height: 3px;
+
+    top: 22px;
+    left: 11px;
     opacity: 0;
   }
   .o-three-1 {
     transition: all .5s ease;
-    width: 50%;
+    width: 14px;
+    height: 3px;
+
     border-radius:5px 0 0 5px;
     margin: 2.5px 0 auto auto;
-    bottom: 0;
-    left: 0;
+    top: 30px;
+    left: 11px;
   }
   .c-three-1 {
     transition: all .5s ease;
-    width: 50%;
+    width: 16px;
+    height: 3px;
+
     border-radius:5px 0 0 5px;
     margin: 2.5px 0 auto auto;
     transform: rotate(-45deg);
-    bottom: 5px;
-    left: 2px;
+    top: 28px;
+    left: 11px;
   }
   .o-three-2 {
     transition: all .5s ease;
-    width: 50%;
+    width: 16px;
+    height: 3px;
+
     border-radius:0 5px 5px 0;
     margin: 2.5px auto auto 0;
-    bottom: 0;
-    right: 0;
+    top: 30px;
+    left: 23px;
   }
   .c-three-2 {
     transition: all .5s ease;
-    width: 50%;
+    width: 16px;
+    height: 3px;
+
     border-radius:0 5px 5px 0;
     margin: 2.5px auto auto 0;
     transform: rotate(45deg);
-    bottom: 5px;
-    right: 2px;
+    top: 28px;
+    left: 23px;
   }
 }
 button.jump {
