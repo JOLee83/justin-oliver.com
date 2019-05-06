@@ -19,6 +19,7 @@ z-index: 101;
   cursor: pointer;
 }
 .mobile-button {
+  overflow: visible;
   border: none;
   width: 35px;
   height: 35px;
