@@ -36,7 +36,9 @@ const MenuDiv = styled.div`
       height: 31px;
       border: .1rem solid rgb(250, 250, 250);
       border-radius: 5px;
-      z-index: 104;
+      z-index: 99;
+      background-color: rgba(0,0,0,.5);
+
       box-shadow: -.1rem -.1rem 1rem rgb(25, 25, 25),
           .1rem .1rem 1rem rgb(25, 25, 25),
           .1rem .1rem 1rem rgb(25, 25, 25),
@@ -87,10 +89,12 @@ const MenuDiv = styled.div`
       height: 3px;
       top: 24px;
       left: 11px;
-      box-shadow: -.1rem -.1rem 1rem rgb(25, 25, 25),
+      z-index: 102;
+
+      /* box-shadow: -.1rem -.1rem 1rem rgb(25, 25, 25),
           .1rem .1rem 1rem rgb(25, 25, 25),
           .1rem .1rem 1rem rgb(25, 25, 25),
-          -.1rem -.1rem 1rem rgb(25, 25, 25);
+          -.1rem -.1rem 1rem rgb(25, 25, 25); */
     }
     .close-2 {
       transition: all .5s linear;
@@ -108,6 +112,8 @@ const MenuDiv = styled.div`
       border-radius:5px 0 0 5px;
       top: 32px;
       left: 11px;
+      z-index: 102;
+
 
     }
     .close-3-1 {
@@ -127,6 +133,8 @@ const MenuDiv = styled.div`
       border-radius:0 5px 5px 0;
       top: 32px;
       left: 23px;
+      z-index: 102;
+
     }
     .close-3-2 {
       transition: all .5s linear;
