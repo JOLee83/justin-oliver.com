@@ -90,11 +90,6 @@ const MenuDiv = styled.div`
       top: 24px;
       left: 11px;
       z-index: 102;
-
-      /* box-shadow: -.1rem -.1rem 1rem rgb(25, 25, 25),
-          .1rem .1rem 1rem rgb(25, 25, 25),
-          .1rem .1rem 1rem rgb(25, 25, 25),
-          -.1rem -.1rem 1rem rgb(25, 25, 25); */
     }
     .close-2 {
       transition: all .5s linear;
@@ -113,8 +108,6 @@ const MenuDiv = styled.div`
       top: 32px;
       left: 11px;
       z-index: 102;
-
-
     }
     .close-3-1 {
       transition: all .5s linear;
@@ -134,7 +127,6 @@ const MenuDiv = styled.div`
       top: 32px;
       left: 23px;
       z-index: 102;
-
     }
     .close-3-2 {
       transition: all .5s linear;
@@ -158,7 +150,6 @@ const MenuDiv = styled.div`
     cursor: pointer;
     transition: color .4s ease-in-out;
     outline-color: rgb(250, 0, 0);
-
   }
   .hidden, .shown {
     margin-top: .3rem;
@@ -191,7 +182,7 @@ const MenuDiv = styled.div`
     display: none;
   }
   @media (min-width: 700px) {
-    .full-button{
+    .full-button {
       position: fixed;
       top: 8px;
       left: 8px;
@@ -199,6 +190,17 @@ const MenuDiv = styled.div`
       display: flex;
       font-family: 'Chakra Petch', sans-serif;
       padding: .15rem .3rem 0 .3rem;
+      width: 80px;
+      .faded {
+        text-align: center;
+        opacity: 0;
+        transition: opacity .4s ease-in-out;
+      }
+      .unfaded {
+        text-align: center;
+        opacity: 1;
+        transition: opacity .4s ease-in-out;
+      }
     }
     .mobile-button {
       display:none;
@@ -233,7 +235,9 @@ const MenuDiv = styled.div`
 `
 class PopMenu extends Component {
   state = {
-    popMenu: false
+    popMenu: false,
+    buttonText: "Menu",
+    fading: false
   }
   componentDidMount() {
     window.addEventListener('scroll', this._closeMenu)
@@ -255,6 +259,25 @@ class PopMenu extends Component {
         popMenu: !prevState.popMenu
       }
     })
+    this._changeText()
+  }
+  _changeText = () => {
+    this.setState(() => ({
+      fading: true
+    }))
+    setTimeout(_ => {
+      if (this.state.buttonText === "Menu") {
+        this.setState(() => ({
+          buttonText: "Close",
+          fading: false
+        }))
+      } else {
+        this.setState(() => ({
+          buttonText: "Menu",
+          fading: false
+        }))
+      }
+    }, 500)
   }
   render() {
     return (
@@ -268,7 +291,7 @@ class PopMenu extends Component {
           <div className={`bar ${this.state.popMenu ? "close-3-2" : "open-3-2"}`} />
         </button>
         <button className="full-button" onClick={this._toggleMenu} tabIndex="1">
-          {this.state.popMenu ? 'Close' : 'Menu'}
+          <div className={this.state.fading ? "faded" : "unfaded"}>{this.state.buttonText}</div>
         </button>
         <div className={this.state.popMenu ? "shown" : "hidden"}>
           <button className="jump" onClick={() => this._menu(".top")} tabIndex={this.state.popMenu ? 2 : -1}>

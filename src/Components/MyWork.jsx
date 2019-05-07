@@ -56,6 +56,18 @@ const MyWorkDiv = styled.div`
       transition: all 2s ease-in-out;
     }
   }
+  .show {
+    .faded {
+        text-align: center;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      .unfaded {
+        text-align: center;
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+  }
   @media (min-width: 500px) {
     img, p{
       max-width: 50vw;
@@ -84,7 +96,9 @@ class MyWork extends Component {
       MyWorks: [{ title: "Quicklee", imgSrc: "./img/quicklee.png", imgAlt: "quicklee app", href: "http://quicklee.surge.sh", description: " is a full-stack web app that I built for my capstone project at Suncoast Developers Guild. The front-end is built with React and SASS, the back-end is an API built with C#, .Net, Linq, and Entity." },
       { title: "Malibulawns", imgSrc: "./img/malibulawns.png", imgAlt: "malibu lawns", href: "https://www.malibulawns.com", description: " was my first commercial site that I designed and built. I used various resources for the design, and built it using React, React Router, and Styled Components." },
       { title: "Mine Sweeper", imgSrc: "./img/minesweeper.png", imgAlt: "./img/minesweeper.png", href: "http://mine-sweeper-justin.surge.sh/", description: " is a React based game using an API. This was from my first week of learning React at SDG. API can be slow at times, and have not set up for mobile use yet." }
-      ]
+      ],
+      buttonText: "See More",
+      fading: false
     }
   }
   previewHeight = () => {
@@ -106,7 +120,26 @@ class MyWork extends Component {
         this.props.scroll(".third")
       }
       this._setHeight()
+      this._changeText()
     })
+  }
+  _changeText = () => {
+    this.setState(() => ({
+      fading: true
+    }))
+    setTimeout(_ => {
+      if (this.state.buttonText === "See More") {
+        this.setState(() => ({
+          buttonText: "See Less",
+          fading: false
+        }))
+      } else {
+        this.setState(() => ({
+          buttonText: "See More",
+          fading: false
+        }))
+      }
+    }, 1100)
   }
   render() {
     return (
@@ -170,7 +203,11 @@ class MyWork extends Component {
               </p>
             </section>
           </div>
-          <button className="show" onClick={this.ShowMoreWork} tabIndex="6">{this.state.ShowMore ? "See Less" : "See More Projects"}</button>
+          <button className="show" onClick={this.ShowMoreWork} tabIndex="6">
+            <div className={this.state.fading ? "faded" : "unfaded"}>
+              {this.state.buttonText}
+            </div>
+          </button>
         </div>
       </MyWorkDiv >
     );

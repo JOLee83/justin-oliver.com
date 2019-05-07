@@ -40,6 +40,19 @@ const AboutDiv = styled.div`
     transition: all 0.5s ease-in-out;
     outline-color: rgb(250, 0, 0);
     cursor: pointer;
+   
+  }
+  .read {
+    .faded {
+        text-align: center;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      .unfaded {
+        text-align: center;
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
   }
   .about-card {
     position:relative;
@@ -88,7 +101,9 @@ class About extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      ReadMore: false
+      ReadMore: false,
+      buttonText: "Read More",
+      fading: false
     }
   }
   previewHeight = () => {
@@ -110,7 +125,26 @@ class About extends Component {
         this.props.scroll(".second")
       }
       this._setHeight()
+      this._changeText()
     })
+  }
+  _changeText = () => {
+    this.setState(() => ({
+      fading: true
+    }))
+    setTimeout(_ => {
+      if (this.state.buttonText === "Read More") {
+        this.setState(() => ({
+          buttonText: "Read Less",
+          fading: false
+        }))
+      } else {
+        this.setState(() => ({
+          buttonText: "Read More",
+          fading: false
+        }))
+      }
+    }, 1100)
   }
   render() {
     return (
@@ -128,7 +162,11 @@ class About extends Component {
               <p>All that is missing from my career now is the opportunity to bring my passion for development to the right company. I look forward to hearing from you so that I can share additional examples of my work and show how I will be a great fit for your organization.</p>
             </div>
           </div>
-          <button className="read" onClick={this.ReadMoreAbout} tabIndex="3">{this.state.ReadMore ? "Read Less" : "Read More"}</button>
+          <button className="read" onClick={this.ReadMoreAbout} tabIndex="3">
+            <div className={this.state.fading ? "faded" : "unfaded"}>
+              {this.state.buttonText}
+            </div>
+          </button>
         </div>
       </AboutDiv >
     );
