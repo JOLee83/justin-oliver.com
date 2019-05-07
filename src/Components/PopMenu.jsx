@@ -5,9 +5,6 @@ const MenuDiv = styled.div`
   position: fixed;
   z-index: 101;
   .mobile-button, .full-button {
-    position: fixed;
-    top: 8px;
-    left: 8px;
     text-align: center;
     font-family: 'Chakra Petch', sans-serif;
     border-radius: 20%;
@@ -19,13 +16,31 @@ const MenuDiv = styled.div`
     cursor: pointer;
   }
   .mobile-button {
+    position: fixed;
+    top: 3px;
+    left: 3px;
+    margin: 2px;
     overflow: visible;
     border: none;
-    width: 35px;
-    height: 35px;
+    width: 41px;
+    height: 41px;
     .bar {
       position: fixed;
       background-color: rgb(250, 250, 250);
+    }
+    .button-div {
+      position: fixed;
+      top: 8px;
+      left: 8px;
+      width: 31px;
+      height: 31px;
+      border: .1rem solid rgb(250, 250, 250);
+      border-radius: 5px;
+      z-index: 104;
+      box-shadow: -.1rem -.1rem 1rem rgb(25, 25, 25),
+          .1rem .1rem 1rem rgb(25, 25, 25),
+          .1rem .1rem 1rem rgb(25, 25, 25),
+          -.1rem -.1rem 1rem rgb(25, 25, 25);
     }
     .open-1-1 {
       transition: all .5s linear;
@@ -45,7 +60,6 @@ const MenuDiv = styled.div`
       top: 18px;
       left: 11px;
       z-index: 102;
-      background-color: rgb(139, 0, 0);
     }
     .open-1-2 {
       transition: all .5s linear;
@@ -65,7 +79,6 @@ const MenuDiv = styled.div`
       top: 18px;
       left: 23px;
       z-index: 102;
-      background-color: rgb(139, 0, 0);
     }
     .open-2 {
       transition: all .5s linear;
@@ -82,11 +95,11 @@ const MenuDiv = styled.div`
     .close-2 {
       transition: all .5s linear;
       border-radius: 5px;
-      width: 28px;
-      height: 3px;
-      top: 24px;
-      left: 11px;
-      opacity: 0;
+      width: 33px;
+      height: 33px;
+      top: 8px;
+      left: 8px;
+      background-color: rgba(0,0,0,.5);
     }
     .open-3-1 {
       transition: all .5s linear;
@@ -106,7 +119,6 @@ const MenuDiv = styled.div`
       top: 30px;
       left: 11px;
       z-index: 102;
-      background-color: rgb(139, 0, 0);
     }
     .open-3-2 {
       transition: all .5s linear;
@@ -125,7 +137,6 @@ const MenuDiv = styled.div`
       top: 30px;
       left: 23px;
       z-index: 102;
-      background-color: rgb(139, 0, 0);
     }
   }
   button.jump {
@@ -173,6 +184,9 @@ const MenuDiv = styled.div`
   }
   @media (min-width: 700px) {
     .full-button{
+      position: fixed;
+      top: 8px;
+      left: 8px;
       border: .1rem solid rgb(250, 250, 250);
       display: flex;
       font-family: 'Chakra Petch', sans-serif;
@@ -238,6 +252,7 @@ class PopMenu extends Component {
     return (
       <MenuDiv>
         <button className="mobile-button" onClick={this._toggleMenu} tabIndex="1">
+          <div className="button-div" />
           <div className={`bar ${this.state.popMenu ? "close-1-1" : "open-1-1"}`} />
           <div className={`bar ${this.state.popMenu ? "close-1-2" : "open-1-2"}`} />
           <div className={`bar ${this.state.popMenu ? "close-2" : "open-2"}`} />
