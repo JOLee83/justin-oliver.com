@@ -122,7 +122,7 @@ class About extends Component {
       ReadMore: !prevState.ReadMore
     }), () => {
       if (!this.state.ReadMore) {
-        this.props.scroll(".second")
+        this.props.scroll(".about")
       }
       this._setHeight()
       this._changeText()
@@ -148,7 +148,7 @@ class About extends Component {
   }
   render() {
     return (
-      <AboutDiv className="second">
+      <AboutDiv className="about">
         <img src="./img/profilepicture.jpg" alt="Justin Oliver Lee" />
         <div className="about-card">
           <h1>About Me</h1>

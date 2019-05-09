@@ -83,19 +83,30 @@ class Resume extends Component {
   }
   render() {
     return (
-      <ResumeDiv className="fourth">
+      <ResumeDiv className="resume">
         <h1>Resume</h1>
         <div className="resume-card">
-          <button>
-            <a className="link"
-              href="https://drive.google.com/file/d/1TuEUxaJHyiaz4SVyjLEzUuuqmxlJBvIq/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              tabIndex="8"
-            >
-              <i className="fas fa-file" />Download PDF
-				    </a>
-          </button>
+          <div>
+            <button>
+              <a className="link"
+                href="./Justin_Oliver_Lee_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                tabIndex="8"
+              >
+                <i className="fas fa-file" />Open PDF
+              </a>
+            </button>
+            <button>
+              <a className="link"
+                href="./Justin_Oliver_Lee_Resume.pdf"
+                download
+                tabIndex="8"
+              >
+                <i className="fas fa-file" />Download PDF
+              </a>
+            </button>
+          </div>
           <iframe src="https://drive.google.com/file/d/1TuEUxaJHyiaz4SVyjLEzUuuqmxlJBvIq/preview" className="frame" width="850" title="My Resume" />
         </div>
       </ResumeDiv >

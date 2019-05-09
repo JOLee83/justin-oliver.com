@@ -39,7 +39,7 @@ const HomeDiv = styled.div`
 class Home extends Component {
   render() {
     return (
-      <HomeDiv className="top">
+      <HomeDiv className="home">
         <div className="title-card">
           <div className="name">justin oliver lee</div>
           <TypeWriter />

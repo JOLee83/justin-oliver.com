@@ -117,7 +117,7 @@ class MyWork extends Component {
       ShowMore: !prevState.ShowMore
     }), () => {
       if (!this.state.ShowMore) {
-        this.props.scroll(".third")
+        this.props.scroll(".work")
       }
       this._setHeight()
       this._changeText()
@@ -143,7 +143,7 @@ class MyWork extends Component {
   }
   render() {
     return (
-      <MyWorkDiv className="third">
+      <MyWorkDiv className="work">
         <h1>My Work</h1>
         <div className="work-card">
           <div className="works">

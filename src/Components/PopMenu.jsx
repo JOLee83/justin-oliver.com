@@ -247,11 +247,15 @@ class PopMenu extends Component {
     this._closeMenu()
   }
   _closeMenu = () => {
-    this.setState(() => {
-      return {
-        popMenu: false
-      }
-    })
+    if (this.state.popMenu) {
+      this.setState(() => {
+        return {
+          popMenu: false
+        }
+      })
+      this._changeText()
+    }
+
   }
   _toggleMenu = () => {
     this.setState(prevState => {
@@ -294,19 +298,19 @@ class PopMenu extends Component {
           <div className={this.state.fading ? "faded" : "unfaded"}>{this.state.buttonText}</div>
         </button>
         <div className={this.state.popMenu ? "shown" : "hidden"}>
-          <button className="jump" onClick={() => this._menu(".top")} tabIndex={this.state.popMenu ? 2 : -1}>
+          <button className="jump" onClick={() => this._menu(".home")} tabIndex={this.state.popMenu ? 2 : -1}>
             Home
           </button>
-          <button className="jump" onClick={() => this._menu(".second")} tabIndex={this.state.popMenu ? 2 : -1}>
+          <button className="jump" onClick={() => this._menu(".about")} tabIndex={this.state.popMenu ? 2 : -1}>
             About Me
           </button>
-          <button className="jump" onClick={() => this._menu(".third")} tabIndex={this.state.popMenu ? 2 : -1}>
+          <button className="jump" onClick={() => this._menu(".work")} tabIndex={this.state.popMenu ? 2 : -1}>
             My Work
           </button >
-          <button className="jump" onClick={() => this._menu(".fourth")} tabIndex={this.state.popMenu ? 2 : -1}>
+          <button className="jump" onClick={() => this._menu(".resume")} tabIndex={this.state.popMenu ? 2 : -1}>
             Resume
           </button >
-          <button className="jump" onClick={() => this._menu(".last")} tabIndex={this.state.popMenu ? 2 : -1}>
+          <button className="jump" onClick={() => this._menu(".contact")} tabIndex={this.state.popMenu ? 2 : -1}>
             Contact Me
           </button >
         </div >

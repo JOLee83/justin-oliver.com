@@ -135,7 +135,7 @@ const ContactDiv = styled.div`
 class Contact extends Component {
   render() {
     return (
-      <ContactDiv className="last">
+      <ContactDiv className="contact">
         <div className="back">
           <h1>Contact Me</h1>
           <p>
