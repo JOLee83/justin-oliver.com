@@ -46,7 +46,7 @@ const MenuDiv = styled.div`
     }
     .open-1-1 {
       transition: all .5s linear;
-      width: 18px;
+      width: 14px;
       height: 3px;
       border-radius:5px 0 0 5px;
       top: 16px;
@@ -65,11 +65,11 @@ const MenuDiv = styled.div`
     }
     .open-1-2 {
       transition: all .5s linear;
-      width: 16px;
+      width: 14px;
       height: 3px;
       border-radius:0 5px 5px 0;
       top: 16px;
-      left: 23px;
+      left: 25px;
       z-index: 102;
     }
     .close-1-2 {
@@ -83,16 +83,16 @@ const MenuDiv = styled.div`
       z-index: 102;
     }
     .open-2 {
-      transition: all .5s linear;
+      transition: all .9s ease-in-out;
       border-radius: 5px;
       width: 28px;
       height: 3px;
       top: 24px;
       left: 11px;
-      z-index: 102;
+      z-index: 101;
     }
     .close-2 {
-      transition: all .5s linear;
+      transition: all .9s ease-in-out;
       border-radius: 5px;
       width: 33px;
       height: 33px;
@@ -121,11 +121,11 @@ const MenuDiv = styled.div`
     }
     .open-3-2 {
       transition: all .5s linear;
-      width: 16px;
+      width: 14px;
       height: 3px;
       border-radius:0 5px 5px 0;
       top: 32px;
-      left: 23px;
+      left: 25px;
       z-index: 102;
     }
     .close-3-2 {
