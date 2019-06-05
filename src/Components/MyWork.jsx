@@ -97,7 +97,7 @@ class MyWork extends Component {
       { title: "Malibulawns", imgSrc: "./img/malibulawns.png", imgAlt: "malibu lawns", href: "https://www.malibulawns.com", description: " was my first commercial site that I designed and built. I used various resources for the design, and built it using React, React Router, and Styled Components." },
       { title: "Mine Sweeper", imgSrc: "./img/minesweeper.png", imgAlt: "./img/minesweeper.png", href: "http://mine-sweeper-justin.surge.sh/", description: " is a React based game using an API. This was from my first week of learning React at SDG. API can be slow at times, and have not set up for mobile use yet." }
       ],
-      buttonText: "See More",
+      buttonText: "More Projects",
       fading: false
     }
   }
@@ -128,14 +128,14 @@ class MyWork extends Component {
       fading: true
     }))
     setTimeout(_ => {
-      if (this.state.buttonText === "See More") {
+      if (this.state.buttonText === "More Projects") {
         this.setState(() => ({
-          buttonText: "See Less",
+          buttonText: "Less Projects",
           fading: false
         }))
       } else {
         this.setState(() => ({
-          buttonText: "See More",
+          buttonText: "More Projects",
           fading: false
         }))
       }

@@ -106,7 +106,10 @@ class TypeWriter extends Component {
   render() {
     return (
       <TypeDiv>
-        <div className="title">{this.state.currentTitle}<span className="cursor">|</span></div>
+        <div className="title">
+          {this.state.currentTitle}
+          <span className="cursor">|</span>
+        </div>
       </TypeDiv>
     );
   }

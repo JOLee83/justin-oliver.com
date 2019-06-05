@@ -83,7 +83,7 @@ const MenuDiv = styled.div`
       z-index: 102;
     }
     .open-2 {
-      transition: all .9s ease-in-out;
+      transition: all .5s linear;
       border-radius: 5px;
       width: 28px;
       height: 3px;
@@ -92,7 +92,7 @@ const MenuDiv = styled.div`
       z-index: 101;
     }
     .close-2 {
-      transition: all .9s ease-in-out;
+      transition: all .5s linear;
       border-radius: 5px;
       width: 33px;
       height: 33px;
