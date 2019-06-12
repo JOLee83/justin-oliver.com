@@ -139,14 +139,15 @@ const MenuDiv = styled.div`
       z-index: 102;
     }
   }
-  button.jump {
+  .jump {
     font-family: 'Chakra Petch', sans-serif;
     color: rgb(250, 250, 250);
     background-color: transparent;
     border: none;
     font-size: 1.3rem;
-    width: 100%;
     padding: 1rem;
+    text-decoration: none;
+    text-align: center;
     cursor: pointer;
     transition: color .4s ease-in-out;
     outline-color: rgb(250, 0, 0);
@@ -255,7 +256,6 @@ class PopMenu extends Component {
       })
       this._changeText()
     }
-
   }
   _toggleMenu = () => {
     this.setState(prevState => {
@@ -286,7 +286,12 @@ class PopMenu extends Component {
   render() {
     return (
       <MenuDiv>
-        <button className="mobile-button" onClick={this._toggleMenu} tabIndex="1">
+        <button
+          className="mobile-button"
+          onClick={this._toggleMenu}
+          tabIndex="1"
+          alt="opens navigation menu"
+        >
           <div className="button-div" />
           <div className={`bar ${this.state.popMenu ? "close-1-1" : "open-1-1"}`} />
           <div className={`bar ${this.state.popMenu ? "close-1-2" : "open-1-2"}`} />
@@ -294,25 +299,67 @@ class PopMenu extends Component {
           <div className={`bar ${this.state.popMenu ? "close-3-1" : "open-3-1"}`} />
           <div className={`bar ${this.state.popMenu ? "close-3-2" : "open-3-2"}`} />
         </button>
-        <button className="full-button" onClick={this._toggleMenu} tabIndex="1">
-          <div className={this.state.fading ? "faded" : "unfaded"}>{this.state.buttonText}</div>
+        <button
+          className="full-button"
+          onClick={this._toggleMenu}
+          tabIndex="1"
+          alt="opens navigation menu"
+        >
+          <div className={this.state.fading ? "faded" : "unfaded"}>
+            {this.state.buttonText}
+          </div>
         </button>
         <div className={this.state.popMenu ? "shown" : "hidden"}>
-          <button className="jump" onClick={() => this._menu(".home")} tabIndex={this.state.popMenu ? 2 : -1}>
+          <button
+            className="jump"
+            onClick={() => this._menu(".home")}
+            tabIndex={this.state.popMenu ? 2 : -1}
+            alt="scrolls to top of page"
+          >
             Home
           </button>
-          <button className="jump" onClick={() => this._menu(".about")} tabIndex={this.state.popMenu ? 2 : -1}>
+          <button
+            className="jump"
+            onClick={() => this._menu(".about")}
+            tabIndex={this.state.popMenu ? 2 : -1}
+            alt="scrolls to about me section"
+          >
             About Me
           </button>
-          <button className="jump" onClick={() => this._menu(".work")} tabIndex={this.state.popMenu ? 2 : -1}>
+          <button
+            className="jump"
+            onClick={() => this._menu(".skills")}
+            tabIndex={this.state.popMenu ? 2 : -1}
+            alt="scrolls to my skills section"
+          >
+            My Skills
+          </button >
+          <button
+            className="jump"
+            onClick={() => this._menu(".work")}
+            tabIndex={this.state.popMenu ? 2 : -1}
+            alt="scrolls to my work section"
+          >
             My Work
           </button >
-          <button className="jump" onClick={() => this._menu(".resume")} tabIndex={this.state.popMenu ? 2 : -1}>
-            Resume
-          </button >
-          <button className="jump" onClick={() => this._menu(".contact")} tabIndex={this.state.popMenu ? 2 : -1}>
+          <button
+            className="jump"
+            onClick={() => this._menu(".contact")}
+            tabIndex={this.state.popMenu ? 2 : -1}
+            alt="scrolls to contact section"
+          >
             Contact Me
           </button >
+          <a className="jump"
+            href="./Justin_Oliver_Lee_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            tabIndex={this.state.popMenu ? 2 : -1}
+            onClick={() => this._closeMenu()}
+            alt="opens resume PDF in new window"
+          >
+            My Resume
+          </a>
         </div >
       </MenuDiv >
     );

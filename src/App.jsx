@@ -3,7 +3,7 @@ import Home from './Components/Home.jsx'
 import About from './Components/About.jsx'
 import PopMenu from './Components/PopMenu.jsx'
 import MyWork from './Components/MyWork.jsx'
-import Resume from './Components/Resume.jsx'
+import Skills from './Components/Skills.jsx'
 import Contact from './Components/Contact.jsx'
 
 class App extends Component {
@@ -19,8 +19,8 @@ class App extends Component {
         <PopMenu scroll={this._scroll} />
         <Home />
         <About scroll={this._scroll} />
+        <Skills />
         <MyWork scroll={this._scroll} />
-        <Resume />
         <Contact />
       </>
     );

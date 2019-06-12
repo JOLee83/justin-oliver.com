@@ -10,7 +10,6 @@ const AboutDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start ;
   z-index: 100;
   font-size: 1.2rem;
   img {
@@ -40,7 +39,6 @@ const AboutDiv = styled.div`
     transition: all 0.5s ease-in-out;
     outline-color: rgb(250, 0, 0);
     cursor: pointer;
-   
   }
   .read {
     .faded {

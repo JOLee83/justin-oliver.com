@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const MyWorkDiv = styled.div`
   min-height: 100vh;
-  background-image: linear-gradient(to bottom,  rgb(25, 25, 25), rgb(25, 24, 43));
+  background-image: linear-gradient(to bottom, rgb(25, 24, 43), rgb(25, 24, 43));
   background-size: cover;
   color: rgb(250, 250, 250);
   display: flex;
@@ -12,12 +12,12 @@ const MyWorkDiv = styled.div`
   justify-content: flex-start;
   z-index: 100;
   font-family: 'Chakra Petch', sans-serif;
+  h1 {
+    margin: 0 0 .5rem 0;
+  }
   img, p {
     max-width: 90vw;
     font-size: 1.2rem;
-  }
-  img {
-    margin-top: .5em;
   }
   button {
     font-family: 'Chakra Petch', sans-serif;
@@ -27,7 +27,7 @@ const MyWorkDiv = styled.div`
     color: rgb(250, 250, 250);
     background-color: transparent;
     font-size: 1.2rem;
-    margin: .5rem 0 0 0;
+    margin: 0;
     padding: .2rem;
     transition: all 0.5s ease-in-out;
     outline-color: rgb(250, 0, 0);
@@ -145,6 +145,7 @@ class MyWork extends Component {
     return (
       <MyWorkDiv className="work">
         <h1>My Work</h1>
+        <p className="subtitle">Some of my professional and personal projects</p>
         <div className="work-card">
           <div className="works">
             {this.state.MyWorks.map((proj, i) => {
