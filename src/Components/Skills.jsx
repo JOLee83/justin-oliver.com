@@ -12,15 +12,11 @@ const SkillsDiv = styled.div`
   justify-content: flex-start;
   z-index: 100;
   font-family: 'Chakra Petch', sans-serif;
-  /* padding-bottom: 4rem; */
   font-size: 1.2rem;
   h1, p {
     margin:0 0 .5rem 0;
   }
-  /* p {
-    margin-top: 0;
-    
-  } */
+
   .list {
     width: 90%;
     display: flex;

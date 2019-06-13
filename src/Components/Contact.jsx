@@ -6,6 +6,8 @@ const ContactDiv = styled.div`
   background-image: linear-gradient(to bottom, rgb(25, 24, 43), rgb(40, 36, 119));
   background-size: cover;
   color: rgb(250, 250, 250);
+  font-size: 1.2rem;
+
   .back {
     min-height: 100vh;
     background-position: bottom; 
@@ -17,7 +19,6 @@ const ContactDiv = styled.div`
     align-items: center;
     justify-content: flex-start;
     z-index: 100;
-    font-size: 1.2rem;
     font-family: 'Chakra Petch', sans-serif;
     a {
       margin: 10px;
@@ -62,7 +63,6 @@ const ContactDiv = styled.div`
       justify-content: space-evenly;
       font-family: 'Chakra Petch', sans-serif;
       flex: 1;
-      padding-bottom: 10rem;
     }
     .i-link {
       max-width: 6rem;
@@ -86,13 +86,11 @@ const ContactDiv = styled.div`
         margin: 0 3rem .4rem 3rem;
       }
       .card {
-        font-size: 1.1rem;
         text-align: center;
         width: 300px;
       }
       h1 {
         margin-top: 2rem;
-        font-size: 2rem;
       }
       p {
         font-size: 1.3rem;
@@ -123,6 +121,9 @@ const ContactDiv = styled.div`
   @media (min-width: 800px) {
     .back{
       background-image: url(./img/background/SeattleSkylineSilohette3.png);
+    }
+    .text-link {
+      font-size: 1.2rem;
     }
   }
   @media (min-width: 1200px) {

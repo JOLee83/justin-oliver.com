@@ -12,7 +12,12 @@ const MyWorkDiv = styled.div`
   justify-content: flex-start;
   z-index: 100;
   font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.2rem;
+
   h1 {
+    margin: 0 0 .5rem 0;
+  }
+  .subtitle {
     margin: 0 0 .5rem 0;
   }
   img, p {
@@ -72,10 +77,13 @@ const MyWorkDiv = styled.div`
     img, p{
       max-width: 50vw;
     }
-		p {
+    .work-card {
+      p {
 			font-size: 1.3rem;
 			margin-bottom: 2rem;
+      }
     }
+		
     a:hover {
       color: rgb(139, 0, 0);
       transition: all 0.5s ease-in-out;
