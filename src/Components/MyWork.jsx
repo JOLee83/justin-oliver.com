@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { Projects } from '../Constants/Projects';
 
 const MyWorkDiv = styled.div`
   min-height: 100vh;
@@ -101,10 +102,7 @@ class MyWork extends Component {
     super(props)
     this.state = {
       ShowMore: false,
-      MyWorks: [{ title: "Quicklee", imgSrc: "./img/quicklee.png", imgAlt: "quicklee app", href: "http://quicklee.surge.sh", description: " is a full-stack web app that I built for my capstone project at Suncoast Developers Guild. The front-end is built with React and SASS, the back-end is an API built with C#, .Net, Linq, and Entity." },
-      { title: "Malibulawns", imgSrc: "./img/malibulawns.png", imgAlt: "malibu lawns", href: "https://www.malibulawns.com", description: " was my first commercial site that I designed and built. I used various resources for the design, and built it using React, React Router, and Styled Components." },
-      { title: "Mine Sweeper", imgSrc: "./img/minesweeper.png", imgAlt: "./img/minesweeper.png", href: "http://mine-sweeper-justin.surge.sh/", description: " is a React based game using an API. This was from my first week of learning React at SDG. API can be slow at times, and have not set up for mobile use yet." }
-      ],
+      MyWorks: Projects,
       buttonText: "More Projects",
       fading: false
     }
