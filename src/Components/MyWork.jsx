@@ -112,7 +112,7 @@ class MyWork extends Component {
   }
   componentDidMount = () => {
     window.addEventListener("resize", this._setHeight)
-    setTimeout(this._setHeight, 500)
+    setTimeout(this._setHeight, 1000)
   }
   _setHeight = () => {
     let area = document.querySelector(".works")
@@ -162,7 +162,7 @@ class MyWork extends Component {
                       target="_blank"
                       rel="noopener noreferrer"
                       tabIndex="5">
-                      <img src={proj.imgSrc} alt={proj.imgAlt} />
+                      <img src={proj.imgSrc} alt={proj.imgAlt} onLoad={this._setHeight} />
                     </a>
                     <p>
                       <a href={proj.href}
