@@ -24,7 +24,7 @@ class TypeWriter extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      titles: ["Problem Solver", "Up For A Challenge", "Web Developer", "Problem Solver", "Up For A Challenge", "Web Developer", "Na Na Na Batman!"],
+      titles: ["Problem Solver", "Up For A Challenge", "Software Engineer", "Problem Solver", "Up For A Challenge", "Software Engineer", "Na Na Na Batman!"],
       title: 0,
       cursor: 0,
       erase: false,
