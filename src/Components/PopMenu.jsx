@@ -351,12 +351,12 @@ class PopMenu extends Component {
             Contact Me
           </button >
           <a className="jump"
-            href="./Justin_Oliver_Lee_Resume.pdf"
+            href="https://drive.google.com/file/d/13DDGPebrTjKaTiu8gJsrjU576D46lp6Q/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             tabIndex={this.state.popMenu ? 2 : -1}
             onClick={() => this._closeMenu()}
-            alt="opens resume PDF in new window"
+            alt=""
           >
             My Resume
           </a>
