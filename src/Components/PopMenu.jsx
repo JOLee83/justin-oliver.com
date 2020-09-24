@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const MenuDiv = styled.div`
   position: fixed;
   z-index: 101;
+
   .mobile-button, .full-button {
     text-align: center;
     font-family: 'Chakra Petch', sans-serif;
     border-radius: 20%;
     color: rgb(250, 250, 250);
     background-color: transparent;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     transition: background-color .4s ease-in-out;
     outline-color: rgb(250, 0, 0);
     cursor: pointer;
+    z-index: 100;
   }
+
   .mobile-button {
     position: fixed;
     top: 3px;
@@ -24,10 +27,9 @@ const MenuDiv = styled.div`
     border: none;
     width: 41px;
     height: 41px;
-    .bar {
-      position: fixed;
-      background-color: rgb(250, 250, 250);
-    }
+
+
+
     .button-div {
       position: fixed;
       top: 8px;
@@ -38,13 +40,20 @@ const MenuDiv = styled.div`
       border-radius: 5px;
       z-index: 99;
       background-color: rgba(0,0,0,.5);
-
       box-shadow: -.1rem -.1rem 1rem rgb(25, 25, 25),
           .1rem .1rem 1rem rgb(25, 25, 25),
           .1rem .1rem 1rem rgb(25, 25, 25),
           -.1rem -.1rem 1rem rgb(25, 25, 25);
     }
-    .open-1-1 {
+
+
+  }
+  .bar {
+      position: fixed;
+      background-color: rgb(250, 250, 250);
+    }
+
+  .open-1-1 {
       transition: all .5s linear;
       width: 14px;
       height: 3px;
@@ -53,6 +62,7 @@ const MenuDiv = styled.div`
       left: 11px;
       z-index: 102;
     }
+
     .close-1-1 {
       transition: all .5s linear;
       width: 18px;
@@ -63,6 +73,7 @@ const MenuDiv = styled.div`
       left: 11px;
       z-index: 102;
     }
+
     .open-1-2 {
       transition: all .5s linear;
       width: 14px;
@@ -72,6 +83,7 @@ const MenuDiv = styled.div`
       left: 25px;
       z-index: 102;
     }
+
     .close-1-2 {
       transition: all .5s linear;
       width: 16px;
@@ -82,6 +94,7 @@ const MenuDiv = styled.div`
       left: 23px;
       z-index: 102;
     }
+
     .open-2 {
       transition: all .5s linear;
       border-radius: 5px;
@@ -91,6 +104,7 @@ const MenuDiv = styled.div`
       left: 11px;
       z-index: 101;
     }
+
     .close-2 {
       transition: all .5s linear;
       border-radius: 5px;
@@ -98,8 +112,9 @@ const MenuDiv = styled.div`
       height: 33px;
       top: 8px;
       left: 8px;
-      background-color: rgba(0,0,0,.5);
+      opacity: 0;
     }
+
     .open-3-1 {
       transition: all .5s linear;
       width: 14px;
@@ -109,6 +124,7 @@ const MenuDiv = styled.div`
       left: 11px;
       z-index: 102;
     }
+
     .close-3-1 {
       transition: all .5s linear;
       width: 16px;
@@ -119,6 +135,7 @@ const MenuDiv = styled.div`
       left: 11px;
       z-index: 102;
     }
+
     .open-3-2 {
       transition: all .5s linear;
       width: 14px;
@@ -128,6 +145,7 @@ const MenuDiv = styled.div`
       left: 25px;
       z-index: 102;
     }
+
     .close-3-2 {
       transition: all .5s linear;
       width: 16px;
@@ -138,100 +156,139 @@ const MenuDiv = styled.div`
       left: 23px;
       z-index: 102;
     }
-  }
+
   .jump {
     font-family: 'Chakra Petch', sans-serif;
     color: rgb(250, 250, 250);
     background-color: transparent;
     border: none;
     font-size: 1.3rem;
-    padding: 1rem;
+    padding: 1rem 2rem 2rem 1rem;
     text-decoration: none;
-    text-align: center;
+    text-align: left;
     cursor: pointer;
     transition: color .4s ease-in-out;
     outline-color: rgb(250, 0, 0);
+    display: flex;
+
+    .icon-frame {
+      width: 30px;
+      text-align: center;
+      margin-right: 15px;
+    }
   }
+
   .hidden, .shown {
-    margin-top: .3rem;
+    padding: 45px 0;
     position: fixed;
-    top: 45px;
     background-image: linear-gradient(to top, rgb(0, 0, 0), rgb(25, 25, 25));
     color: rgb(250, 250, 250);
     display: flex;
     font-size: 1.3rem;
-    width: 100vw;
-    z-index: 99;
+    height: calc(100vh - 45px);
+    width: fit-content;    z-index: 99;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
     font-family: 'Chakra Petch', sans-serif;
     box-shadow: -.05rem -.05rem .1rem rgb(240, 240, 240),
     .05rem .05rem .1rem rgb(240, 240, 240),
     .05rem .05rem .1rem rgb(240, 240, 240),
     -.05rem -.05rem .1rem rgb(240, 240, 240);
-    transition: all .4s ease-in-out;
-    z-index: none;
+    transition: all .5s ease-in-out;
   }
+
   .hidden {
     left: -150%;
   }
+
   .shown {
     left: 0;
   }
+
   .full-button {
     display: none;
   }
+
+  .hidden-menu-background, .shown-menu-background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+    z-index: 98;
+    transition: opacity .4s ease-in-out;
+  }
+
+  .shown-menu-background {
+    opacity: .5;
+  }
+
+  .hidden-menu-background {
+    opacity: 0;
+    pointer-events: none;
+  }
+
   @media (min-width: 700px) {
     .full-button {
       position: fixed;
       top: 8px;
-      left: 8px;
+      left: 6px;
       border: .1rem solid rgb(250, 250, 250);
       display: flex;
       font-family: 'Chakra Petch', sans-serif;
-      padding: .15rem .3rem 0 .3rem;
-      width: 80px;
+      padding: .15rem .3rem 0 34px;
+      width: 100px;
+      max-width: none;
+      font-size: 1.5rem;
+      padding-top: 0;
+      border-radius: 10%;
+
       .faded {
         text-align: center;
         opacity: 0;
         transition: opacity .4s ease-in-out;
       }
+
       .unfaded {
         text-align: center;
         opacity: 1;
         transition: opacity .4s ease-in-out;
       }
     }
+
     .mobile-button {
-      display:none;
+      display: none;
     }
+
     .shown, .hidden {
       font-size:1.3rem;
-      height: 80vh;
-      width:150px;
+      height: calc(100vh - 45px);
+      width: fit-content;
     }
+
     .hidden {
       left: -100%;
     }
+
     .shown {
       left: 0;
+      overflow-y: scroll;
     }
-    .full-button {
-      font-size: 1.7rem;
-      padding-top: 0;
-      border-radius: 10%;
-      max-width: 95px;
-    }
+
     .jump:hover {
       color: rgb(139, 0, 0);
       transition: color .4s ease-in-out;
     }
+
     .full-button:hover {
       background-color: rgb(250, 250, 250);
       color: rgb(139, 0, 0);
       transition: background-color .4s ease-in-out, color .4s ease-in-out;
+      .bar {
+        background-color: rgb(139, 0, 0);
+        transition: all .5s linear;
+
+      }
     }
+    
   }
 `
 class PopMenu extends Component {
@@ -240,13 +297,16 @@ class PopMenu extends Component {
     buttonText: "Menu",
     fading: false
   }
+
   componentDidMount() {
     window.addEventListener('scroll', this._closeMenu)
   }
+
   _menu = target => {
     this.props.scroll(target)
     this._closeMenu()
   }
+
   _closeMenu = () => {
     if (this.state.popMenu) {
       this.setState(() => {
@@ -257,6 +317,7 @@ class PopMenu extends Component {
       this._changeText()
     }
   }
+
   _toggleMenu = () => {
     this.setState(prevState => {
       return {
@@ -265,6 +326,7 @@ class PopMenu extends Component {
     })
     this._changeText()
   }
+
   _changeText = () => {
     this.setState(() => ({
       fading: true
@@ -283,6 +345,19 @@ class PopMenu extends Component {
       }
     }, 500)
   }
+
+  _button = () => {
+    return (
+      <>
+        <div className={`bar ${this.state.popMenu ? "close-1-1" : "open-1-1"}`} />
+        <div className={`bar ${this.state.popMenu ? "close-1-2" : "open-1-2"}`} />
+        <div className={`bar ${this.state.popMenu ? "close-2" : "open-2"}`} />
+        <div className={`bar ${this.state.popMenu ? "close-3-1" : "open-3-1"}`} />
+        <div className={`bar ${this.state.popMenu ? "close-3-2" : "open-3-2"}`} />
+      </>
+    );
+  }
+
   render() {
     return (
       <MenuDiv>
@@ -293,11 +368,12 @@ class PopMenu extends Component {
           alt="opens navigation menu"
         >
           <div className="button-div" />
-          <div className={`bar ${this.state.popMenu ? "close-1-1" : "open-1-1"}`} />
+          {this._button()}
+          {/* <div className={`bar ${this.state.popMenu ? "close-1-1" : "open-1-1"}`} />
           <div className={`bar ${this.state.popMenu ? "close-1-2" : "open-1-2"}`} />
           <div className={`bar ${this.state.popMenu ? "close-2" : "open-2"}`} />
           <div className={`bar ${this.state.popMenu ? "close-3-1" : "open-3-1"}`} />
-          <div className={`bar ${this.state.popMenu ? "close-3-2" : "open-3-2"}`} />
+          <div className={`bar ${this.state.popMenu ? "close-3-2" : "open-3-2"}`} /> */}
         </button>
         <button
           className="full-button"
@@ -305,6 +381,8 @@ class PopMenu extends Component {
           tabIndex="1"
           alt="opens navigation menu"
         >
+          {this._button()}
+
           <div className={this.state.fading ? "faded" : "unfaded"}>
             {this.state.buttonText}
           </div>
@@ -316,6 +394,9 @@ class PopMenu extends Component {
             tabIndex={this.state.popMenu ? 2 : -1}
             alt="scrolls to top of page"
           >
+            <div className='icon-frame'>
+              <i className="fas fa-home" />
+            </div>
             Home
           </button>
           <button
@@ -324,6 +405,9 @@ class PopMenu extends Component {
             tabIndex={this.state.popMenu ? 2 : -1}
             alt="scrolls to about me section"
           >
+            <div className='icon-frame'>
+              <i className="fas fa-user" />
+            </div>
             About Me
           </button>
           <button
@@ -332,6 +416,9 @@ class PopMenu extends Component {
             tabIndex={this.state.popMenu ? 2 : -1}
             alt="scrolls to my skills section"
           >
+            <div className='icon-frame'>
+              <i className="fas fa-list-ul" />
+            </div>
             My Skills
           </button >
           <button
@@ -340,6 +427,9 @@ class PopMenu extends Component {
             tabIndex={this.state.popMenu ? 2 : -1}
             alt="scrolls to my work section"
           >
+            <div className='icon-frame'>
+              <i className="fas fa-bookmark" />
+            </div>
             My Work
           </button >
           <button
@@ -348,6 +438,9 @@ class PopMenu extends Component {
             tabIndex={this.state.popMenu ? 2 : -1}
             alt="scrolls to contact section"
           >
+            <div className='icon-frame'>
+              <i className="fas fa-address-card" />
+            </div>
             Contact Me
           </button >
           <a className="jump"
@@ -358,9 +451,13 @@ class PopMenu extends Component {
             onClick={() => this._closeMenu()}
             alt=""
           >
+            <div className='icon-frame'>
+              <i className="fab fa-google-drive" />
+            </div>
             My Resume
           </a>
         </div >
+        <div className={this.state.popMenu ? "shown-menu-background" : "hidden-menu-background"} onClick={this._closeMenu} />
       </MenuDiv >
     );
   }

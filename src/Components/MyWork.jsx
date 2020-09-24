@@ -116,7 +116,7 @@ class MyWork extends Component {
   }
   _setHeight = () => {
     let area = document.querySelector(".works")
-    return area.style.maxHeight = this.state.ShowMore ? "500vh" : `${this.previewHeight()}px`
+    return area.style.maxHeight = this.state.ShowMore ? "3000px" : `${this.previewHeight()}px`
   }
   ShowMoreWork = () => {
     this.setState(prevState => ({

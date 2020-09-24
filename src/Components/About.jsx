@@ -113,7 +113,7 @@ class About extends Component {
   }
   _setHeight = () => {
     let area = document.querySelector(".text")
-    return area.style.maxHeight = this.state.ReadMore ? "500vh" : `${this.previewHeight()}px`
+    return area.style.maxHeight = this.state.ReadMore ? "3000px" : `${this.previewHeight()}px`
   }
   ReadMoreAbout = () => {
     this.setState(prevState => ({
