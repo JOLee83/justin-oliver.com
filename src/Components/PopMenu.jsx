@@ -8,7 +8,6 @@ const MenuDiv = styled.div`
   .mobile-button, .full-button {
     text-align: center;
     font-family: 'Chakra Petch', sans-serif;
-    border-radius: 20%;
     color: rgb(250, 250, 250);
     background-color: transparent;
     font-size: 1.4rem;
@@ -28,8 +27,6 @@ const MenuDiv = styled.div`
     width: 41px;
     height: 41px;
 
-
-
     .button-div {
       position: fixed;
       top: 8px;
@@ -45,13 +42,12 @@ const MenuDiv = styled.div`
           .1rem .1rem 1rem rgb(25, 25, 25),
           -.1rem -.1rem 1rem rgb(25, 25, 25);
     }
-
-
   }
+
   .bar {
-      position: fixed;
-      background-color: rgb(250, 250, 250);
-    }
+    position: fixed;
+    background-color: rgb(250, 250, 250);
+  }
 
   .open-1-1 {
       transition: all .5s linear;
@@ -163,7 +159,8 @@ const MenuDiv = styled.div`
     background-color: transparent;
     border: none;
     font-size: 1.3rem;
-    padding: 1rem 2rem 2rem 1rem;
+    padding: 1rem 2rem 1rem 1rem;
+    margin-bottom: 1rem;
     text-decoration: none;
     text-align: left;
     cursor: pointer;
@@ -231,15 +228,26 @@ const MenuDiv = styled.div`
       position: fixed;
       top: 8px;
       left: 6px;
-      border: .1rem solid rgb(250, 250, 250);
-      display: flex;
+      border: none;
+      border-radius: 0;
+      padding: 0;
       font-family: 'Chakra Petch', sans-serif;
-      padding: .15rem .3rem 0 34px;
-      width: 100px;
-      max-width: none;
+      width: 102px;
+      height: 35px;
+      display: flex;
       font-size: 1.5rem;
-      padding-top: 0;
-      border-radius: 10%;
+      overflow: visible;
+
+      .button-div {
+        position: fixed;
+        top: 8px;
+        left: 6px;
+        border: .1rem solid rgb(250, 250, 250);
+        padding: 0 .3rem 0 34px;
+        border-radius: 5px;
+        transition: all .4s linear;
+        width: 60px;
+      }
 
       .faded {
         text-align: center;
@@ -279,13 +287,14 @@ const MenuDiv = styled.div`
     }
 
     .full-button:hover {
-      background-color: rgb(250, 250, 250);
-      color: rgb(139, 0, 0);
-      transition: background-color .4s ease-in-out, color .4s ease-in-out;
+      .button-div {
+        background-color: rgb(250, 250, 250);
+        color: rgb(139, 0, 0);
+      }
+
       .bar {
         background-color: rgb(139, 0, 0);
         transition: all .5s linear;
-
       }
     }
     
@@ -381,10 +390,12 @@ class PopMenu extends Component {
           tabIndex="1"
           alt="opens navigation menu"
         >
-          {this._button()}
+          <div className='button-div'>
+            {this._button()}
 
-          <div className={this.state.fading ? "faded" : "unfaded"}>
-            {this.state.buttonText}
+            <div className={this.state.fading ? "faded" : "unfaded"}>
+              {this.state.buttonText}
+            </div>
           </div>
         </button>
         <div className={this.state.popMenu ? "shown" : "hidden"}>
