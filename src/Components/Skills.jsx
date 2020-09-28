@@ -76,7 +76,7 @@ const SkillsDiv = styled.div`
 
 	@media (min-width: 1200px) {
 		.list {
-			max-width: 50vw;
+			max-width: 800px;
 		}
 	}
 `;
@@ -84,133 +84,17 @@ const SkillsDiv = styled.div`
 class Skills extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      // skills: [
-      //   'HTML',
-      //   'CSS',
-      //   'JavaScript',
-      //   'TypeScript',
-      //   'C#',
-      //   'SQL',
-      //   'Git',
-      //   'RESTful API',
-      //   'SASS',
-      //   'LESS',
-      //   'Styled Components',
-      //   'Flex Box',
-      //   'BootStrap',
-      //   'Bulma',
-      //   'Material UI',
-      //   'React',
-      //   'Redux',
-      //   'React Native',
-      //   'Node',
-      //   '.Net',
-      //   'Postgres',
-      //   'MySQL',
-      //   'GitHub',
-      //   'GitLab',
-      //   'Azure Devops',
-      // ],
-      // yOffset: 0,
-      // threshold: 0,
-      // postThreshold: 0,
-      // pass: true
-    }
+    this.state = {};
   }
-  // _getOffset = () => {
-  //   let el = document.querySelector('.skills')
-  //   let top = 0
-  //   do {
-  //     top += el.offsetTop
-  //     el = el.offsetParent
-  //   } while (el)
-  //   return top
-  // }
-  // _setYOffset = () => {
-  //   let yOffset = window.pageYOffset
-
-  //   this.setState(() => ({
-  //     yOffset: yOffset
-  //   }))
-  // }
-  // _setThreshold = () => {
-  //   let clientHeight = document.querySelector('.skills').clientHeight * 0.3
-  //   // console.log(document.querySelector('.skill').getBoundingClientRect().y - window.innerHeight)
-  //   let threshold = this._getOffset() - window.innerHeight + clientHeight
-
-  //   this.setState(() => ({
-  //     threshold: threshold
-  //   }))
-  // }
-  // _pass = () => {
-  //   const { threshold, yOffset, postThreshold } = this.state
-  //   if (yOffset < threshold) {
-  //     this.setState(() => ({
-  //       pass: true
-  //     }))
-  //   }
-  //   if (yOffset > postThreshold) {
-  //     this.setState(() => ({
-  //       pass: false
-  //     }))
-  //   }
-  // }
-
-  // _setPostThreshold = () => {
-  //   let clientHeight = document.querySelector('.skills').clientHeight * 1.5
-  //   let postThreshold = this._getOffset() - window.innerHeight + clientHeight
-  //   this.setState(() => ({
-  //     postThreshold: postThreshold
-  //   }))
-  // }
-
-  // _set = () => {
-  //   this._setYOffset()
-  //   this._setThreshold()
-  //   this._setPostThreshold()
-  //   this._pass()
-  // }
-
-  // componentDidMount = () => {
-  //   setTimeout(this._set, 500)
-  //   window.addEventListener('resize', this._set)
-  //   window.addEventListener('scroll', this._set)
-  // }
 
   render() {
-    const containmentDOMRect = document.getElementById("skills-list");
-
     return (
       <SkillsDiv className="skills">
         <h1>My Skills</h1>
         <p>Project experience with</p>
         <div className="list" id='skills-list'>
           {MySkills.map((skill, index) => {
-            // const {
-            //   skills,
-            //   threshold,
-            //   yOffset,
-            //   postThreshold,
-            //   pass
-            // } = this.state;
-
-            // const delay = pass ? index * 0.05 : (skills.length - index - 1) * 0.05;
-            // const styles = { transition: `all 1s ${delay}s ease-in` };
-
-            return (
-              <Skill key={`skill-key-${index}`} skill={skill} index={index} containmentDOMRect={containmentDOMRect} />
-              // <div
-              //   style={styles}
-              //   className={`skill${yOffset > pos ? '' : ' unpop'} item-${index}`}
-              //   key={index}
-              // >
-              //   <div className='img-frame'>
-              //     <img src={skill.imgSrc} alt='' style={styles} />
-              //   </div>
-              //   {skill.title}
-              // </div>
-            );
+            return <Skill key={`skill-key-${index}`} skill={skill} index={index} />;
           })}
         </div>
       </SkillsDiv>

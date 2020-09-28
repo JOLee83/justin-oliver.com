@@ -13,19 +13,19 @@ class Skill extends Component {
   }
 
   _getPosition = () => {
-    const el = document.getElementById(`skill-${this.props.index}`);
-    const winHi = window.innerHeight;
+    const element = document.getElementById(`skill-${this.props.index}`);
 
-    if (el) {
-      const elProps = el.getBoundingClientRect();
-      this.setState({ isVisible: elProps.y - winHi + 100 > 0 });
+    if (element) {
+      const isVisible = (element.getBoundingClientRect().y - window.innerHeight + 100) < 0;
+
+      this.setState({ isVisible });
     }
   }
 
   render() {
     return (
       <div
-        className={`skill${!this.state.isVisible ? '' : ' unpop'}`}
+        className={`skill${this.state.isVisible ? '' : ' unpop'}`}
         id={`skill-${this.props.index}`}
       >
         <div className='img-frame'>
@@ -33,7 +33,7 @@ class Skill extends Component {
         </div>
         {this.props.skill.title}
       </div>
-    )
+    );
   }
 }
 

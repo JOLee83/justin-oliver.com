@@ -247,7 +247,6 @@ const MenuDiv = styled.div`
         border-radius: 5px;
         transition: all .4s linear;
         width: 60px;
-        /* min-width: fit-content; */
       }
 
       .faded {
@@ -279,7 +278,6 @@ const MenuDiv = styled.div`
 
     .shown {
       left: 0;
-      overflow-y: scroll;
     }
 
     .jump:hover {
@@ -298,72 +296,59 @@ const MenuDiv = styled.div`
         transition: all .5s linear;
       }
     }
-    
   }
 `
 class PopMenu extends Component {
   state = {
     popMenu: false,
-    buttonText: "Menu",
-    fading: false
+    buttonText: 'Menu',
+    fading: false,
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this._closeMenu)
+    window.addEventListener('scroll', this._closeMenu);
   }
 
-  _menu = target => {
-    this.props.scroll(target)
-    this._closeMenu()
+  _menu = target => () => {
+    this.props.scroll(target);
+    this._closeMenu();
   }
 
   _closeMenu = () => {
     if (this.state.popMenu) {
-      this.setState(() => {
-        return {
-          popMenu: false
-        }
-      })
-      this._changeText()
+      this._toggleMenu();
     }
   }
 
   _toggleMenu = () => {
-    this.setState(prevState => {
-      return {
-        popMenu: !prevState.popMenu
-      }
+    this.setState(prevState => ({
+      popMenu: !prevState.popMenu,
     })
-    this._changeText()
+    );
+    this._changeText();
   }
 
   _changeText = () => {
     this.setState(() => ({
       fading: true
-    }))
-    setTimeout(_ => {
-      if (this.state.buttonText === "Menu") {
-        this.setState(() => ({
-          buttonText: "Close",
-          fading: false
-        }))
-      } else {
-        this.setState(() => ({
-          buttonText: "Menu",
-          fading: false
-        }))
-      }
+    }));
+
+    setTimeout(() => {
+      this.setState(() => ({
+        buttonText: this.state.buttonText === 'Menu' ? 'Close' : 'Menu',
+        fading: false,
+      }));
     }, 500)
   }
 
   _button = () => {
     return (
       <>
-        <div className={`bar ${this.state.popMenu ? "close-1-1" : "open-1-1"}`} />
-        <div className={`bar ${this.state.popMenu ? "close-1-2" : "open-1-2"}`} />
-        <div className={`bar ${this.state.popMenu ? "close-2" : "open-2"}`} />
-        <div className={`bar ${this.state.popMenu ? "close-3-1" : "open-3-1"}`} />
-        <div className={`bar ${this.state.popMenu ? "close-3-2" : "open-3-2"}`} />
+        <div className={`bar ${this.state.popMenu ? 'close-1-1' : 'open-1-1'}`} />
+        <div className={`bar ${this.state.popMenu ? 'close-1-2' : 'open-1-2'}`} />
+        <div className={`bar ${this.state.popMenu ? 'close-2' : 'open-2'}`} />
+        <div className={`bar ${this.state.popMenu ? 'close-3-1' : 'open-3-1'}`} />
+        <div className={`bar ${this.state.popMenu ? 'close-3-2' : 'open-3-2'}`} />
       </>
     );
   }
@@ -372,101 +357,102 @@ class PopMenu extends Component {
     return (
       <MenuDiv>
         <button
-          className="mobile-button"
+          className='mobile-button'
           onClick={this._toggleMenu}
-          tabIndex="1"
-          alt="opens navigation menu"
+          tabIndex='1'
+          alt='opens navigation menu'
         >
-          <div className="button-div" />
+          <div className='button-div' />
           {this._button()}
         </button>
         <button
-          className="full-button"
+          className='full-button'
           onClick={this._toggleMenu}
-          tabIndex="1"
-          alt="opens navigation menu"
+          tabIndex='1'
+          alt='opens navigation menu'
         >
           <div className='button-div'>
             {this._button()}
 
-            <div className={this.state.fading ? "faded" : "unfaded"}>
+            <div className={this.state.fading ? 'faded' : 'unfaded'}>
               {this.state.buttonText}
             </div>
           </div>
         </button>
-        <div className={this.state.popMenu ? "shown" : "hidden"}>
+        <div className={this.state.popMenu ? 'shown' : 'hidden'}>
           <button
-            className="jump"
-            onClick={() => this._menu(".home")}
+            className='jump'
+            onClick={this._menu('.home')}
             tabIndex={this.state.popMenu ? 2 : -1}
-            alt="scrolls to top of page"
+            alt='scrolls to top of page'
           >
             <div className='icon-frame'>
-              <i className="fas fa-home" />
+              <i className='fas fa-home' />
             </div>
             Home
           </button>
           <button
-            className="jump"
-            onClick={() => this._menu(".about")}
+            className='jump'
+            onClick={this._menu('.about')}
             tabIndex={this.state.popMenu ? 2 : -1}
-            alt="scrolls to about me section"
+            alt='scrolls to about me section'
           >
             <div className='icon-frame'>
-              <i className="fas fa-user" />
+              <i className='fas fa-user' />
             </div>
             About Me
           </button>
           <button
-            className="jump"
-            onClick={() => this._menu(".skills")}
+            className='jump'
+            onClick={this._menu('.skills')}
             tabIndex={this.state.popMenu ? 2 : -1}
-            alt="scrolls to my skills section"
+            alt='scrolls to my skills section'
           >
             <div className='icon-frame'>
-              <i className="fas fa-list-ul" />
+              <i className='fas fa-list-ul' />
             </div>
             My Skills
           </button >
           <button
-            className="jump"
-            onClick={() => this._menu(".work")}
+            className='jump'
+            onClick={this._menu('.work')}
             tabIndex={this.state.popMenu ? 2 : -1}
-            alt="scrolls to my work section"
+            alt='scrolls to my work section'
           >
             <div className='icon-frame'>
-              <i className="fas fa-bookmark" />
+              <i className='fas fa-bookmark' />
             </div>
             My Work
           </button >
           <button
-            className="jump"
-            onClick={() => this._menu(".contact")}
+            className='jump'
+            onClick={this._menu('.contact')}
             tabIndex={this.state.popMenu ? 2 : -1}
-            alt="scrolls to contact section"
+            alt='scrolls to contact section'
           >
             <div className='icon-frame'>
-              <i className="fas fa-address-card" />
+              <i className='fas fa-address-card' />
             </div>
             Contact Me
           </button >
-          <a className="jump"
-            href="https://drive.google.com/file/d/13DDGPebrTjKaTiu8gJsrjU576D46lp6Q/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
+          <a className='jump'
+            href='https://drive.google.com/file/d/13DDGPebrTjKaTiu8gJsrjU576D46lp6Q/view?usp=sharing'
+            target='_blank'
+            rel='noopener noreferrer'
             tabIndex={this.state.popMenu ? 2 : -1}
-            onClick={() => this._closeMenu()}
-            alt=""
+            onClick={this._closeMenu}
+            alt=''
           >
             <div className='icon-frame'>
-              <i className="fab fa-google-drive" />
+              <i className='fab fa-google-drive' />
             </div>
             My Resume
           </a>
         </div >
-        <div className={this.state.popMenu ? "shown-menu-background" : "hidden-menu-background"} onClick={this._closeMenu} />
+        <div className={this.state.popMenu ? 'shown-menu-background' : 'hidden-menu-background'} onClick={this._closeMenu} />
       </MenuDiv >
     );
   }
 }
+
 export default PopMenu;
