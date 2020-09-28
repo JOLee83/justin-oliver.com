@@ -247,6 +247,7 @@ const MenuDiv = styled.div`
         border-radius: 5px;
         transition: all .4s linear;
         width: 60px;
+        /* min-width: fit-content; */
       }
 
       .faded {
@@ -378,11 +379,6 @@ class PopMenu extends Component {
         >
           <div className="button-div" />
           {this._button()}
-          {/* <div className={`bar ${this.state.popMenu ? "close-1-1" : "open-1-1"}`} />
-          <div className={`bar ${this.state.popMenu ? "close-1-2" : "open-1-2"}`} />
-          <div className={`bar ${this.state.popMenu ? "close-2" : "open-2"}`} />
-          <div className={`bar ${this.state.popMenu ? "close-3-1" : "open-3-1"}`} />
-          <div className={`bar ${this.state.popMenu ? "close-3-2" : "open-3-2"}`} /> */}
         </button>
         <button
           className="full-button"

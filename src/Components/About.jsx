@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 
 const AboutDiv = styled.div`
-  padding-top: 1rem;
+  padding: 10px 0;
   min-height: 100vh;
   background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(25, 25, 25));
   background-size: cover;

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { MySkills } from '../Constants/MySkills';
+import Skill from './Skill';
 
 const SkillsDiv = styled.div`
 	min-height: 100vh;
@@ -17,13 +19,13 @@ const SkillsDiv = styled.div`
 	z-index: 100;
 	font-family: 'Chakra Petch', sans-serif;
 	font-size: 1.2rem;
+  padding: 10px 0;
 
 	h1, p {
 		margin: 0 0 0.5rem 0;
 	}
 
 	.list {
-		width: 90%;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
@@ -31,32 +33,44 @@ const SkillsDiv = styled.div`
 
 		.skill {
 			display: flex;
+      flex-direction: column;
 			justify-content: center;
 			align-items: center;
 			text-align: center;
-			margin: 0.5rem;
-			border: 1px solid white;
-			width: 110px;
-			height: 50px;
+			margin: 10px;
+      font-size: 17px;
+			width: 160px;
 			border-radius: 10px;
+      transition: all 1s ease;
+
+      .img-frame {
+        height: 150px;
+        max-width: 150px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          max-width: 150px;
+          max-height: 150px;
+          transition: all 1s ease;
+        }
+      }
 		}
 
 		.unpop {
 			transform: scale(0);
-			opacity: 0;
+
+      img {
+        transform: rotate(180deg);
+      }
 		}
 	}
 
 	@media (min-width: 500px) {
 		.list {
 			max-width: 70vw;
-			/* min-height: 70vh; */
-
-			.skill {
-				font-size: 1.6rem;
-				width: 220px;
-				height: 75px;
-			}
 		}
 	}
 
@@ -71,128 +85,131 @@ class Skills extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      skills: [
-        'HTML',
-        'CSS',
-        'JavaScript',
-        'TypeScript',
-        'C#',
-        'SQL',
-        'Git',
-        'RESTful API',
-        'SASS',
-        'LESS',
-        'Styled Components',
-        'Flex Box',
-        'BootStrap',
-        'Bulma',
-        'Material UI',
-        'React',
-        'Redux',
-        'React Native',
-        'Node',
-        '.Net',
-        'Postgres',
-        'MySQL',
-        'GitHub',
-        'GitLab',
-        'Azure Devops',
-      ],
-      yOffset: 0,
-      threshold: 0,
-      postThreshold: 0,
-      pass: true
+      // skills: [
+      //   'HTML',
+      //   'CSS',
+      //   'JavaScript',
+      //   'TypeScript',
+      //   'C#',
+      //   'SQL',
+      //   'Git',
+      //   'RESTful API',
+      //   'SASS',
+      //   'LESS',
+      //   'Styled Components',
+      //   'Flex Box',
+      //   'BootStrap',
+      //   'Bulma',
+      //   'Material UI',
+      //   'React',
+      //   'Redux',
+      //   'React Native',
+      //   'Node',
+      //   '.Net',
+      //   'Postgres',
+      //   'MySQL',
+      //   'GitHub',
+      //   'GitLab',
+      //   'Azure Devops',
+      // ],
+      // yOffset: 0,
+      // threshold: 0,
+      // postThreshold: 0,
+      // pass: true
     }
   }
-  _getOffset = () => {
-    let el = document.querySelector('.skills')
-    let top = 0
-    do {
-      top += el.offsetTop
-      el = el.offsetParent
-    } while (el)
-    return top
-  }
-  _setYOffset = () => {
-    let yOffset = window.pageYOffset
+  // _getOffset = () => {
+  //   let el = document.querySelector('.skills')
+  //   let top = 0
+  //   do {
+  //     top += el.offsetTop
+  //     el = el.offsetParent
+  //   } while (el)
+  //   return top
+  // }
+  // _setYOffset = () => {
+  //   let yOffset = window.pageYOffset
 
-    this.setState(() => ({
-      yOffset: yOffset
-    }))
-  }
-  _setThreshold = () => {
-    let clientHeight = document.querySelector('.skills').clientHeight * 0.3
-    let threshold = this._getOffset() - window.innerHeight + clientHeight
+  //   this.setState(() => ({
+  //     yOffset: yOffset
+  //   }))
+  // }
+  // _setThreshold = () => {
+  //   let clientHeight = document.querySelector('.skills').clientHeight * 0.3
+  //   // console.log(document.querySelector('.skill').getBoundingClientRect().y - window.innerHeight)
+  //   let threshold = this._getOffset() - window.innerHeight + clientHeight
 
-    this.setState(() => ({
-      threshold: threshold
-    }))
-  }
-  _pass = () => {
-    const { threshold, yOffset, postThreshold } = this.state
-    if (yOffset < threshold) {
-      this.setState(prevState => ({
-        pass: true
-      }))
-    }
-    if (yOffset > postThreshold) {
-      this.setState(prevState => ({
-        pass: false
-      }))
-    }
-  }
-  _setPostThreshold = () => {
-    let clientHeight = document.querySelector('.skills').clientHeight * 1.5
-    let postThreshold = this._getOffset() - window.innerHeight + clientHeight
-    this.setState(() => ({
-      postThreshold: postThreshold
-    }))
-  }
-  _set = () => {
-    this._setYOffset()
-    this._setThreshold()
-    this._setPostThreshold()
-    this._pass()
-  }
-  componentDidMount = () => {
-    setTimeout(this._set, 500)
-    window.addEventListener('resize', this._set)
-    window.addEventListener('scroll', this._set)
-  }
+  //   this.setState(() => ({
+  //     threshold: threshold
+  //   }))
+  // }
+  // _pass = () => {
+  //   const { threshold, yOffset, postThreshold } = this.state
+  //   if (yOffset < threshold) {
+  //     this.setState(() => ({
+  //       pass: true
+  //     }))
+  //   }
+  //   if (yOffset > postThreshold) {
+  //     this.setState(() => ({
+  //       pass: false
+  //     }))
+  //   }
+  // }
+
+  // _setPostThreshold = () => {
+  //   let clientHeight = document.querySelector('.skills').clientHeight * 1.5
+  //   let postThreshold = this._getOffset() - window.innerHeight + clientHeight
+  //   this.setState(() => ({
+  //     postThreshold: postThreshold
+  //   }))
+  // }
+
+  // _set = () => {
+  //   this._setYOffset()
+  //   this._setThreshold()
+  //   this._setPostThreshold()
+  //   this._pass()
+  // }
+
+  // componentDidMount = () => {
+  //   setTimeout(this._set, 500)
+  //   window.addEventListener('resize', this._set)
+  //   window.addEventListener('scroll', this._set)
+  // }
+
   render() {
+    const containmentDOMRect = document.getElementById("skills-list");
+
     return (
       <SkillsDiv className="skills">
         <h1>My Skills</h1>
         <p>Project experience with</p>
-        <div className="list">
-          {this.state.skills.map((skill, index) => {
-            const {
-              skills,
-              threshold,
-              yOffset,
-              postThreshold,
-              pass
-            } = this.state;
+        <div className="list" id='skills-list'>
+          {MySkills.map((skill, index) => {
+            // const {
+            //   skills,
+            //   threshold,
+            //   yOffset,
+            //   postThreshold,
+            //   pass
+            // } = this.state;
 
-            const styles = pass
-              ? { transition: `all .5s ${index * 0.05}s ease` }
-              : {
-                transition: `all .5s ${(skills.length - index - 1) *
-                  0.05}s ease`
-              };
+            // const delay = pass ? index * 0.05 : (skills.length - index - 1) * 0.05;
+            // const styles = { transition: `all 1s ${delay}s ease-in` };
 
             return (
-              <div
-                style={styles}
-                className={
-                  yOffset > threshold && yOffset < postThreshold
-                    ? 'skill'
-                    : 'skill unpop'
-                }
-                key={index}
-              >
-                {skill}
-              </div>
+              <Skill key={`skill-key-${index}`} skill={skill} index={index} containmentDOMRect={containmentDOMRect} />
+              // <div
+              //   style={styles}
+              //   className={`skill${yOffset > pos ? '' : ' unpop'} item-${index}`}
+              //   key={index}
+              // >
+              //   <div className='img-frame'>
+              //     <img src={skill.imgSrc} alt='' style={styles} />
+              //   </div>
+              //   {skill.title}
+              // </div>
             );
           })}
         </div>
