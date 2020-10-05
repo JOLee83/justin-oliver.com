@@ -35,9 +35,9 @@ export const MySkills = [
     imgSrc: './img/icons/react.png',
   },
   {
-    title: 'Redux',
+    title: 'Node',
     link: '',
-    imgSrc: './img/icons/redux.png',
+    imgSrc: './img/icons/node.png',
   },
   {
     title: 'React Native',
@@ -45,14 +45,14 @@ export const MySkills = [
     imgSrc: './img/icons/reactnative.png',
   },
   {
-    title: 'Node',
-    link: '',
-    imgSrc: './img/icons/node.png',
-  },
-  {
     title: '.Net',
     link: '',
     imgSrc: './img/icons/dotnet.png',
+  },
+  {
+    title: 'Redux',
+    link: '',
+    imgSrc: './img/icons/redux.png',
   },
   {
     title: 'MySQL',

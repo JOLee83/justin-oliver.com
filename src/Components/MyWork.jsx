@@ -76,9 +76,12 @@ const MyWorkDiv = styled.div`
   }
   @media (min-width: 500px) {
     img, p{
-      max-width: 50vw;
+      max-width: 70vw;
     }
+
     .work-card {
+      max-width: 70vw;
+
       p {
 			font-size: 1.3rem;
 			margin-bottom: 2rem;
@@ -89,13 +92,23 @@ const MyWorkDiv = styled.div`
       color: rgb(139, 0, 0);
       transition: all 0.5s ease-in-out;
     }
+
     button:hover {
       background-color: rgb(250, 250, 250);
       color: rgb(139, 0, 0);
       transition: all 0.5s ease-in-out;
     }
-    
   }
+
+  @media (min-width: 1200px) {
+    img, p{
+      max-width: 800px;
+    }
+
+    .work-card {
+      max-width: 800px;
+		}
+	}
 `
 class MyWork extends Component {
   constructor(props) {

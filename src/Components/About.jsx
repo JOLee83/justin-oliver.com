@@ -79,7 +79,7 @@ const AboutDiv = styled.div`
       max-width:300px;
     }
     .about-card {
-      max-width: 50vw;
+      max-width: 70vw;
     }
     a:hover {
       color: rgb(139, 0, 0);
@@ -94,6 +94,12 @@ const AboutDiv = styled.div`
       font-size: 1.2rem;
     }
   }
+
+  @media (min-width: 1200px) {
+    .about-card {
+			max-width: 800px;
+		}
+	}
 `
 class About extends Component {
   constructor(props) {

@@ -10,6 +10,8 @@ class Skill extends Component {
 
   componentDidMount() {
     document.addEventListener('scroll', this._getPosition);
+
+    setTimeout(this._getPosition, 1000);
   }
 
   _getPosition = () => {
@@ -29,7 +31,7 @@ class Skill extends Component {
         id={`skill-${this.props.index}`}
       >
         <div className='img-frame'>
-          <img src={this.props.skill.imgSrc} alt='' onLoad={this._getPosition} />
+          <img src={this.props.skill.imgSrc} alt='' />
         </div>
         {this.props.skill.title}
       </div>

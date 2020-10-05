@@ -159,7 +159,7 @@ const MenuDiv = styled.div`
     background-color: transparent;
     border: none;
     font-size: 1.3rem;
-    padding: 1rem 2rem 1rem 1rem;
+    padding: 0 32px 0 16px;
     margin-bottom: 1rem;
     text-decoration: none;
     text-align: left;
@@ -176,21 +176,28 @@ const MenuDiv = styled.div`
   }
 
   .hidden, .shown {
-    padding: 45px 0;
+    padding: 80px 0;
     position: fixed;
     background-image: linear-gradient(to top, rgb(0, 0, 0), rgb(25, 25, 25));
     color: rgb(250, 250, 250);
-    display: flex;
     font-size: 1.3rem;
     height: calc(100vh - 45px);
-    width: fit-content;    z-index: 99;
-    flex-direction: column;
+    width: fit-content;    
+    z-index: 99;
     font-family: 'Chakra Petch', sans-serif;
     box-shadow: -.05rem -.05rem .1rem rgb(240, 240, 240),
     .05rem .05rem .1rem rgb(240, 240, 240),
     .05rem .05rem .1rem rgb(240, 240, 240),
     -.05rem -.05rem .1rem rgb(240, 240, 240);
     transition: all .5s ease-in-out;
+
+    .link-flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: calc(100vh - 125px);
+      max-height: 450px;
+    }
   }
 
   .hidden {
@@ -264,20 +271,6 @@ const MenuDiv = styled.div`
 
     .mobile-button {
       display: none;
-    }
-
-    .shown, .hidden {
-      font-size:1.3rem;
-      height: calc(100vh - 45px);
-      width: fit-content;
-    }
-
-    .hidden {
-      left: -100%;
-    }
-
-    .shown {
-      left: 0;
     }
 
     .jump:hover {
@@ -380,74 +373,76 @@ class PopMenu extends Component {
           </div>
         </button>
         <div className={this.state.popMenu ? 'shown' : 'hidden'}>
-          <button
-            className='jump'
-            onClick={this._menu('.home')}
-            tabIndex={this.state.popMenu ? 2 : -1}
-            alt='scrolls to top of page'
-          >
-            <div className='icon-frame'>
-              <i className='fas fa-home' />
-            </div>
+          <div className='link-flex'>
+            <button
+              className='jump'
+              onClick={this._menu('.home')}
+              tabIndex={this.state.popMenu ? 2 : -1}
+              alt='scrolls to top of page'
+            >
+              <div className='icon-frame'>
+                <i className='fas fa-home' />
+              </div>
             Home
           </button>
-          <button
-            className='jump'
-            onClick={this._menu('.about')}
-            tabIndex={this.state.popMenu ? 2 : -1}
-            alt='scrolls to about me section'
-          >
-            <div className='icon-frame'>
-              <i className='fas fa-user' />
-            </div>
+            <button
+              className='jump'
+              onClick={this._menu('.about')}
+              tabIndex={this.state.popMenu ? 2 : -1}
+              alt='scrolls to about me section'
+            >
+              <div className='icon-frame'>
+                <i className='fas fa-user' />
+              </div>
             About Me
           </button>
-          <button
-            className='jump'
-            onClick={this._menu('.skills')}
-            tabIndex={this.state.popMenu ? 2 : -1}
-            alt='scrolls to my skills section'
-          >
-            <div className='icon-frame'>
-              <i className='fas fa-list-ul' />
-            </div>
+            <button
+              className='jump'
+              onClick={this._menu('.skills')}
+              tabIndex={this.state.popMenu ? 2 : -1}
+              alt='scrolls to my skills section'
+            >
+              <div className='icon-frame'>
+                <i className='fas fa-list-ul' />
+              </div>
             My Skills
           </button >
-          <button
-            className='jump'
-            onClick={this._menu('.work')}
-            tabIndex={this.state.popMenu ? 2 : -1}
-            alt='scrolls to my work section'
-          >
-            <div className='icon-frame'>
-              <i className='fas fa-bookmark' />
-            </div>
+            <button
+              className='jump'
+              onClick={this._menu('.work')}
+              tabIndex={this.state.popMenu ? 2 : -1}
+              alt='scrolls to my work section'
+            >
+              <div className='icon-frame'>
+                <i className='fas fa-bookmark' />
+              </div>
             My Work
           </button >
-          <button
-            className='jump'
-            onClick={this._menu('.contact')}
-            tabIndex={this.state.popMenu ? 2 : -1}
-            alt='scrolls to contact section'
-          >
-            <div className='icon-frame'>
-              <i className='fas fa-address-card' />
-            </div>
+            <button
+              className='jump'
+              onClick={this._menu('.contact')}
+              tabIndex={this.state.popMenu ? 2 : -1}
+              alt='scrolls to contact section'
+            >
+              <div className='icon-frame'>
+                <i className='fas fa-address-card' />
+              </div>
             Contact Me
           </button >
-          <a className='jump'
-            href='https://drive.google.com/file/d/13DDGPebrTjKaTiu8gJsrjU576D46lp6Q/view?usp=sharing'
-            target='_blank'
-            rel='noopener noreferrer'
-            tabIndex={this.state.popMenu ? 2 : -1}
-            onClick={this._closeMenu}
-            alt=''
-          >
-            <div className='icon-frame'>
-              <i className='fab fa-google-drive' />
-            </div>
+            <a className='jump'
+              href='https://drive.google.com/file/d/13DDGPebrTjKaTiu8gJsrjU576D46lp6Q/view?usp=sharing'
+              target='_blank'
+              rel='noopener noreferrer'
+              tabIndex={this.state.popMenu ? 2 : -1}
+              onClick={this._closeMenu}
+              alt=''
+            >
+              <div className='icon-frame'>
+                <i className='fab fa-google-drive' />
+              </div>
             My Resume
           </a>
+          </div>
         </div >
         <div className={this.state.popMenu ? 'shown-menu-background' : 'hidden-menu-background'} onClick={this._closeMenu} />
       </MenuDiv >
