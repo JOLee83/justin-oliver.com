@@ -1,14 +1,85 @@
+/* Preflight is intentionally left out so browser defaults for headings, paragraphs and buttons stay as before */
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@theme {
+  --color-*: initial;
+  --color-black: #000000;
+  --color-black-50: #00000080;
+  --color-charcoal: #191919;
+  --color-midnight: #19182b;
+  --color-indigo: #282477;
+  --color-snow: #fafafa;
+  --color-mist: #f0f0f0;
+  --color-focus: #fa0000;
+  --color-accent: #8b0000;
+
+  --font-chakra: 'Chakra Petch', sans-serif;
+  --font-muli: 'Muli', sans-serif;
+
+  --breakpoint-*: initial;
+  --breakpoint-sm: 500px;
+  --breakpoint-md: 700px;
+  --breakpoint-lg: 800px;
+  --breakpoint-xl: 1200px;
+
+  --shadow-glow:
+    -.05rem -.05rem .1rem var(--color-mist),
+    .05rem .05rem .1rem var(--color-mist),
+    .05rem .05rem .1rem var(--color-mist),
+    -.05rem -.05rem .1rem var(--color-mist);
+  --shadow-menu-button:
+    -.1rem -.1rem 1rem var(--color-charcoal),
+    .1rem .1rem 1rem var(--color-charcoal),
+    .1rem .1rem 1rem var(--color-charcoal),
+    -.1rem -.1rem 1rem var(--color-charcoal);
+  --text-shadow-title:
+    -.1rem -.1rem .5rem var(--color-charcoal),
+    .1rem .1rem .5rem var(--color-charcoal),
+    .1rem .1rem .6rem var(--color-charcoal),
+    -.1rem -.1rem .5rem var(--color-charcoal);
+
+  --animate-blink: blink 1s step-end infinite;
+  --animate-intro: intro 1s ease-in;
+
+  @keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes intro {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* single solid focus ring; replaces the browser's two-tone "auto" outline */
+@utility focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+}
+
+/* drawn inside the element, for elements at the edge of an overflow-hidden container */
+@utility focus-ring-inset {
+  &:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: -2px;
+  }
+}
+
 html, body {
   margin: 0;
   padding: 0;
-  background-color: rgb(0, 0, 0);
-  animation: intro 1s ease-in;
-}
-@keyframes intro {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  background-color: var(--color-black);
+  animation: var(--animate-intro);
 }

@@ -1,4 +1,10 @@
-export const MySkills = [
+export type Skill = {
+  title: string;
+  link: string;
+  imgSrc: string;
+};
+
+export const MySkills: Skill[] = [
   {
     title: 'HTML',
     link: '',
