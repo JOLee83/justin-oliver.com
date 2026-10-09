@@ -1,4 +1,14 @@
-export const MySkills = [
+export const MySkills: Skill[] = [
+  {
+    title: 'Claude',
+    link: '',
+    imgSrc: './img/icons/claude.png',
+  },
+  {
+    title: 'Codex',
+    link: '',
+    imgSrc: './img/icons/codex.png',
+  },
   {
     title: 'HTML',
     link: '',
@@ -45,6 +55,26 @@ export const MySkills = [
     imgSrc: './img/icons/reactnative.png',
   },
   {
+    title: 'SWR',
+    link: '',
+    imgSrc: './img/icons/swr.png',
+  },
+  {
+    title: 'Axios',
+    link: '',
+    imgSrc: './img/icons/axios.png',
+  },
+  {
+    title: 'Vite',
+    link: '',
+    imgSrc: './img/icons/vite.png',
+  },
+  {
+    title: 'Docker',
+    link: '',
+    imgSrc: './img/icons/docker.png',
+  },
+  {
     title: '.Net',
     link: '',
     imgSrc: './img/icons/dotnet.png',
@@ -83,6 +113,16 @@ export const MySkills = [
     title: 'LESS',
     link: '',
     imgSrc: './img/icons/less.png',
+  },
+  {
+    title: 'Tailwind CSS',
+    link: '',
+    imgSrc: './img/icons/tailwindcss.png',
+  },
+  {
+    title: 'Post CSS',
+    link: '',
+    imgSrc: './img/icons/postcss.png',
   },
   {
     title: 'Material UI',
