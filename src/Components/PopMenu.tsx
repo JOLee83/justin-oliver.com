@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import type { ScrollFn } from '../App';
 
 const menuButton = 'group z-100 cursor-pointer bg-transparent text-center font-chakra text-snow focus-ring transition-[background-color] duration-400 ease-in-out';
 

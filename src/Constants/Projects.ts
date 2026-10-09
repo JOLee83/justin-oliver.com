@@ -1,11 +1,3 @@
-export type Project = {
-  title: string;
-  imgSrc: string;
-  imgAlt: string;
-  href: string;
-  description: string;
-};
-
 export const Projects: Project[] = [
   {
     title: 'SeekOut Recruit ',

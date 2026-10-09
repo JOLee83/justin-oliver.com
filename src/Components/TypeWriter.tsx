@@ -8,8 +8,6 @@ const ERASE_DELAY = 75
 const PAUSE_FULL = 3000
 const PAUSE_EMPTY = 1000
 
-type TypeState = { title: number; cursor: number; erase: boolean }
-
 const TypeWriter = () => {
   const [{ title, cursor, erase }, setState] = useState<TypeState>({ title: 0, cursor: 0, erase: false })
   const started = useRef(false)

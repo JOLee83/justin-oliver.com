@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import type { Skill as SkillType } from '../Constants/MySkills';
 
 interface Props {
-  skill: SkillType;
+  skill: Skill;
 }
 
 const Skill = ({ skill }: Props) => {

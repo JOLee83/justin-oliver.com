@@ -6,8 +6,6 @@ import MyWork from './Components/MyWork'
 import Skills from './Components/Skills'
 import Contact from './Components/Contact'
 
-export type ScrollFn = (target: string) => void;
-
 const App = () => {
   const scroll = useCallback<ScrollFn>(target => {
     document.querySelector(target)?.scrollIntoView({ behavior: "smooth" })

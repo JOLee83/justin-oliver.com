@@ -1,4 +1,3 @@
-import type { ScrollFn } from '../App';
 import { Projects } from '../Constants/Projects';
 import { useExpandable } from '../hooks/useExpandable';
 

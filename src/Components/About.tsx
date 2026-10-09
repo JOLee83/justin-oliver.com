@@ -1,4 +1,3 @@
-import type { ScrollFn } from '../App'
 import { useExpandable } from '../hooks/useExpandable'
 
 interface Props {
